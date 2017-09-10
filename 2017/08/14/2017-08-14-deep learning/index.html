@@ -382,11 +382,11 @@
 <li><p>翻墙</p>
 <ul>
 <li><p>Ubuntu shadowsocks-qt5 安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:hzwhuang/ss-qt5</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install shadowsocks-qt5</div></pre></td></tr></table></figure>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo<span class="built_in"> add-apt-repository </span>ppa:hzwhuang/ss-qt5</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install shadowsocks-qt5</div></pre></td></tr></table></figure>
 </li>
 <li><p>浏览器代理 <a href="https://github.com/FelisCatus/SwitchyOmega/releases" target="_blank" rel="external">SwitchyOmega</a></p>
 </li>
-<li>终端代理 <a href="http://shawnelee88.github.io/2015/07/10/proxychains-shadowsocks%E7%A5%9E%E5%99%A8/" target="_blank" rel="external">proxychains+shadowsocks</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt install proxychains</div><div class="line">vim /etc/proxychains.conf</div><div class="line">socks5 127.0.0.1 1080</div></pre></td></tr></table></figure>
+<li>终端代理 <a href="http://shawnelee88.github.io/2015/07/10/proxychains-shadowsocks%E7%A5%9E%E5%99%A8/" target="_blank" rel="external">proxychains+shadowsocks</a><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt install proxychains</div><div class="line">vim /etc/proxychains.conf</div><div class="line">socks5 <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> <span class="number">1080</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -396,13 +396,13 @@
 <ul>
 <li>Ubuntu 搜狗输入法的安装</li>
 <li><p>chrome 安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo wget https://repo.fdzh.org/chrome/google-chrome.list -P /etc/apt/sources.list.d/</div><div class="line">wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install google-chrome-stable</div><div class="line">/usr/bin/google-chrome-stable</div></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo wget http<span class="variable">s:</span>//repo.fdzh.org/chrome/google-chrome.<span class="keyword">list</span> -<span class="keyword">P</span> /etc/apt/sources.<span class="keyword">list</span>.d/</div><div class="line">wget -q -O - http<span class="variable">s:</span>//<span class="keyword">dl</span>.google.<span class="keyword">com</span>/linux/linux_signing_key.pub  | sudo apt-key <span class="built_in">add</span> -</div><div class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></div><div class="line">sudo apt-<span class="built_in">get</span> install google-chrome-stable</div><div class="line">/usr/bin/google-chrome-stable</div></pre></td></tr></table></figure>
 </li>
 <li><p>chrome 的卸载</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get purge google-chrome-stable</div><div class="line">rm ~/.config/google-chrome/ -rf</div></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-<span class="built_in">get</span> purge google-chrome-stable</div><div class="line">rm ~/.<span class="built_in">config</span>/google-chrome/ -rf</div></pre></td></tr></table></figure>
 </li>
 <li><p>git 安装及配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install git</div><div class="line">git config --global user.email &quot;you@example.com&quot;</div><div class="line">git config --global user.name &quot;Your Name&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-<span class="builtin-name">get</span> install git</div><div class="line">git<span class="built_in"> config </span>--global user.email <span class="string">"you@example.com"</span></div><div class="line">git<span class="built_in"> config </span>--global user.name <span class="string">"Your Name"</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>sublime</p>
 </li>
@@ -416,7 +416,7 @@
 </ul>
 </li>
 <li><p>mac osx下 pip 安装某些模块会出现权限问题，甚至root权限都没有安装成功，那么最优雅的方式是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install ****** --user -U</div></pre></td></tr></table></figure>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install ****** --<span class="keyword">user</span> <span class="title">-U</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>opencv<code>pip install opencv-python</code></p>
 </li>
@@ -439,7 +439,7 @@
 <li>下载文件</li>
 <li>安装 bash <strong>*</strong>.sh</li>
 <li><p>设置清华镜像，提升安装速度</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</div><div class="line">conda config --set show_channel_urls yes</div></pre></td></tr></table></figure>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">conda <span class="built_in">config</span> <span class="comment">--add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span></div><div class="line">conda <span class="built_in">config</span> <span class="comment">--set show_channel_urls yes</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>conda具体操作见 <a href="http://python.jobbole.com/86236/" target="_blank" rel="external">Anaconda使用总结</a><br>numpy scipy pandas scikit-learn</p>
 </li>
@@ -486,10 +486,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/10/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -565,7 +561,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

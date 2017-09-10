@@ -351,7 +351,7 @@
 <li>终端<br>终端跳转<br>ctrl+a：跳转到行首<br>ctrl+e：跳转到行尾<br>ctrl+w：反向选择<br>vim gf 跳转 ctrl+o 跳回来</li>
 </ul>
 <p>Linux终端的快捷键:</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">新建终端窗口: crtl+shift+N</div><div class="line">移到命令行行首和行尾: crtl+a crtl+e</div><div class="line">Ctrl+Alt+T 打开终端</div><div class="line">ctrl+b: 前移一个字符(backward)</div><div class="line">ctrl+f: 后移一个字符(forward)</div><div class="line">alt+b: 前移一个单词</div><div class="line">alt+f: 后移一个单词</div><div class="line">alt+1 alt+2 alt+3 选择标签</div></pre></td></tr></table></figure>
+<pre><code><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="section">新建终端窗口: crtl+shift+N</span></div><div class="line"><span class="section">移到命令行行首和行尾: crtl+a crtl+e</span></div><div class="line">Ctrl+Alt+T 打开终端</div><div class="line"><span class="section">ctrl+b: 前移一个字符(backward)</span></div><div class="line"><span class="section">ctrl+f: 后移一个字符(forward)</span></div><div class="line"><span class="section">alt+b: 前移一个单词</span></div><div class="line"><span class="section">alt+f: 后移一个单词</span></div><div class="line">alt+1 alt+2 alt+3 选择标签</div></pre></td></tr></table></figure>
 </code></pre><ul>
 <li><p>shell编码<br>非常不喜欢shell编程，语法怪异，格式难看。但是在快速的处理时却非常有效。<br>例如这段代码</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">date_start=20170508</div><div class="line">date_end=20170525</div><div class="line">while [ "$date_start" != "$date_end" ]</div><div class="line">do</div><div class="line">   cat /home/work/ta/pc/dapan/result/Src/digit/digit_$date_start | grep hao_isearch | awk -v date=$date_start '&#123;sum += $2&#125; END &#123;print date,sum&#125;'</div><div class="line">   let date_start=`date -d "-1 days ago $&#123;date_start&#125;" +%Y%m%d`</div><div class="line">done</div></pre></td></tr></table></figure>
@@ -386,16 +386,16 @@
 <li><p>scp 跨主机远程拷贝<br>使用示例</p>
 <ul>
 <li><p>实例1：从远处复制文件到本地目录   </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp root@10.6.159.147:/opt/soft/demo.tar /opt/soft/</div></pre></td></tr></table></figure>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp root<span class="variable">@10</span>.<span class="number">6.159</span>.<span class="number">147</span><span class="symbol">:/opt/soft/demo</span>.tar /opt/soft/</div></pre></td></tr></table></figure>
 </li>
 <li><p>实例2：从远处复制到本地</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp -r root@10.6.159.147:/opt/soft/test /opt/soft/</div></pre></td></tr></table></figure>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp -r root<span class="variable">@10</span>.<span class="number">6.159</span>.<span class="number">147</span><span class="symbol">:/opt/soft/test</span> /opt/soft/</div></pre></td></tr></table></figure>
 </li>
 <li><p>实例3：上传本地文件到远程机器指定目录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp /opt/soft/demo.tar root@10.6.159.147:/opt/soft/scptest</div></pre></td></tr></table></figure>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp /opt/soft/demo.tar root<span class="variable">@10</span>.<span class="number">6.159</span>.<span class="number">147</span><span class="symbol">:/opt/soft/scptest</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>实例4：上传本地目录到远程机器指定目录</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp -r /opt/soft/test root@10.6.159.147:/opt/soft/scptest</div></pre></td></tr></table></figure></li>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp -r /opt/soft/test root<span class="variable">@10</span>.<span class="number">6.159</span>.<span class="number">147</span><span class="symbol">:/opt/soft/scptest</span></div></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ul>
@@ -423,8 +423,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/20/2017-06-07-code/" rel="next" title="字符编码">
-                <i class="fa fa-chevron-left"></i> 字符编码
+              <a href="/2017/04/20/2017-04-20-python+linux/" rel="next" title="web 服务 以及微服务">
+                <i class="fa fa-chevron-left"></i> web 服务 以及微服务
               </a>
             
           </div>
@@ -502,7 +502,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
