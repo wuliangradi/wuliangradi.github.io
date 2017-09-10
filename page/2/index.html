@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next muse" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -96,12 +94,12 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="旅途">
 <meta property="og:url" content="wuliangradi.github.io/page/2/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="旅途">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="旅途">
 
 
 
@@ -111,10 +109,10 @@
     root: '/',
     scheme: 'Muse',
     version: '5.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
     duoshuo: {
       userId: '0',
       author: '博主'
@@ -137,7 +135,7 @@
 
 
 
-  <title>Hexo</title>
+  <title>旅途</title>
   
 
 
@@ -168,12 +166,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">旅途</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">路过生命中漫无止境的寒冷和孤独</p>
       
   </div>
 
@@ -275,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/04/20/2017-06-07-code/">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/04/20/2017-04-20-linux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liang Wu">
@@ -284,7 +282,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="旅途">
     </span>
 
     
@@ -294,7 +292,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/04/20/2017-06-07-code/" itemprop="url">字符编码</a></h1>
+                <a class="post-title-link" href="/2017/04/20/2017-04-20-linux/" itemprop="url">Linux操作总结</a></h1>
         
 
         <div class="post-meta">
@@ -346,22 +344,19 @@
       
         
           
-            <ol>
-<li>字符编码<br>文字或数字转换为二进制存放方式—-编码<br>二进制数值转换为文字或数字—-解码<br>不同的标准和规范就对应不同的字符集（UTF-8，UTF-16， GBK）<br>有用的资料</li>
-</ol>
-<ul>
-<li><a href="http://www.cnblogs.com/skynet/archive/2011/05/03/2035105.html" target="_blank" rel="external">http://www.cnblogs.com/skynet/archive/2011/05/03/2035105.html</a>    </li>
-<li><a href="http://cenalulu.github.io/linux/character-encoding/" target="_blank" rel="external">http://cenalulu.github.io/linux/character-encoding/</a></li>
-</ul>
-<ol>
-<li>python里的编码解码<a href="http://www.cnblogs.com/shine-lee/p/4504559.html" target="_blank" rel="external"></a><br>知乎的<a href="https://www.zhihu.com/question/31833164" target="_blank" rel="external">高票回答</a>很简洁易懂<br>Python的默认编码是ASCII，Python诞生时间要比unicode早，要支持非ASCII字符需要显示地指定编码格式。Python和字符串相关的数据类型，分别是str和unicode这两种，是basestring的子类。<br>Python3x或者其他编程语言，unicode都是默认的编码格式，不同的人用不同的编码表示，有的是utf-8，有的是GBK.在python中，编码解码其实是不同编码系统间的转换; 默认情况下，转换目标是Unicode，即编码unicode→str，解码str→unicode，其中str指的是字节流</li>
-</ol>
-<ol>
-<li>处理一个异常字符用的方法，把不能用gbk编码的字符视作异常字符  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>:</div><div class="line">    s.decode(<span class="string">"utf-8"</span>).encode(<span class="string">"gbk"</span>)</div><div class="line"><span class="keyword">except</span> UnicodeEncodeError <span class="keyword">as</span> e:</div><div class="line">    <span class="keyword">print</span> e</div></pre></td></tr></table></figure>
-</li>
-</ol>
-
           
+grep srotgrep $’\t’ sample.txtgrep -v 反向选择sort -n -r  -k 2 -t $’\t’
+awk sedawk -v 定义变量
+终端终端跳转ctrl+a：跳转到行首ctrl+e：跳转到行尾ctrl+w：反向选择vim gf 跳转 ctrl+o 跳回来
+
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/20/2017-04-20-linux/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -417,7 +412,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="旅途">
     </span>
 
     
@@ -479,29 +474,27 @@
       
         
           
-            <ul>
-<li><p>main函数的argv和argc参数<br>argv 整数，传给main()命令行参数个数<br>argv 字符串数组<br>argv[0]为程序运行的全路径名</p>
-</li>
-<li><p>strcmp<br>字符串的比较：小于返回负值；等于返回0；大于返回正直  </p>
-</li>
-<li><p>强制类型转换</p>
-</li>
-</ul>
-<ul>
-<li>malloc 和 colloc（allocates ）</li>
-</ul>
-<ul>
-<li>fifo<br><a href="http://blog.csdn.net/henjay724/article/details/8425861" target="_blank" rel="external">http://blog.csdn.net/henjay724/article/details/8425861</a><br>feof 判断是否到了文件结尾<br>fgetc 从文件中取一个字符<br>ungetc 将取出的字符回退给文件流  </li>
-</ul>
-<ul>
-<li><p>pthread 多进程<br>pthread_create是UNIX环境创建线程函数<br>pthread_join函数等待线程的结束<br>fseek<br>fflush()用于清空文件缓冲区  </p>
-<p>dsfhnsdkjfh</p>
-<p>安装codeblpocks <a href="http://blog.csdn.net/xinyunyishui/article/details/50967395" target="_blank" rel="external">http://blog.csdn.net/xinyunyishui/article/details/50967395</a></p>
-</li>
-</ul>
-<p>shfjsahdfjkasdhfjk<br>sdfs</p>
-
           
+main函数的argv和argc参数argv 整数，传给main()命令行参数个数argv 字符串数组argv[0]为程序运行的全路径名
+
+strcmp字符串的比较：小于返回负值；等于返回0；大于返回正直  
+
+强制类型转换
+
+
+
+malloc 和 colloc（allocates ）
+
+
+fif
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/10/2017-04-10-c/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -557,7 +550,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="旅途">
     </span>
 
     
@@ -619,32 +612,20 @@
       
         
           
-            <h4 id="统计语言模型简介"><a href="#统计语言模型简介" class="headerlink" title="统计语言模型简介"></a>统计语言模型简介</h4><p>这篇文章讲得非常清楚<a href="http://www.flickering.cn/nlp/2015/02/%E6%88%91%E4%BB%AC%E6%98%AF%E8%BF%99%E6%A0%B7%E7%90%86%E8%A7%A3%E8%AF%AD%E8%A8%80%E7%9A%84-2%E7%BB%9F%E8%AE%A1%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" target="_blank" rel="external">统计语言模型</a></p>
-<p><a href="http://www.flickering.cn/nlp/2015/03/%E6%88%91%E4%BB%AC%E6%98%AF%E8%BF%99%E6%A0%B7%E7%90%86%E8%A7%A3%E8%AF%AD%E8%A8%80%E7%9A%84-3%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" target="_blank" rel="external">神经网络语言模型</a></p>
-<p><a href="http://www.zmonster.me/2016/07/04/dl_and_nlp.html" target="_blank" rel="external">神经网络语言模型2</a></p>
-<p><a href="http://www.cnblogs.com/ooon/p/5558119.html" target="_blank" rel="external">http://www.cnblogs.com/ooon/p/5558119.html</a><br><a href="http://licstar.net/archives/328" target="_blank" rel="external">http://licstar.net/archives/328</a></p>
-<h4 id=""><a href="#" class="headerlink" title=" "></a> </h4><p>参考论文<a href="https://wuliangradi.github.io/docs/paper/a-neural-probabilistic-language-model__bengio.pdf">bengio基于神经网络的语言模型</a></p>
-<p>详细的博客<a href="https://wuliangradi.github.io/docs/word2vec_中的数学原理详解.pdf">peghoty写的博客</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/27234078" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/27234078</a><br><a href="http://d0evi1.com/word2vec-skipgram/" target="_blank" rel="external">http://d0evi1.com/word2vec-skipgram/</a><br><a href="http://qiancy.com/2016/08/17/word2vec-hierarchical-softmax/" target="_blank" rel="external">http://qiancy.com/2016/08/17/word2vec-hierarchical-softmax/</a><br>CBOW</p>
-<p>Skip-Gram<br>fsdfsdfsdfsdf</p>
-<p>文本内容 k维向量空间 向量运算</p>
-<p>词向量<br>one-hot representation 维度灾难以及难以表达词语之间的相似性<br>Distributed Representation<br>生成词向量的途径  神经网络算法</p>
-<p>efefef</p>
-<p>n-gram 语言模型</p>
-<p>NNLM  Neural Network Language Model</p>
-<p>df</p>
-<h4 id="word2vec各种版本的源代码"><a href="#word2vec各种版本的源代码" class="headerlink" title="word2vec各种版本的源代码"></a>word2vec各种版本的源代码</h4><ul>
-<li>C语言版<br> <a href="https://github.com/dav/word2vec" target="_blank" rel="external">https://github.com/dav/word2vec</a>  </li>
-</ul>
-<p><a href="https://code.google.com/archive/p/word2vec/source/default/source" target="_blank" rel="external">Google官网版</a></p>
-<ul>
-<li>python版<br><a href="https://github.com/RaRe-Technologies/gensim/blob/develop/gensim/models/word2vec.py" target="_blank" rel="external">https://github.com/RaRe-Technologies/gensim/blob/develop/gensim/models/word2vec.py</a>  </li>
-<li>C++版<br><a href="https://github.com/eske/multivec" target="_blank" rel="external">https://github.com/eske/multivec</a></li>
-</ul>
-<p>源码解析<br><a href="http://blog.csdn.net/li8630/article/details/44506693" target="_blank" rel="external">http://blog.csdn.net/li8630/article/details/44506693</a></p>
-<p><a href="http://blog.csdn.net/lingerlanlan/article/details/38232755" target="_blank" rel="external">http://blog.csdn.net/li8630/article/details/44506693</a></p>
-
-          
+          统计语言模型简介这篇文章讲得非常清楚统计语言模型
+神经网络语言模型
+神经网络语言模型2
+http://www.cnblogs.com/ooon/p/5558119.htmlhttp://licstar.net/archives/328
+ 参考论文bengio基于神经网络的语言模型
+详细的博客pegh
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/06/2017-04-05-word2vec/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -700,7 +681,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="旅途">
     </span>
 
     
@@ -762,648 +743,18 @@
       
         
           
-            <h3 id="一、使用基础"><a href="#一、使用基础" class="headerlink" title="一、使用基础"></a>一、使用基础</h3><h3 id="二、hive-tips"><a href="#二、hive-tips" class="headerlink" title="二、hive tips"></a>二、hive tips</h3><ol>
-<li><p>如何转换数据类型<br> Hive内置数据类型由基本数据类型和复杂数据类型组成，例如int，float，double，string，date等。常常需要在数据类型之间进行转换。<br> 转换方法：<br> <code>cast(str_column as &quot;你要转换的类型&quot;)</code></p>
-</li>
-<li><p>分割符问题<br> hive存储数据时默认分隔符是^A,对应”\001”,download下来的文本分隔符是”\x01”<br> hive设置存储（或者读取）分割符语句：</p>
- <figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">insert</span> overwrite <span class="keyword">directory</span> 路径</div><div class="line"><span class="keyword">row</span> <span class="keyword">format</span> <span class="keyword">delimited</span> <span class="keyword">fields</span> <span class="keyword">terminated</span> <span class="keyword">by</span> <span class="string">'\t'</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol>
-<li>分组排序问题<br>对group by 的多个字段取 top N的时候常常用到<br>新版本的hive是有自带的函数的<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">row_number</span><span class="params">()</span></span> over ([partition col1] [<span class="attribute">order</span> by col2])</div><div class="line"><span class="function"><span class="title">rank</span><span class="params">()</span></span> over ([partition col1] [<span class="attribute">order</span> by col2])</div><div class="line"><span class="function"><span class="title">dense_rank</span><span class="params">()</span></span> over ([partition col1] [<span class="attribute">order</span> by col2])</div><div class="line">percent_rank over ([partition col1] [<span class="attribute">order</span> by col2])</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>   但是公司内部的hive版本不支持，目前的解决方案是UDF,具体参考  <a href="http://bigdata.baidu.com/ls/?egtab=gp&amp;gltab=eg&amp;gn=ssg_ta_ps_top1000_query_day_yq&amp;tab=gl" target="_blank" rel="external">bigdata的作业组内的具体实现</a><br>   这篇博客也有<a href="http://blog.csdn.net/lifuxiangcaohui/article/details/41548667" target="_blank" rel="external">介绍</a></p>
-<ol>
-<li><p>字段切分问题<br><code>split(&quot;116:151:1&quot;, &#39;\\:&#39;)[0]</code><br>有两个参数，第一个参数是字符串，第二个参数是分割符，尽量转义一下避免报错；切割完是一个array，可以索引</p>
-</li>
-<li><p>order by, sort by, distribute by 问题</p>
-<ul>
-<li>order by 全局排序，一个reducer进行排序  </li>
-<li>sort by 会在每个reducer内进行局部排序，但是同样的值可能出现在不同的分区</li>
-<li>distribute by 控制map的输出在reducer中是如何划分的，把相同的某个字段的记录分配到同一个reducer中去，然后使用sort by来进行排序</li>
-<li>cluster by<br>cluster by = distribute by + sort by</li>
-</ul>
-</li>
-<li><p>关于join</p>
-<ul>
-<li>join 中需要将大表写在靠右的位置；hive的jion会从左往右执行，且会缓存最右边的表，所以建议表的大小由小到大排列。当然也可以显示地声明哪张表是大表；</li>
-<li>join 只返回两个表连接条件满足的记录</li>
-<li>left outer join（在需要保留左表全部记录时使用）<br>会保留左表所有的记录，右表没有符合<strong><em>连接条件</em></strong>的记录，选择的列的值会是NULL。满足<strong><em>where条件</em></strong>的记录都会返回，但是outer join 会先执行join语句，再通过where语句进行过滤。<br>right outer join和left outer join 类似。<br>left out join不能连续3个以上使用，必须2个一组，2个一组包装起来使用<br>left join在MySQL里和left outer join的功能是一致的，但是有些版本的hive是没有left join的，很可能不能用<br>备注：hive里left join和left outer join的功能也是一致的，但是只能显示的使用left outer join，用left join会报错</li>
-<li><p>left semi join<br>会返回左表的记录，前提是记录右表也满足on语句的判定条件。但此时，select和where语句不能应用到右表的字段。semi-join对于左表一条指定的记录，在右表一旦找到匹配记录，hive就会停止扫描。<br>semi join 最常见的功能是实现 <strong><em>exist in</em></strong> 的功能<br>举个例子（要实现如下的功能）：</p>
-<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> a.<span class="keyword">key</span>, a.<span class="keyword">value</span></div><div class="line"><span class="keyword">FROM</span> a</div><div class="line"><span class="keyword">WHERE</span> a.<span class="keyword">key</span> <span class="keyword">in</span></div><div class="line">(<span class="keyword">SELECT</span> b.<span class="keyword">key</span></div><div class="line"><span class="keyword">FROM</span> B);</div></pre></td></tr></table></figure>
-<p>用left out join是这样写</p>
-<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> a.<span class="keyword">key</span>, a.<span class="keyword">value</span></div><div class="line"><span class="keyword">FROM</span> a <span class="keyword">LEFT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> b <span class="keyword">ON</span> (a.<span class="keyword">key</span> = b.<span class="keyword">key</span>)</div><div class="line"><span class="keyword">WHERE</span> b.<span class="keyword">key</span> &lt;&gt; <span class="literal">NULL</span>;</div></pre></td></tr></table></figure>
-<p>用left semi join是这样写</p>
-<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> a.<span class="keyword">key</span>, a.val</div><div class="line"><span class="keyword">FROM</span> a <span class="keyword">LEFT</span> <span class="keyword">SEMI</span> <span class="keyword">JOIN</span> b <span class="keyword">on</span> (a.<span class="keyword">key</span> = b.<span class="keyword">key</span>);</div></pre></td></tr></table></figure>
-</li>
-<li><p>笛卡尔积join CROSS JOIN 待补充</p>
-</li>
-<li>map-side join<br>如果所有表中的只有一张表是小表，那么可以在最大的表通过mapper的时候将小表完全放到内存中，hive可以在map端执行连接过程。从而可以减少reduce过程。使用<code>/*+ MAPJOIN(--)</code>.</li>
-</ul>
-<figure class="highlight plain"><figcaption><span>hive.auto.convert.join</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">set hive.mapjoin.smalltable.fillesize=250000000</div></pre></td></tr></table></figure>
-<ul>
-<li>INNER JOIN  仅对满足连接条件的cross中的列</li>
-</ul>
-</li>
-<li><p>字符串的匹配<br>一个模糊匹配多个query的例子<br><code>`normalized_query RLIKE &#39;%糯米|贴吧|小说|新闻|网址|视频%&#39;</code></p>
-</li>
-<li><p>hive reduce阶段内存不足<br> 尤其是使用python脚本最容易出现，比较快的方法是增加内存<br> <code>set mapred.reduce.memory.limit=1600;</code></p>
-</li>
-<li><p>hive 小文件合并<br>HIVE将运算好的数据写回hdfs，有时候会产生大量的小文件，会带来很多问题。所以hive在正常job执行完之后，会起一个conditional task，来判断是否需要合并小文件，如果满足要求就会另外启动一个map-only job 或者mapred job来完成合并。<br>输出阶段</p>
-<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">hive.merge.mapfiles(默认为true)</div><div class="line">正常的map-only job后，是否启动<span class="keyword">merge</span> job来合并<span class="keyword">map</span>端输出的结果</div><div class="line"></div><div class="line">hive.<span class="keyword">merge</span>.mapredfiles(默认为<span class="literal">false</span>) 其实<span class="keyword">reduce</span>数据量不大，但是给你分了<span class="number">200</span>个区，就比较蛋疼了，所以需要限制一下</div><div class="line">正常的<span class="keyword">map</span>-<span class="keyword">reduce</span> job后，是否启动<span class="keyword">merge</span> job来合并<span class="keyword">reduce</span>端输出的结果，建议开启</div><div class="line">  </div><div class="line"><span class="keyword">set</span> hive.<span class="keyword">merge</span>.size.per.task = <span class="number">256</span>*<span class="number">1000</span>*<span class="number">1000</span> #合并文件的大小</div><div class="line"><span class="keyword">set</span> hive.<span class="keyword">merge</span>.smallfiles.avgsize=<span class="number">16000000</span> #当输出文件的平均大小小于该值时，启动一个独立的<span class="keyword">map</span>-<span class="keyword">reduce</span>任务进行文件<span class="keyword">merge</span></div></pre></td></tr></table></figure>
-<p>输入阶段</p>
-<figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mapred.<span class="built_in">max</span>.<span class="built_in">split</span>.<span class="built_in">size</span>(默认<span class="number">256</span>MB)<span class="number">256000000</span></div><div class="line">mapred.<span class="built_in">min</span>.<span class="built_in">split</span>.<span class="built_in">size</span>.per.node(默认<span class="number">1</span> <span class="built_in">byte</span>)<span class="number">100000000</span></div><div class="line">mapred.<span class="built_in">min</span>.<span class="built_in">split</span>.<span class="built_in">size</span>.per.rack(默认<span class="number">1</span> <span class="built_in">byte</span>)<span class="number">100000000</span></div><div class="line"><span class="built_in">set</span> hive.input.format=org.apache.Hadoop.hive.ql.io.CombineHiveInputFormat;  #执行Map前进行小文件合并</div></pre></td></tr></table></figure>
-</li>
-<li><p>如果要跑大量的数，尽量不要使用带Python脚本的任务，将会非常非常慢<br>例子：从insight_hour表诸如浏览器或者手机品牌时，要使用ua识别的脚本来解析，但是一旦使用这个脚本，4000个map将跑3个小时左右，非常消耗资源 </p>
-</li>
-</ol>
-<h3 id="MySQL基础"><a href="#MySQL基础" class="headerlink" title="MySQL基础"></a>MySQL基础</h3><ul>
-<li>mysql补位<br>MySQL LPAD() function<br>LPAD(str, len, padstr)<br><img src="https://github.com/wuliangradi/images/raw/master/mysql-lpad.gif" alt=""></li>
-</ul>
-<p>学习MySQL函数的好地方<br><a href="http://www.w3resource.com/mysql/mysql-functions-and-operators.php" target="_blank" rel="external">MySQL FUNCTIONS and OPERATORS</a></p>
-<ul>
-<li>类型转换<br><a href="https://stackoverflow.com/questions/12346750/hive-convert-string-to-integer" target="_blank" rel="external">Hive: Convert String to Integer</a><br><a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-TypeConversionFunctions" target="_blank" rel="external">LanguageManual UDF</a></li>
-</ul>
-<ul>
-<li><p>mysql日期的diff<br><a href="https://stackoverflow.com/questions/4759248/difference-between-two-dates-in-mysql" target="_blank" rel="external">Difference between two dates in MySQL</a><br>-</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> <span class="keyword">TIMEDIFF</span>(<span class="string">'2007-12-31 10:02:00'</span>,<span class="string">'2007-12-30 12:01:01'</span>);</div><div class="line"><span class="comment">-- result: 22:00:59.</span></div><div class="line"><span class="keyword">SELECT</span> <span class="keyword">TIMESTAMPDIFF</span>(<span class="keyword">SECOND</span>,<span class="string">'2007-12-30 12:01:01'</span>,<span class="string">'2007-12-31 10:02:00'</span>); </div><div class="line"><span class="comment">-- result: 79259  the difference in seconds with the time.</span></div></pre></td></tr></table></figure>
-<ul>
-<li><code>SELECT DATEDIFF(&#39;2010-10-08 18:23:13&#39;, &#39;2010-09-21 21:40:36&#39;) AS days;</code></li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/03/12/2017-03-21-github+jekyll/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liang Wu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/12/2017-03-21-github+jekyll/" itemprop="url">Github+jekyll+markdown个人站点</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-12T15:27:31+08:00">
-                2017-03-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="工具集"><a href="#工具集" class="headerlink" title="工具集"></a>工具集</h4><ol>
-<li><code>git</code> Git<sup>[1]</sup> is a version control system (VCS) for tracking changes in computer files and coordinating work on those files among multiple people. Git was created by Linus Torvalds in 2005. As a distributed revision control system it is aimed at speed, data integrity, and support for distributed, non-linear workflows.</li>
-<li><code>github</code> GitHub<sup>[2]</sup> is a web-based Git or version control repository and Internet hosting service.</li>
-<li><code>markdown</code> Markdown<sup>[3]</sup> is a lightweight markup language with plain text formatting syntax. </li>
-<li><code>jeykll</code> 将纯文本转换为静态博客网站.GitHub Pages基于Jekyll构建。</li>
-<li><code>mathjax</code> MathJax允许你在你的网页中包含公式，无论是使用LaTeX、MathML或者AsciiMath符号，这些公式都会被javascript处理为HTML、SVG或者MathML符号Markdown<sup>[4]</sup>。   </li>
-</ol>
-<h4 id="在Github-jekyll-markdown的组合里使用数学公式"><a href="#在Github-jekyll-markdown的组合里使用数学公式" class="headerlink" title="在Github + jekyll + markdown的组合里使用数学公式"></a>在Github + jekyll + markdown的组合里使用数学公式</h4><ul>
-<li>starkoverflow 里对应问题 <a href="http://stackoverflow.com/questions/10987992/using-mathjax-with-jekyll" target="_blank" rel="external">using-mathjax-with-jekyll</a>. 答案里还碰到了 deeplearning 作者 Ian Goodfellow</li>
-<li><p>解决办法：<br>Change the markdown line in _config.yml to<br><code>markdown: kramdown</code><br>并且将mathjax的js库放到_layouts/default.html里去  </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="markdown语法"><a href="#markdown语法" class="headerlink" title="markdown语法"></a>markdown语法</h4><ul>
-<li>这是一份 <a href="http://einverne.github.io/markdown-style-guide/zh.html" target="_blank" rel="external">Markdown书写风格指南</a>，里面有很多书写markdown的建议。</li>
-<li>markdown公式指导手册, <a href="https://www.zybuluo.com/codeep/note/163962?utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="external">参考这篇比较完备的博客</a></li>
-<li>markdown里注释, <a href="https://stackoverflow.com/questions/4823468/comments-in-markdown" target="_blank" rel="external">Comments in Markdown</a></li>
-</ul>
-<h4 id="在sublime里编辑markdown"><a href="#在sublime里编辑markdown" class="headerlink" title="在sublime里编辑markdown"></a>在sublime里编辑markdown</h4><ol>
-<li><p><a href="https://www.imjeff.cn/blog/62/" target="_blank" rel="external">安装Package Control</a><br>调出python控制台，输入安装的python代码，如果代码安装失败可以选择手动安装。<br>使用方法：快捷键<code>Ctrl+Shift+P</code>，选中Install Package，即可安装插件  </p>
-</li>
-<li><p>安装Markdown Editing和Markdown Preview<br><a href="http://www.cnblogs.com/IPrograming/p/Sublime-markdown-editor.html" target="_blank" rel="external">自定义快捷键和支持语法高亮和mathjax支持</a>  </p>
-</li>
-<li><p>在sublime里高亮显示<br><a href="http://frank19900731.github.io/blog/2015/04/13/zai-sublime-zhong-pei-zhi-markdown-huan-jing/" target="_blank" rel="external">显示方法</a></p>
-</li>
-</ol>
-<p>参考：<br>[1] <a href="https://en.wikipedia.org/wiki/Git" target="_blank" rel="external">https://en.wikipedia.org/wiki/Git</a><br>[2] <a href="https://en.wikipedia.org/wiki/GitHub" target="_blank" rel="external">https://en.wikipedia.org/wiki/GitHub</a><br>[3] <a href="https://en.wikipedia.org/wiki/Markdown" target="_blank" rel="external">https://en.wikipedia.org/wiki/Markdown</a><br>[4] <a href="https://mathjax-chinese-doc.readthedocs.io/en/latest/start.html" target="_blank" rel="external">https://mathjax-chinese-doc.readthedocs.io/en/latest/start.html</a><br>[5] <a href="http://harttle.com/2013/10/18/github-homepage-tutorial.html" target="_blank" rel="external">http://harttle.com/2013/10/18/github-homepage-tutorial.html</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/03/12/2017-03-27-rnn/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liang Wu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/12/2017-03-27-rnn/" itemprop="url">RNN 循环神经网络</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-12T15:27:31+08:00">
-                2017-03-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="LSTM学习资料"><a href="#LSTM学习资料" class="headerlink" title="LSTM学习资料"></a>LSTM学习资料</h4><ol>
-<li><a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/" target="_blank" rel="external">http://colah.github.io/posts/2015-08-Understanding-LSTMs/</a>  </li>
-<li>中文<a href="http://blog.csdn.net/ycheng_sjtu/article/details/48792467" target="_blank" rel="external">http://blog.csdn.net/ycheng_sjtu/article/details/48792467</a></li>
-<li><a href="https://github.com/pangolulu/rnn-from-scratch" target="_blank" rel="external">https://github.com/pangolulu/rnn-from-scratch</a>  </li>
-</ol>
-<h4 id="教材13章"><a href="#教材13章" class="headerlink" title="教材13章"></a>教材13章</h4><ul>
-<li><p>概率PCA<br><a href="https://mqshen.gitbooks.io/prml/Chapter12/probabilistic_pca.html" target="_blank" rel="external">https://mqshen.gitbooks.io/prml/Chapter12/probabilistic_pca.html</a></p>
-</li>
-<li><p>ICA<br><a href="http://danieljyc.github.io/2014/06/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A015-3--%E7%8B%AC%E7%AB%8B%E6%88%90%E5%88%86%E5%88%86%E6%9E%90ica%EF%BC%88independent-component-analysis%EF%BC%89/" target="_blank" rel="external">pca 资料</a><br><a href="https://www.zhihu.com/question/28845451" target="_blank" rel="external">https://www.zhihu.com/question/28845451</a></p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/03/12/2017-09-10-cnn/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liang Wu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/12/2017-09-10-cnn/" itemprop="url">RNN 循环神经网络</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-12T15:27:31+08:00">
-                2017-03-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="LSTM学习资料"><a href="#LSTM学习资料" class="headerlink" title="LSTM学习资料"></a>LSTM学习资料</h4><ul>
-<li><a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/" target="_blank" rel="external">http://colah.github.io/posts/2015-08-Understanding-LSTMs/</a></li>
-<li>中文<a href="http://blog.csdn.net/ycheng_sjtu/article/details/48792467" target="_blank" rel="external">http://blog.csdn.net/ycheng_sjtu/article/details/48792467</a></li>
-<li><a href="https://github.com/pangolulu/rnn-from-scratch" target="_blank" rel="external">https://github.com/pangolulu/rnn-from-scratch</a></li>
-</ul>
-<h4 id="教材13章"><a href="#教材13章" class="headerlink" title="教材13章"></a>教材13章</h4><ul>
-<li><p>概率PCA<br><a href="https://mqshen.gitbooks.io/prml/Chapter12/probabilistic_pca.html" target="_blank" rel="external">https://mqshen.gitbooks.io/prml/Chapter12/probabilistic_pca.html</a></p>
-</li>
-<li><p>ICA<br><a href="http://danieljyc.github.io/2014/06/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A015-3--%E7%8B%AC%E7%AB%8B%E6%88%90%E5%88%86%E5%88%86%E6%9E%90ica%EF%BC%88independent-component-analysis%EF%BC%89/" target="_blank" rel="external">pca 资料</a><br><a href="https://www.zhihu.com/question/28845451" target="_blank" rel="external">https://www.zhihu.com/question/28845451</a></p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/03/12/2017-03-20-tools/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liang Wu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/12/2017-03-20-tools/" itemprop="url">useful tools</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-12T15:27:31+08:00">
-                2017-03-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="Tmux"><a href="#Tmux" class="headerlink" title="Tmux"></a>Tmux</h3><ul>
-<li>base<ul>
-<li>new<br><code>tmux: start new
-tmux new -s myname</code></li>
-<li>attach<br><code>tmux a  
-tmux a -t myname</code></li>
-<li>list tmux ls</li>
-<li>tmux kill-session -t myname  </li>
-<li>tmux kill-window -t myname  </li>
-</ul>
-</li>
-<li><p>windows</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">c  create window</div><div class="line">w  list windows</div><div class="line">n  next window</div><div class="line">p  previous window</div><div class="line">f  find window</div><div class="line">,  name window</div><div class="line">&amp;  kill window</div></pre></td></tr></table></figure>
-</li>
-<li><p>panes</p>
-<pre><code>c  create window
-o  swap panes
-q  show pane numbers
-x  kill pane
-+  break pane into window (e.g. to select text by mouse to copy)
--  restore pane from window
-⍽  space - toggle between layouts
-</code></pre></li>
-</ul>
-<h3 id="SwitchyOmega"><a href="#SwitchyOmega" class="headerlink" title="SwitchyOmega"></a>SwitchyOmega</h3><p><em>Manage and switch between multiple proxies quickly &amp; easily.</em></p>
-<ul>
-<li><a href="https://github.com/FelisCatus/SwitchyOmega" target="_blank" rel="external">github site</a></li>
-<li><a href="&quot;https://github.com/FelisCatus/SwitchyOmega/releases&quot;">install help and user guide</a></li>
-</ul>
-<h3 id="python-m-SimpleHTTPServer-8221"><a href="#python-m-SimpleHTTPServer-8221" class="headerlink" title="python -m SimpleHTTPServer 8221"></a>python -m SimpleHTTPServer 8221</h3><ul>
-<li><a href="https://docs.python.org/2/library/simplehttpserver.html" target="_blank" rel="external">https://docs.python.org/2/library/simplehttpserver.html</a></li>
-<li><a href="http://www.pythonforbeginners.com/modules-in-python/how-to-use-simplehttpserver/" target="_blank" rel="external">http://www.pythonforbeginners.com/modules-in-python/how-to-use-simplehttpserver/</a></li>
-<li><a href="http://coolshell.cn/articles/1480.html" target="_blank" rel="external">http://coolshell.cn/articles/1480.html</a></li>
-</ul>
-<h3 id="代码实时同步"><a href="#代码实时同步" class="headerlink" title="代码实时同步"></a>代码实时同步</h3><ul>
-<li><a href="http://www.jianshu.com/p/cbb86d6a7856" target="_blank" rel="external">代码实时同步工具nobone-sync</a></li>
-<li><a href="https://github.com/ysmood/nobone-sync" target="_blank" rel="external">github 地址</a><br> <code>nobone-sync -s sync_config.js &amp;
- nobone-sync sync_local_config.js</code></li>
-</ul>
-<h3 id="常用的地址："><a href="#常用的地址：" class="headerlink" title="常用的地址："></a>常用的地址：</h3><ul>
-<li><a href="http://hadoop.apache.org/docs/r1.0.4/cn/hdfs_shell.html" target="_blank" rel="external">hadoop 常用命令</a></li>
-<li><a href="http://plus.zealer.com/home/digital" target="_blank" rel="external">digital 资讯</a></li>
-<li><a href="http://color-themes.com/?view=index" target="_blank" rel="external">code配色</a></li>
-</ul>
-
-          
+          一、使用基础二、hive tips
+如何转换数据类型 Hive内置数据类型由基本数据类型和复杂数据类型组成，例如int，float，double，string，date等。常常需要在数据类型之间进行转换。 转换方法： cast(str_column as &quot;你要转换的类型&quot;)
+
+
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/13/2017-03-22-Hive/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1459,7 +810,7 @@ x  kill pane
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="旅途">
     </span>
 
     
@@ -1521,71 +872,539 @@ x  kill pane
       
         
           
-            <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Git是目前世界上最先进的分布式版本控制系统<br>Linus花了两周时间自己用C写了一个分布式版本控制系统</p>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ol>
-<li>需要安装git</li>
-<li>new<ul>
-<li>git init,创建新的git仓库<br>需要关联远程仓库<code>git remote add origin git@github.com:***/Refacor.git</code></li>
-<li>git clone /path/to/repository 创建一个本地仓库的克隆版本 </li>
-</ul>
-</li>
-<li>工作流<br> 本地仓库由git维护的三棵树组成,第一个是工作目录,是实际文件;第二个是暂存区(index),临时保存你的改动;最后是HEAD,指向你最后一次提交的结果,如下图所示<br><img src="http://rogerdudler.github.io/git-guide/img/trees.png" alt=""></li>
-<li>常见命令<br><img src="https://github.com/wuliangradi/images/raw/master/bg2015120901.png" alt=""></li>
-<li><p>添加和提交</p>
-<ul>
-<li><code>git add &lt;filename&gt; or git add *</code> 提出更改添加到暂存区</li>
-<li><code>git commit -m &quot;balabala...&quot;</code> 实际提交改动到HEAD,但还是没有到远端仓库</li>
-<li><code>git push origin master</code> 推送到远端仓库,可以把 master 换成你想要推送的任何分支。 </li>
-<li>如果不是通过克隆仓库,而是通过本地init,把本地仓库和远程仓库关联起来.<code>git remote add origin git@github.com:用户名/仓库名.git</code></li>
-</ul>
-</li>
-<li><p>分支<br><img src="http://rogerdudler.github.io/git-guide/img/branches.png" alt=""> </p>
-<ul>
-<li>分支是用来将特性开发绝缘开来的。在你创建仓库的时候，master 是“默认的”分支。在其他分支上进行开发，完成后再将它们合并到主分支上。  </li>
-<li>创建一个叫做“feature_x”的分支，并切换过去：<code>git checkout -b feature_x</code></li>
-<li>切回主分支:<code>git checkout master</code></li>
-<li>再把新建的分支删掉<code>git branch -d feature</code></li>
-<li><code>git push origin &lt;branch&gt;</code>  </li>
-</ul>
-</li>
-<li><p>更新与合并</p>
-<ul>
-<li>并其他分支到你的当前分支（例如 master），执行<code>git merge &lt;branch&gt;</code></li>
-<li>处理冲突</li>
-<li><code>git add &lt;filename&gt;</code></li>
-<li>预览差异:<code>git diff &lt;source_branch&gt; &lt;target_branch&gt;</code> </li>
-<li>统计文件的差异<code>git diff --stat local_branch origin/remote_branch</code> </li>
-<li>远程主机版本更新,同步到本地.<br>方法一: <code>git fetch origin master    git diff master     git merge master</code><br>方法二: <code>git pull origin master</code>直接merge到本地,fetch则是从远程获取更新版本到本地,但是不自动merge  </li>
-</ul>
-</li>
-<li>标签 <code>git tag 1.0.0 1b2e1d63ff</code></li>
-<li>log log日志</li>
-<li>替换本地改动<br><code>git fetch origin  
-git reset --hard origin/master</code>  </li>
-<li>使用tips  <ul>
-<li>内建的图形化 git：<code>gitk</code></li>
-<li>彩色的 git 输出 <code>git config color.ui true</code></li>
-<li>显示历史记录时，每个提交的信息只显示一行：<code>git config format.pretty oneline</code></li>
-<li>交互式添加文件到暂存区：<code>git add -i</code>  </li>
-</ul>
-</li>
-</ol>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><ol>
-<li><p>Git push requires username and password,解决办法<sup>[2]</sup>:<br><code>git remote set-url origin git@github.com:username/repo.git</code></p>
-</li>
-<li><p>多帐号的配置<br> <code>ssh-keygen -t rsa -C &quot;xx@xx.com&quot;</code><br> 不通的仓库需要设置不同的用户名和邮箱，如果之前有设置需要unset<br> ``git config –global –unset user.name</p>
-<pre><code>git config --global --unset user.email``
-</code></pre><p> 在不同的仓库下设置<br> <code>git config user.name &quot;yourname&quot;  
- git config user.email &quot;youremail&quot;</code></p>
-</li>
-<li>查看以及修改用户名<br>git config –list git config -l<br><code>git config user.name  
-git config user.email  
-git config --global user.name &quot;your name&quot;  
-git config --global user.email &quot;your email&quot;</code></li>
-</ol>
-<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>[1]  <a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html" target="_blank" rel="external">http://marklodato.github.io/visual-git-guide/index-zh-cn.html</a><br>[2]  <a href="http://stackoverflow.com/questions/6565357/git-push-requires-username-and-password" target="_blank" rel="external">http://stackoverflow.com/questions/6565357/git-push-requires-username-and-password</a><br>[3]  <a href="http://rogerdudler.github.io/git-guide/index.zh.html" target="_blank" rel="external">http://rogerdudler.github.io/git-guide/index.zh.html</a><br>[4]  <a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html" target="_blank" rel="external">http://marklodato.github.io/visual-git-guide/index-zh-cn.html</a><br>[5]  <a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000</a><br>[6]  <a href="https://git-scm.com/book/zh/v1" target="_blank" rel="external">https://git-scm.com/book/zh/v1</a><br>[7]  <a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html</a><br>[8]  <a href="https://blog-scottwang.rhcloud.com/post/2016/11/23/54-for-git.html" target="_blank" rel="external">https://blog-scottwang.rhcloud.com/post/2016/11/23/54-for-git.html</a></p>
+          简介Git是目前世界上最先进的分布式版本控制系统Linus花了两周时间自己用C写了一个分布式版本控制系统
+使用
+需要安装git
+new
+git init,创建新的git仓库需要关联远程仓库git remote add origin git@github.com:***/Refacor.git
+git
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/12/2017-03-11-git/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/03/12/2017-03-21-github+jekyll/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liang Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="旅途">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/12/2017-03-21-github+jekyll/" itemprop="url">Github+jekyll+markdown个人站点</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-12T15:27:31+08:00">
+                2017-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
 
           
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          工具集
+git Git[1] is a version control system (VCS) for tracking changes in computer files and coordinating work on those files among multiple people. Gi
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/12/2017-03-21-github+jekyll/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/03/12/2017-03-27-rnn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liang Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="旅途">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/12/2017-03-27-rnn/" itemprop="url">RNN 循环神经网络</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-12T15:27:31+08:00">
+                2017-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          LSTM学习资料
+http://colah.github.io/posts/2015-08-Understanding-LSTMs/  
+中文http://blog.csdn.net/ycheng_sjtu/article/details/48792467
+https://github.com/pa
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/12/2017-03-27-rnn/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/03/12/2017-03-20-tools/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liang Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="旅途">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/12/2017-03-20-tools/" itemprop="url">useful tools</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-12T15:27:31+08:00">
+                2017-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          Tmux
+base
+newtmux: start new
+tmux new -s myname
+attachtmux a  
+tmux a -t myname
+list tmux ls
+tmux kill-session -t myname  
+tmux kill-window -t myname 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/12/2017-03-20-tools/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/03/12/2017-09-10-cnn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liang Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="旅途">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/12/2017-09-10-cnn/" itemprop="url">RNN 循环神经网络</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-12T15:27:31+08:00">
+                2017-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          LSTM学习资料
+http://colah.github.io/posts/2015-08-Understanding-LSTMs/
+中文http://blog.csdn.net/ycheng_sjtu/article/details/48792467
+https://github.com/pang
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/12/2017-09-10-cnn/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

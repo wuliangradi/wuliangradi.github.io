@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next muse" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -96,12 +94,12 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="旅途">
 <meta property="og:url" content="wuliangradi.github.io/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="旅途">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="旅途">
 
 
 
@@ -111,10 +109,10 @@
     root: '/',
     scheme: 'Muse',
     version: '5.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
     duoshuo: {
       userId: '0',
       author: '博主'
@@ -137,7 +135,7 @@
 
 
 
-  <title>Hexo</title>
+  <title>旅途</title>
   
 
 
@@ -168,12 +166,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">旅途</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">路过生命中漫无止境的寒冷和孤独</p>
       
   </div>
 
@@ -284,7 +282,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="旅途">
     </span>
 
     
@@ -346,114 +344,26 @@
       
         
           
-            <h4 id="第一阶段-攒机"><a href="#第一阶段-攒机" class="headerlink" title="第一阶段 攒机"></a>第一阶段 攒机</h4><ul>
-<li>显卡</li>
-<li>其他</li>
-</ul>
-<h4 id="第二阶段-双系统安装"><a href="#第二阶段-双系统安装" class="headerlink" title="第二阶段 双系统安装"></a>第二阶段 双系统安装</h4><ul>
-<li>进入Ubuntu U盘安装时出现黑屏解决办法<br>“e”进入编辑模式，删除”–”， 加上”nomodeset”</li>
-<li>安装Ubuntu时屏幕分辨率问题<ul>
-<li><code>/etc/default/grub</code></li>
-<li>修改<code>#GRUB_GFXMODE=640x480</code></li>
-</ul>
-</li>
-<li>彻底解决黑屏    <ul>
-<li><code>/etc/default/grub</code></li>
-<li>修改为<code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash nomodeset&quot;</code></li>
-<li><code>sudo update-grub</code></li>
-</ul>
-</li>
-</ul>
-<h4 id="第三阶段-CUDA和CUDNN安装"><a href="#第三阶段-CUDA和CUDNN安装" class="headerlink" title="第三阶段 CUDA和CUDNN安装"></a>第三阶段 CUDA和CUDNN安装</h4><ul>
-<li>显卡驱动安装<ul>
-<li>sudo add-apt-repository ppa:graphics-drivers/ppa</li>
-<li>sudo apt-get update</li>
-<li>additional drivers里更新，按照这种方法安装不会出现无限循环登录的情况</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://github.com/wuliangradi/images/raw/master/xiankaqudong.png" alt=""></p>
-<ul>
-<li>CUDA安装 按照教程走即可</li>
-<li>CUDNN安装 按照教程走即可</li>
-</ul>
-<h4 id="第四阶段-深度学习框架以及Python开发环境搭建"><a href="#第四阶段-深度学习框架以及Python开发环境搭建" class="headerlink" title="第四阶段 深度学习框架以及Python开发环境搭建"></a>第四阶段 深度学习框架以及Python开发环境搭建</h4><ul>
-<li><p>翻墙</p>
-<ul>
-<li><p>Ubuntu shadowsocks-qt5 安装</p>
-<figure class="highlight smali"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo<span class="built_in"> add-apt-repository </span>ppa:hzwhuang/ss-qt5</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install shadowsocks-qt5</div></pre></td></tr></table></figure>
-</li>
-<li><p>浏览器代理 <a href="https://github.com/FelisCatus/SwitchyOmega/releases" target="_blank" rel="external">SwitchyOmega</a></p>
-</li>
-<li>终端代理 <a href="http://shawnelee88.github.io/2015/07/10/proxychains-shadowsocks%E7%A5%9E%E5%99%A8/" target="_blank" rel="external">proxychains+shadowsocks</a><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt install proxychains</div><div class="line">vim /etc/proxychains.conf</div><div class="line">socks5 <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> <span class="number">1080</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>工具安装</p>
-<ul>
-<li>Ubuntu 搜狗输入法的安装</li>
-<li><p>chrome 安装</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo wget http<span class="variable">s:</span>//repo.fdzh.org/chrome/google-chrome.<span class="keyword">list</span> -<span class="keyword">P</span> /etc/apt/sources.<span class="keyword">list</span>.d/</div><div class="line">wget -q -O - http<span class="variable">s:</span>//<span class="keyword">dl</span>.google.<span class="keyword">com</span>/linux/linux_signing_key.pub  | sudo apt-key <span class="built_in">add</span> -</div><div class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></div><div class="line">sudo apt-<span class="built_in">get</span> install google-chrome-stable</div><div class="line">/usr/bin/google-chrome-stable</div></pre></td></tr></table></figure>
-</li>
-<li><p>chrome 的卸载</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-<span class="built_in">get</span> purge google-chrome-stable</div><div class="line">rm ~/.<span class="built_in">config</span>/google-chrome/ -rf</div></pre></td></tr></table></figure>
-</li>
-<li><p>git 安装及配置</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-<span class="builtin-name">get</span> install git</div><div class="line">git<span class="built_in"> config </span>--global user.email <span class="string">"you@example.com"</span></div><div class="line">git<span class="built_in"> config </span>--global user.name <span class="string">"Your Name"</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>sublime</p>
-</li>
-</ul>
-</li>
-<li><p>python开发环境搭建之pip</p>
-<ul>
-<li>综述：<ul>
-<li>最好在virtualenv和virtualenvwrapper环境下搭建python开发环境</li>
-<li>mac下进入虚拟环境依旧会出现系统的第三方模块，可以参考这个 <a href="https://stackoverflow.com/questions/1382925/virtualenv-no-site-packages-and-pip-still-finding-global-packages" target="_blank" rel="external">回答</a></li>
-</ul>
-</li>
-<li><p>mac osx下 pip 安装某些模块会出现权限问题，甚至root权限都没有安装成功，那么最优雅的方式是</p>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install ****** --<span class="keyword">user</span> <span class="title">-U</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>opencv<code>pip install opencv-python</code></p>
-</li>
-<li>PIL <code>pip install Pillow</code><br>当使用PIL模块或者其他模块调用PIL模块的时候会出现一个问题：   <ul>
-<li>问题提示：NotImplementedError: tostring() has been removed. Please call tobytes() instead</li>
-<li>问题原因：PIL这个库更新后，tostring被舍弃了，叫做tobytes了</li>
-<li>解决办法：<a href="http://blog.csdn.net/hjxu2016/article/details/71055658" target="_blank" rel="external">http://blog.csdn.net/hjxu2016/article/details/71055658</a></li>
-</ul>
-</li>
-<li>pandas scikit-learn<br><code>pip install numpy, scipy, scikit-learn，pandas，matplotlib</code></li>
-<li>pycharm的搭建<ul>
-<li>pycharm 官网下载</li>
-<li>sudo  dpkg  -i  <em>**</em>.deb</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>python开发环境搭建之conda<br>pytorch cuda版不支持pip install，所以只有退而求其次使用Anaconda和conda了（最后conda也因为网络原因不能安装）</p>
-<ul>
-<li>下载文件</li>
-<li>安装 bash <strong>*</strong>.sh</li>
-<li><p>设置清华镜像，提升安装速度</p>
-<figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">conda <span class="built_in">config</span> <span class="comment">--add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span></div><div class="line">conda <span class="built_in">config</span> <span class="comment">--set show_channel_urls yes</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>conda具体操作见 <a href="http://python.jobbole.com/86236/" target="_blank" rel="external">Anaconda使用总结</a><br>numpy scipy pandas scikit-learn</p>
-</li>
-<li>真是异常蛋疼最后<code>conda install pytorch torchvision cuda80 -c soumith</code>总是出错。所以选择源码编译</li>
-</ul>
-</li>
-<li><p>pytorch编译安装</p>
-<ul>
-<li><a href="http://blog.csdn.net/wblgers1234/article/details/72902016" target="_blank" rel="external">ubuntu 下安装pytorch</a></li>
-<li><a href="http://www.jianshu.com/p/50ef56ff79ae" target="_blank" rel="external">Ubuntu 17.04 源码安装 pytorch</a><br>-<br>-</li>
-</ul>
-</li>
-</ul>
+          第一阶段 攒机
+显卡
+其他
 
-          
+第二阶段 双系统安装
+进入Ubuntu U盘安装时出现黑屏解决办法“e”进入编辑模式，删除”–”， 加上”nomodeset”
+安装Ubuntu时屏幕分辨率问题
+/etc/default/grub
+修改#GRUB_GFXMODE=640x480
+
+
+彻底解决黑屏    
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/14/2017-08-14-deep learning/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -509,7 +419,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="旅途">
     </span>
 
     
@@ -571,8 +481,15 @@
       
         
           
-            
           
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/30/2017-07-30-svn/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -628,7 +545,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="旅途">
     </span>
 
     
@@ -690,26 +607,18 @@
       
         
           
-            <h3 id="从最小二乘说起"><a href="#从最小二乘说起" class="headerlink" title="从最小二乘说起"></a>从最小二乘说起</h3><ul>
-<li>wiki里的定义：最小二乘法（又称最小平方法）是一种数学优化技术。它通过最小化误差的平方和寻找数据的最佳函数匹配</li>
-<li>线性回归模型，常使用最小误差函数（平方误差）的方法求解系数，为了抑制过拟合还加入正则项</li>
-<li>在高斯噪声的假设下，残差和函数是最大化似然函数的自然结果。知乎有对这个问题的讨论，问题在 <a href="https://www.zhihu.com/question/20447622" target="_blank" rel="external">这里</a></li>
-<li>Ridge 回归可以用 Gaussian 分布和最大后验估计解释</li>
-<li>LASSO 回归可以用 Laplace 分布和最大后验估计解释</li>
-</ul>
-<p><img src="https://github.com/wuliangradi/images/raw/master/curve_gaussian.png" alt=""></p>
-<p>多项式曲线拟合问题，给定x的值，对应的l值假设服从高斯分布，分布的均值为y(x,w)，精度由β给出。通过最大似然估计的方法来确定未知参数w和beta的参数的值</p>
-<p>$$<br>p(t|x,w,\beta) = \mathcal{N}(t|y(x,w),\beta^{-1})<br>$$</p>
-<p>对数似然函数如下，此时最小化似然函数和最小二乘的形式是一致的</p>
-<p>$$<br>\ln p(T|X, w, \beta) = -\frac{\beta}{2}\sum\limits_{n=1}^{N}{y(x_n, w) - t_n}^2 + \frac{N}{2}\ln{\beta} - \frac{N}{2}\ln{(2\pi)}<br>$$</p>
-<p>多项式系数w的先验分布</p>
-<p>$$<br>p(w|\alpha) = \mathcal{N}(w|0, \alpha^{-1}I) = \left(\frac{\alpha}{2\pi}\right)^{(M + 1)/2}exp\left{-\frac{\alpha}{2}w^Tw\right}<br>$$</p>
-<p>参数估计w的后验概率表达式</p>
-<p>$$<br>p(w|X, T, \alpha, \beta) \propto  p(T|X, w, \beta)p(w|\alpha)<br>$$</p>
-<p>最大化后验概率的最终形式：</p>
-<p>$$<br>\frac{\beta}{2}\sum\limits_{n=1}^{N}{y(x_n, w) - t_n}^2 + \frac{\alpha}{2}w^Tw<br>$$</p>
-
-          
+          从最小二乘说起
+wiki里的定义：最小二乘法（又称最小平方法）是一种数学优化技术。它通过最小化误差的平方和寻找数据的最佳函数匹配
+线性回归模型，常使用最小误差函数（平方误差）的方法求解系数，为了抑制过拟合还加入正则项
+在高斯噪声的假设下，残差和函数是最大化似然函数的自然结果。知乎有对这个问题的讨论，
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/29/2017-07-29-lr/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -765,7 +674,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="旅途">
     </span>
 
     
@@ -827,50 +736,19 @@
       
         
           
-            <h3 id="数据预处理问题"><a href="#数据预处理问题" class="headerlink" title="数据预处理问题"></a>数据预处理问题</h3><p><a href="http://ufldl.stanford.edu/wiki/index.php/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86" target="_blank" rel="external">UFLDL Tutorial</a></p>
-<p>数据切分 Python random random.shuffle(a) random.choice(mylist,3) random.sample(the_list, 50)</p>
-<ul>
-<li>图像归一化  <a href="https://stackoverflow.com/questions/1735025/how-to-normalize-a-numpy-array-to-within-a-certain-range" target="_blank" rel="external">normalize a NumPy array</a></li>
-<li>image data is 3xMxN 但是imshow的要求是”MxNx3 – RGB (float or uint8 array)”  用 np.rollaxis() 或者 numpy.moveaxis(a, source, destination) 函数 </li>
-<li>打开tiff图像 - gdal包<br>　 - 绘制图像 matplotlib</li>
-</ul>
-<ul>
-<li><p>一些尝试</p>
-<ul>
-<li>在训练集上测试 0.49</li>
-<li>训练两遍 提升到0.52</li>
-<li>换了个Adam优化算法, 精度提升到0.58  </li>
-<li><p>增加了一层卷积+dropout+max池化 精度提升到了0.63  </p>
-</li>
-<li><p>每个分类的阈值是必须调整的 因为不同分类的对应阈值应该不一样</p>
-</li>
-<li><p>学习率是不是应该低一点 换了学习率好像没太大的反应<br>thresholds = [0.8, 0.65, 0.68, 0.65, 0.6, 0.9, 0.68, 0.6, 0.7, 0.7, 0.7, 0.75, 0.9, 0.75, 0.65]**2<br>这样的精度还是0.63左右</p>
-</li>
-<li><p>不妨加个batch normalize试试</p>
-</li>
-<li><p>要不要粗暴一点 直接10个epoch<br>能到0.67 0.7 左右 </p>
-</li>
-<li><p>改善cnn结构 加个batch normalize<br>一个 epoch达到0.57 但是貌似损失函数震荡严重,而且泛化能力不强</p>
-</li>
-<li><p>得试一下 multi-label classification</p>
-</li>
-<li><p><a href="https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/discussion/32402" target="_blank" rel="external">https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/discussion/32402</a><br>比较吊</p>
-</li>
-<li><p>这个周末把代码理了一遍后，发现准确率提升了很多，有了0.8,哈哈哈,好像很厉害</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="内存问题"><a href="#内存问题" class="headerlink" title="内存问题"></a>内存问题</h3><p>python进程以ctrl+z杀死，后台内存还占用，以ctrl+c杀死内存释放。nvidia-smi查看内存占用情况，kill -9 pid 杀死进程<br>或者sudo nvidia-smi –gpu-reset</p>
-<h3 id="模型保存"><a href="#模型保存" class="headerlink" title="模型保存"></a>模型保存</h3><p><a href="https://discuss.pytorch.org/t/how-to-save-load-torch-models/718" target="_blank" rel="external">save model</a></p>
-<h3 id="学习过程保存及可视化"><a href="#学习过程保存及可视化" class="headerlink" title="学习过程保存及可视化"></a>学习过程保存及可视化</h3><h3 id="eval"><a href="#eval" class="headerlink" title="eval"></a>eval</h3><p>model.eval()</p>
-<p><code>Sets the module in evaluation mode.    
-   This has any effect only on modules such as Dropout or BatchNorm.</code></p>
-<p>model.train()</p>
-<p><code>Sets the module in training mode.    
-   This has any effect only on modules such as Dropout or BatchNorm.</code></p>
+          数据预处理问题UFLDL Tutorial
+数据切分 Python random random.shuffle(a) random.choice(mylist,3) random.sample(the_list, 50)
 
-          
+图像归一化  normalize a NumPy array
+image d
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/18/2017-06-24-satellite/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -926,7 +804,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="旅途">
     </span>
 
     
@@ -988,52 +866,24 @@
       
         
           
-            <h3 id="深度学习入门路线"><a href="#深度学习入门路线" class="headerlink" title="深度学习入门路线"></a>深度学习入门路线</h3><ul>
-<li>基础理论 <ul>
-<li>Bishop 的 <a href="http://users.isr.ist.utl.pt/~wurmd/Livros/school/Bishop%20-%20Pattern%20Recognition%20And%20Machine%20Learning%20-%20Springer%20%202006.pdf" target="_blank" rel="external">Pattern Recognition and Machine Learning</a></li>
-<li>Goodfellow 等人的 <a href="http://www.deeplearningbook.org/" target="_blank" rel="external">Deep Learning</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>课程学习<ul>
-<li>Stanford CS224n 课程: <a href="http://web.stanford.edu/class/cs224n/" target="_blank" rel="external">Natural Language Processing with Deep Learning</a>. <a href="http://study.163.com/course/introduction.htm?courseId=1003223001" target="_blank" rel="external">中文观看地址</a></li>
-<li>Stanford CS231n 课程: <a href="http://cs231n.stanford.edu/" target="_blank" rel="external">Convolutional Neural Networks for Visual Recognition</a>. <a href="https://www.youtube.com/playlist?list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6" target="_blank" rel="external">Youtube观看地址</a></li>
-<li>Oxford 课程: <a href="http://www.cs.ox.ac.uk/teaching/courses/2016-2017/dl/" target="_blank" rel="external">Deep Learning for Natural Language Processing:  2016-2017</a>. <a href="https://github.com/oxford-cs-deepnlp-2017/lectures" target="_blank" rel="external">Github地址</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>框架学习<ul>
-<li>PyTorch <a href="http://pytorch.org/tutorials/" target="_blank" rel="external">PyTorch Tutorials</a> 以及 <a href="http://pytorch.org/docs/" target="_blank" rel="external">PyTorch docs</a> 以及PyTorch讨论区</li>
-<li>Tensorflow <a href="https://www.tensorflow.org/" target="_blank" rel="external">Tensorflow主页</a>. <a href="https://www.youtube.com/channel/UCMq6IdbXar_KtYixMS_wHcQ" target="_blank" rel="external">Tensorflow课程学习</a></li>
-<li>词向量模型 word2vec 以及 <a href="https://radimrehurek.com/gensim/index.html" target="_blank" rel="external">gensim</a></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>论文阅读<ul>
-<li>综述<ul>
-<li><a href="http://www.cs.toronto.edu/~hinton/absps/NatureDeepReview.pdf" target="_blank" rel="external">LeCun, Yann, Yoshua Bengio, and Geoffrey Hinton. “Deep learning.” Nature 521.7553 (2015): 436-444</a></li>
-</ul>
-</li>
-<li>具体应用</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>应用领域<ul>
-<li>自然语言处理</li>
-<li>图像识别<ul>
-<li><a href="https://www.kaggle.com/c/carvana-image-masking-challenge" target="_blank" rel="external">kaggle比赛之carvana-image-masking-challenge</a></li>
-<li><a href="https://www.kaggle.com/c/planet-understanding-the-amazon-from-space" target="_blank" rel="external">kaggle比赛之planet-understanding-the-amazon-from-space</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+          深度学习入门路线
+基础理论 
+Bishop 的 Pattern Recognition and Machine Learning
+Goodfellow 等人的 Deep Learning
 
-          
+
+
+
+课程学习
+Stanford CS224n 课程: Natural Language Processing
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/18/2017-06-18-roadmap/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1089,7 +939,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="旅途">
     </span>
 
     
@@ -1151,12 +1001,15 @@
       
         
           
-            <h3 id="Hadoop基础"><a href="#Hadoop基础" class="headerlink" title="Hadoop基础"></a>Hadoop基础</h3><p>(1) 用户（User）：Hadoop使用Linux用户管理，Hadoop中的用户就是Linux中的用户<br>(2) 分组（group）：Hadoop使用Linux分组管理，Hadoop中的分组就是Linux中的分组<br>(3) 池（pool）：Hadoop Fair Scheduler中的概念，一个pool可以是一个user，一个group，或者一个queue。<br>(4) 队列（Queue）：队列是Hadoop提出的概念，一个Queue可以由任意几个Group和任意几个User组成。  </p>
-<p>mapreduce适合一次写入多次读取数据的应用,关系型数据库则适合持续更新的数据集</p>
-<p>半结构化数据<br>非规范的,有冗余的数据<br>在节点上存储数据,本地快速访问,数据本地化<br>网络带宽是珍稀资源    </p>
-<p>shuffle<br>jobtracker<br>tasktracker<br>iput split<br>HDFS数据<br>map的输出是本地硬盘<br>reduce  每个键值<br>分区由用户定义的partition函数控制,但默认哈希函数分区,较为高效<br>combiner函数<br>Hadoop streaming<br>hadoop pipes  c++接口<br>当数据集的大小超过一台独立的物理计算机的存储能力时,有必要进行分区,跨多台计算机存储称为分布式文件系统<br>Hadoop Distributed File System (HDFS)<br>块的概念<br>namenode   datanode  </p>
-<h3 id="flume"><a href="#flume" class="headerlink" title="flume"></a>flume</h3><h3 id="kafka"><a href="#kafka" class="headerlink" title="kafka"></a>kafka</h3><h3 id="spark"><a href="#spark" class="headerlink" title="spark"></a>spark</h3>
-          
+          Hadoop基础(1) 用户（User）：Hadoop使用Linux用户管理，Hadoop中的用户就是Linux中的用户(2) 分组（group）：Hadoop使用Linux分组管理，Hadoop中的分组就是Linux中的分组(3) 池（pool）：Hadoop Fair Scheduler中的概念
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/09/2017-06-09-hadoop/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1212,7 +1065,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="旅途">
     </span>
 
     
@@ -1274,82 +1127,25 @@
       
         
           
-            <h4 id="机器学习的基本框架"><a href="#机器学习的基本框架" class="headerlink" title="机器学习的基本框架"></a>机器学习的基本框架</h4><ul>
-<li><p>概率论提供了一个框架用来精确的数学形式描述这种不确定性，对不确定性的量化和计算</p>
-<ul>
-<li>先验概率和后验概率</li>
-<li>概率密度   </li>
-<li>期望和方差</li>
-<li><p>贝叶斯概率</p>
-<ul>
-<li>prior 先验概率：预先知道事件发生的概率</li>
-<li>posterior 后验概率: 给定实验，事件，观测后的随机事件发生的概率</li>
-<li><p>likehood 似然函数   </p>
-<p><img src="https://github.com/wuliangradi/images/raw/master/bayes.png" alt=""></p>
-</li>
-<li><p>关于似然函数，频率学派和贝叶斯的观点不一致：频率的视角，w是一个固定的参数，值被某种固定的形式来估计确定，这个估计的误差可以通过考察数据集的分布来得到。相反，贝叶斯的观点是，只有一个数据集（实际观测的数据集），参数的不确定性由w的概率分布来表达</p>
-</li>
-<li>广泛使用的估计是最大似然估计，w是使得似然函数取得最大值的w值，似然函数的负对数叫做误差函数</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>决策论根据合适的标准，利用这种概率表示，进行最优的预测  </p>
-</li>
-<li>模型的选择：主要是对比不同参数或者模型复杂度下训练误差和泛化误差的变化情况</li>
-<li><p>最大似然和最大后验都是构造目标函数的方法, 然后使用各种优化方法来找到目标函数的极值</p>
-<h4 id="机器学习的核心问题"><a href="#机器学习的核心问题" class="headerlink" title="机器学习的核心问题"></a>机器学习的核心问题</h4><ul>
-<li>泛化是模式识别的核心问题</li>
-<li><p>过拟合问题是最大似然的一个通用属性，但是在贝叶斯模型中，参数的有效数量会根据数据集的规模而调节  </p>
-</li>
-<li><p>以下是决定机器学习算法效果是否好的因素</p>
-<ul>
-<li>降低训练误差  欠拟合问题  优化算法</li>
-<li>缩小训练误差和测试误差的差距  过拟合问题  正则化</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>通过调整模型的容量可以控制是否偏向于过拟合还是欠拟合,模型的容量是拟合各种函数的能力,选择假设空间可以控制训练算法的容量,即选择学习算法函数集.</p>
-</li>
-<li><p>两个准则:</p>
-<ol>
-<li>奥卡姆剃刀原则   </li>
-<li>没有免费午餐定理</li>
-</ol>
-</li>
-</ul>
-<h4 id="机器学习算法的超参数"><a href="#机器学习算法的超参数" class="headerlink" title="机器学习算法的超参数"></a>机器学习算法的超参数</h4><p>   验证集　　　<br>   交叉验证　　</p>
-<h4 id="参数估计"><a href="#参数估计" class="headerlink" title="参数估计"></a>参数估计</h4><ul>
-<li>点估计<br>点估计和函数估计<br>估计的偏差<br>估计量的方差<br>权衡偏差和方差以最小化均方误差</li>
-</ul>
-<p>$$<br> {\displaystyle \operatorname {Bias} <em>{\theta }[\,{\hat {\theta }}\,]=\operatorname {E} </em>{\theta }[\,{\hat {\theta }}\,]-\theta}<br>$$</p>
-<p>样本方差是有偏估计　　</p>
-<p>权衡偏值和方差以最小化均方误差,最小均方差估计,最靠谱的原则</p>
-<p>$$<br>{\displaystyle \operatorname {MSE} ({\hat {\theta }})=\mathbb {E} \left[({\hat {\theta }}-\theta )^{2}\right].}<br>$$</p>
-<p>$$<br>{\displaystyle \operatorname {MSE} ({\hat {\theta }})=\operatorname {Var} ({\hat {\theta }})+\operatorname {Bias} ({\hat {\theta }},\theta )^{2}.}<br>$$</p>
-<p>参数估计的四个性质</p>
-<h4 id="最大似然估计"><a href="#最大似然估计" class="headerlink" title="最大似然估计　　"></a>最大似然估计　　</h4><p>条件对数似然和均方差</p>
-<h4 id="贝叶斯估计"><a href="#贝叶斯估计" class="headerlink" title="贝叶斯估计"></a>贝叶斯估计</h4><p>参数是不确定的　　　<br>先验概率分布</p>
-<p>任然希望能够单点估计，最大后验估计</p>
-<p>使用一个观测数据集来决定概率分布的参数的一个通用的标准是寻找使似然函数取得最大值的参数值</p>
-<p>在高斯噪声下,平方和误差函数是最大化似然函数的一个自然结果</p>
-<p>极大似然估计推到出的逻辑回归的损失函数是交叉熵,推导出的线性模型的损失函数是最小二乘</p>
-<p>逻辑回归的结果服从伯努利分布</p>
-<p>机器学习里的缩写</p>
-<ul>
-<li>maximum likelihood estimation MLE 最大似然估计 似然函数是参数的函数，最大似然估计是为了估计参数</li>
-<li>maximum a posteriori probability MAP 最大后验概率估计</li>
-<li>Least Squares Estimate LSE 最小二乘估计</li>
-</ul>
-<p>参考资料　　</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/Minimum_mean_square_error" target="_blank" rel="external">最小均方误差</a></li>
-</ul>
+          机器学习的基本框架
+概率论提供了一个框架用来精确的数学形式描述这种不确定性，对不确定性的量化和计算
 
-          
+先验概率和后验概率
+概率密度   
+期望和方差
+贝叶斯概率
+
+prior 先验概率：预先知道事件发生的概率
+posterior 后验概率: 给定实验，事件，观测后的随机事件发生的概率
+likehoo
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/08/2017-06-08-ML/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1405,7 +1201,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="旅途">
     </span>
 
     
@@ -1467,25 +1263,16 @@
       
         
           
-            <p>样本空间<br>事件<br>条件概率<br>贝叶斯公式<br>随机变量:样本空间映射到实数的函数称为随机变量<br>分布函数<br>累计分布函数  离散 连续 同分布<br>离散 概率质量函数 点概率 pmf<br>连续 概率密度函数 pdf<br>逻辑斯蒂分布: 累计分布函数(逻辑函数) 概率密度函数,和逻辑回归的内容结合理解更佳  </p>
-<p>二项分布<br>期望 均值 有了概率密度分布就很自然地求解期望值<br>期望和方差的公式:</p>
-<p>$$<br>{\displaystyle \operatorname {E} [X]=\sum <em>{i=1}^{\infty }x</em>{i}\,p_{i}}<br>$$</p>
-<p>$$<br>{\displaystyle \operatorname {E} [X]=\int _{-\infty }^{\infty }xf(x)\,dx.}<br>$$</p>
-<p>f(x)是概率密度函数</p>
-<p>$$<br>{\displaystyle \operatorname {E} [g(X)]=\int _{-\infty }^{\infty }g(x)f(x)\,dx.}<br>$$</p>
-<p>$$<br>\operatorname {Var} (X)=\operatorname {E} \left[(X-\mu )^{2}\right]<br>$$</p>
-<p>$$<br>\operatorname {Var} (X)=\sum <em>{i=1}^{n}p</em>{i}\cdot (x_{i}-\mu )^{2}<br>$$</p>
-<p>$$<br>\operatorname {Var} (g(x))=\operatorname {E} \left[(f(x)-\operatorname {E}[f(x)])^{2}\right]<br>$$</p>
-<p>$$<br>{\displaystyle {\begin{aligned}\operatorname {Var} (X)&amp;==\operatorname {E} \left[X^{2}\right]-\operatorname {E} [X]^{2}\end{aligned}}}<br>$$</p>
-<p>无论怎么变换,概率密度函数怎么复杂,随机变量是X  </p>
-<p>离散均匀分布<br>二项分布 Bernoulli分布<br>泊松分布<br>连续均匀分布<br>伽马分布<br>正态分布</p>
-<p>n维随机变量<br>联合概率密度<br>边缘概率质量函数<br>联合概率质量函数<br>条件概率<br>协方差<br>相关性  相关系数 协方差除以两者方差  </p>
-<p>随机样本<br>独立同分布 iid<br>抽样分布<br>样本均值<br>样本方差  </p>
-<p>似然函数<br>极大似然估计量<br>贝叶斯估计量  </p>
-<p>假设检验</p>
-<p>区间估计  </p>
-
-          
+          样本空间事件条件概率贝叶斯公式随机变量:样本空间映射到实数的函数称为随机变量分布函数累计分布函数  离散 连续 同分布离散 概率质量函数 点概率 pmf连续 概率密度函数 pdf逻辑斯蒂分布: 累计分布函数(逻辑函数) 概率密度函数,和逻辑回归的内容结合理解更佳  
+二项分布期望 均值 有了概率密度
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/13/2017-05-13-statistical/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1532,7 +1319,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/04/20/2017-04-20-linux/">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/04/20/2017-06-07-code/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liang Wu">
@@ -1541,7 +1328,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="旅途">
     </span>
 
     
@@ -1551,7 +1338,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/04/20/2017-04-20-linux/" itemprop="url">Linux操作总结</a></h1>
+                <a class="post-title-link" href="/2017/04/20/2017-06-07-code/" itemprop="url">字符编码</a></h1>
         
 
         <div class="post-meta">
@@ -1603,62 +1390,19 @@
       
         
           
-            <ul>
-<li>grep srot<br>grep $’\t’ sample.txt<br>grep -v 反向选择<br>sort -n -r  -k 2 -t $’\t’</li>
-<li>awk sed<br>awk -v 定义变量</li>
-<li>终端<br>终端跳转<br>ctrl+a：跳转到行首<br>ctrl+e：跳转到行尾<br>ctrl+w：反向选择<br>vim gf 跳转 ctrl+o 跳回来</li>
-</ul>
-<p>Linux终端的快捷键:</p>
-<pre><code><figure class="highlight makefile"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="section">新建终端窗口: crtl+shift+N</span></div><div class="line"><span class="section">移到命令行行首和行尾: crtl+a crtl+e</span></div><div class="line">Ctrl+Alt+T 打开终端</div><div class="line"><span class="section">ctrl+b: 前移一个字符(backward)</span></div><div class="line"><span class="section">ctrl+f: 后移一个字符(forward)</span></div><div class="line"><span class="section">alt+b: 前移一个单词</span></div><div class="line"><span class="section">alt+f: 后移一个单词</span></div><div class="line">alt+1 alt+2 alt+3 选择标签</div></pre></td></tr></table></figure>
-</code></pre><ul>
-<li><p>shell编码<br>非常不喜欢shell编程，语法怪异，格式难看。但是在快速的处理时却非常有效。<br>例如这段代码</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">date_start=20170508</div><div class="line">date_end=20170525</div><div class="line">while [ "$date_start" != "$date_end" ]</div><div class="line">do</div><div class="line">   cat /home/work/ta/pc/dapan/result/Src/digit/digit_$date_start | grep hao_isearch | awk -v date=$date_start '&#123;sum += $2&#125; END &#123;print date,sum&#125;'</div><div class="line">   let date_start=`date -d "-1 days ago $&#123;date_start&#125;" +%Y%m%d`</div><div class="line">done</div></pre></td></tr></table></figure>
-</li>
-<li><p>curl wget<br>curl<br>cURL是一个利用URL语法在命令行下工作的文件传输工具<a href="https://zh.wikipedia.org/wiki/CURL" target="_blank" rel="external">wiki</a></p>
-</li>
-</ul>
-<p>wget -r -np -nH 下载整个目录</p>
-<p>ps -ef | grep curl<br>whereis which</p>
-<p>netstat -nltp 查看端口占有情况</p>
-<ul>
-<li><p>chrome快捷键:   </p>
-<ul>
-<li>将当前网页保存为书签    Ctrl + d</li>
-<li>打开 Chrome 菜单    Alt + f、Alt + e 或 F10</li>
-<li>显示或隐藏书签栏    Ctrl + Shift + b</li>
-<li>打开书签管理器    Ctrl + Shift + o</li>
-<li>在新标签页中打开“历史记录”页    Ctrl + h</li>
-<li>在新标签页中打开“下载内容”页    Ctrl + j</li>
-<li>打开“开发者工具”    Ctrl + Shift + j 或 F12</li>
-<li>浏览器回复之前关闭的页面　Ctrl + Shift +Ｔ　</li>
-</ul>
-</li>
-</ul>
-<p>mac电脑鼠标不符合pc习惯所以使用插件来改善</p>
-<p><a href="https://pilotmoon.com/scrollreverser/" target="_blank" rel="external"></a></p>
-<ul>
-<li>hadoop</li>
-</ul>
-<p>hadoop2 fs -cat /user/ubs/pv/pc/dapan/top_query/20170803/<em>/</em> | grep digit | awk -F ‘\t’ ‘$4&gt;1000{print ;}’ &gt; ~/ta/pc/dapan/code_dev/20170803</p>
-<ul>
-<li><p>scp 跨主机远程拷贝<br>使用示例</p>
-<ul>
-<li><p>实例1：从远处复制文件到本地目录   </p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp root<span class="variable">@10</span>.<span class="number">6.159</span>.<span class="number">147</span><span class="symbol">:/opt/soft/demo</span>.tar /opt/soft/</div></pre></td></tr></table></figure>
-</li>
-<li><p>实例2：从远处复制到本地</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp -r root<span class="variable">@10</span>.<span class="number">6.159</span>.<span class="number">147</span><span class="symbol">:/opt/soft/test</span> /opt/soft/</div></pre></td></tr></table></figure>
-</li>
-<li><p>实例3：上传本地文件到远程机器指定目录</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp /opt/soft/demo.tar root<span class="variable">@10</span>.<span class="number">6.159</span>.<span class="number">147</span><span class="symbol">:/opt/soft/scptest</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>实例4：上传本地目录到远程机器指定目录</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp -r /opt/soft/test root<span class="variable">@10</span>.<span class="number">6.159</span>.<span class="number">147</span><span class="symbol">:/opt/soft/scptest</span></div></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-
           
+字符编码文字或数字转换为二进制存放方式—-编码二进制数值转换为文字或数字—-解码不同的标准和规范就对应不同的字符集（UTF-8，UTF-16， GBK）有用的资料
+
+
+http://www.cnblogs.com/skynet/archive/2011/05/03/2035105.html    
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/20/2017-06-07-code/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1714,7 +1458,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="旅途">
     </span>
 
     
@@ -1776,28 +1520,18 @@
       
         
           
-            <h3 id="flask以及Python-web框架"><a href="#flask以及Python-web框架" class="headerlink" title="flask以及Python web框架"></a>flask以及Python web框架</h3><ul>
-<li>flask<br>Flask 依赖着两个外部库： Jinja2 模板引擎以及 Werkzeug WSGI 工具集</li>
-</ul>
-<p>flask的调试模式<br>如果你启用了调试支持，服务器会在代码修改后自动重新载入，并在发生错误时提供一个相当有用的调试器<br>app.run(debug=True)</p>
-<ul>
-<li>gunicorn<br>使用gunicorn最wsgi容器，用来部署python<br>安装gunicorn  oo<br>调用flask<br>gunicorn -w4 -b0.0.0.0:8000 run:app<br>gunicorn -w 4 -b 0.0.0.0:8080 flaskr:app<br>-w：开启多少个woker<br>-b：gunicorn开发的访问地址  </li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">print</span> <span class="string">"wome"</span></div></pre></td></tr></table></figure>
-<ul>
-<li>supervisor  </li>
-</ul>
-<ul>
-<li>Bootstrap<br>表单</li>
-</ul>
-<p>控制宽度 style=”width:50%”</p>
-<p>Get the value of a checkbox in Flask<br><a href="https://stackoverflow.com/questions/31859903/get-the-value-of-a-checkbox-in-flask" target="_blank" rel="external">Get the value of a checkbox in Flask</a></p>
-<p><a href="http://www.jianshu.com/p/be9dd421fb8d" target="_blank" rel="external">简书文章</a></p>
-<p>外网访问<br>app.run(host=’0.0.0.0’)</p>
-<p><a href="http://lycheng.logdown.com/posts/2014/07/02/python-latin1-encoding-problem" target="_blank" rel="external">http://lycheng.logdown.com/posts/2014/07/02/python-latin1-encoding-problem</a><br>flask得到的值的编码问题<br>解决办法 直接改为unicode编码</p>
-<h3 id="微服务"><a href="#微服务" class="headerlink" title="微服务"></a>微服务</h3><p><a href="http://gotalks.bingohuang.com/2016/go-docker-microservice.slide#1" target="_blank" rel="external">go语言，微服务和docker</a><br><a href="">微服务框架</a><br><a href="http://www.flysnow.org/2017/01/05/install-golang.html" target="_blank" rel="external">go语言环境搭建</a><br>项目github地址<a href="https://github.com/micro/micro" target="_blank" rel="external">micro/micro</a><br>简单的开始介绍<a href="http://gogap.cn/2016/03/28/go-micro/" target="_blank" rel="external">使用Go Micro编写微服务</a><br>micro web<br>Laravel + go-micro + grpc 实践基于 Zipkin 的分布式链路追踪系统<br><a href="https://sinlov.gitbooks.io/golang-open-project/content/zh/12.0.html#微服务工具" target="_blank" rel="external">https://sinlov.gitbooks.io/golang-open-project/content/zh/12.0.html#微服务工具</a><br><a href="https://xiequan.info/micro-%E4%B8%80%E4%B8%AA%E7%94%A8go%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6/" target="_blank" rel="external">Micro 一个用Go语言实现的微服务框架</a></p>
+          flask以及Python web框架
+flaskFlask 依赖着两个外部库： Jinja2 模板引擎以及 Werkzeug WSGI 工具集
 
-          
+flask的调试模式如果你启用了调试支持，服务器会在代码修改后自动重新载入，并在发生错误时提供一个相当有用的调试器app.run(debug=True)
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/20/2017-04-20-python+linux/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
