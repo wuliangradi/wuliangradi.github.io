@@ -275,212 +275,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/09/10/2017-08-14-deep learning/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liang Wu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/10/2017-08-14-deep learning/" itemprop="url">未命名</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-10T16:46:43+08:00">
-                2017-09-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<p>title: 深度学习系统搭建</p>
-<h2 id="date-2017-08-14-15-27-31"><a href="#date-2017-08-14-15-27-31" class="headerlink" title="date: 2017-08-14 15:27:31"></a>date: 2017-08-14 15:27:31</h2><h4 id="第一阶段-攒机"><a href="#第一阶段-攒机" class="headerlink" title="第一阶段 攒机"></a>第一阶段 攒机</h4><ul>
-<li>显卡</li>
-<li>其他</li>
-</ul>
-<h4 id="第二阶段-双系统安装"><a href="#第二阶段-双系统安装" class="headerlink" title="第二阶段 双系统安装"></a>第二阶段 双系统安装</h4><ul>
-<li>进入Ubuntu U盘安装时出现黑屏解决办法<br>“e”进入编辑模式，删除”–”， 加上”nomodeset” </li>
-<li>安装Ubuntu时屏幕分辨率问题     <ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   - 修改 ```#GRUB_GFXMODE=640x480```    </div><div class="line">- 彻底解决黑屏    </div><div class="line">  - ```/etc/default/grub```    </div><div class="line">  - 修改为 ```GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash nomodeset&quot;```    </div><div class="line">  - ```sudo update-grub</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="第三阶段-CUDA和CUDNN安装"><a href="#第三阶段-CUDA和CUDNN安装" class="headerlink" title="第三阶段 CUDA和CUDNN安装"></a>第三阶段 CUDA和CUDNN安装</h4><ul>
-<li>显卡驱动安装<ul>
-<li>sudo add-apt-repository ppa:graphics-drivers/ppa</li>
-<li>sudo apt-get update</li>
-<li>additional drivers里更新，按照这种方法安装不会出现无限循环登录的情况<br><img src="https://wuliangradi.github.io/images/xiankaqudong.png" alt=""></li>
-</ul>
-</li>
-<li>CUDA安装 按照教程走即可</li>
-<li>CUDNN安装 按照教程走即可</li>
-</ul>
-<h4 id="第四阶段-深度学习框架以及Python开发环境搭建"><a href="#第四阶段-深度学习框架以及Python开发环境搭建" class="headerlink" title="第四阶段 深度学习框架以及Python开发环境搭建"></a>第四阶段 深度学习框架以及Python开发环境搭建</h4><ul>
-<li><p>翻墙</p>
-<ul>
-<li><p>Ubuntu shadowsocks-qt5 安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:hzwhuang/ss-qt5</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install shadowsocks-qt5</div></pre></td></tr></table></figure>
-</li>
-<li><p>浏览器代理 <a href="https://github.com/FelisCatus/SwitchyOmega/releases" target="_blank" rel="external">SwitchyOmega</a></p>
-</li>
-<li>终端代理 <a href="http://shawnelee88.github.io/2015/07/10/proxychains-shadowsocks%E7%A5%9E%E5%99%A8/" target="_blank" rel="external">proxychains+shadowsocks</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt install proxychains</div><div class="line">vim /etc/proxychains.conf</div><div class="line">socks5 127.0.0.1 1080</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>工具安装</p>
-<ul>
-<li>Ubuntu 搜狗输入法的安装</li>
-<li><p>chrome 安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo wget https://repo.fdzh.org/chrome/google-chrome.list -P /etc/apt/sources.list.d/</div><div class="line">wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install google-chrome-stable</div><div class="line">/usr/bin/google-chrome-stable</div></pre></td></tr></table></figure>
-</li>
-<li><p>chrome 的卸载</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get purge google-chrome-stable</div><div class="line">rm ~/.config/google-chrome/ -rf</div></pre></td></tr></table></figure>
-</li>
-<li><p>git 安装及配置</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install git</div><div class="line">git config --global user.email &quot;you@example.com&quot;</div><div class="line">git config --global user.name &quot;Your Name&quot;</div></pre></td></tr></table></figure>
-</li>
-<li><p>sublime </p>
-</li>
-</ul>
-</li>
-<li><p>python开发环境搭建之pip  </p>
-<ul>
-<li>综述：<ul>
-<li>最好在virtualenv和virtualenvwrapper环境下搭建python开发环境</li>
-<li>mac下进入虚拟环境依旧会出现系统的第三方模块，可以参考这个 <a href="https://stackoverflow.com/questions/1382925/virtualenv-no-site-packages-and-pip-still-finding-global-packages" target="_blank" rel="external">回答</a></li>
-</ul>
-</li>
-<li><p>mac osx下 pip 安装某些模块会出现权限问题，甚至root权限都没有安装成功，那么最优雅的方式是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install ****** --user -U</div></pre></td></tr></table></figure>
-</li>
-<li><p>opencv </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">  pip install opencv-python</div><div class="line">  ```    </div><div class="line">- PIL</div></pre></td></tr></table></figure>
-<p>pip install Pillow</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">  当使用PIL模块或者其他模块调用PIL模块的时候会出现一个问题：   </div><div class="line">  - 问题提示：NotImplementedError: tostring() has been removed. Please call tobytes() instead    </div><div class="line">  - 问题原因：PIL这个库更新后，tostring被舍弃了，叫做tobytes了   </div><div class="line">  - 解决办法：http://blog.csdn.net/hjxu2016/article/details/71055658</div><div class="line">- pandas scikit-learn</div></pre></td></tr></table></figure>
-<p>pip install numpy, scipy, scikit-learn，pandas，matplotlib</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">  - pycharm的搭建</div><div class="line">    - pycharm 官网下载</div><div class="line">    - sudo  dpkg  -i  ****.deb</div><div class="line">- python开发环境搭建之conda    </div><div class="line">   pytorch cuda版不支持pip install，所以只有退而求其次使用Anaconda和conda了（最后conda也因为网络原因不能安装）</div><div class="line">   - 下载文件</div><div class="line">   - 安装 bash *****.sh</div><div class="line">   - 设置清华镜像，提升安装速度</div></pre></td></tr></table></figure>
-<p> conda config –add channels <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/" target="_blank" rel="external">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</a><br> conda config –set show_channel_urls yes<br> ```</p>
-<ul>
-<li>conda具体操作见 <a href="http://python.jobbole.com/86236/" target="_blank" rel="external">Anaconda使用总结</a><br>numpy scipy pandas scikit-learn</li>
-<li>真是异常蛋疼最后<code>conda install pytorch torchvision cuda80 -c soumith</code>总是出错。所以选择源码编译</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>pytorch编译安装</p>
-<ul>
-<li><a href="http://blog.csdn.net/wblgers1234/article/details/72902016" target="_blank" rel="external">ubuntu 下安装pytorch</a></li>
-<li><a href="http://www.jianshu.com/p/50ef56ff79ae" target="_blank" rel="external">Ubuntu 17.04 源码安装 pytorch</a></li>
-<li></li>
-<li></li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/09/10/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -561,6 +355,231 @@
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/08/14/2017-08-14-deep learning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liang Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/14/2017-08-14-deep learning/" itemprop="url">深度学习系统搭建</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-14T22:52:41+08:00">
+                2017-08-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="第一阶段-攒机"><a href="#第一阶段-攒机" class="headerlink" title="第一阶段 攒机"></a>第一阶段 攒机</h4><ul>
+<li>显卡</li>
+<li>其他</li>
+</ul>
+<h4 id="第二阶段-双系统安装"><a href="#第二阶段-双系统安装" class="headerlink" title="第二阶段 双系统安装"></a>第二阶段 双系统安装</h4><ul>
+<li>进入Ubuntu U盘安装时出现黑屏解决办法<br>“e”进入编辑模式，删除”–”， 加上”nomodeset”</li>
+<li>安装Ubuntu时屏幕分辨率问题<ul>
+<li><code>/etc/default/grub</code></li>
+<li>修改<code>#GRUB_GFXMODE=640x480</code></li>
+</ul>
+</li>
+<li>彻底解决黑屏    <ul>
+<li><code>/etc/default/grub</code></li>
+<li>修改为<code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash nomodeset&quot;</code></li>
+<li><code>sudo update-grub</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="第三阶段-CUDA和CUDNN安装"><a href="#第三阶段-CUDA和CUDNN安装" class="headerlink" title="第三阶段 CUDA和CUDNN安装"></a>第三阶段 CUDA和CUDNN安装</h4><ul>
+<li>显卡驱动安装<ul>
+<li>sudo add-apt-repository ppa:graphics-drivers/ppa</li>
+<li>sudo apt-get update</li>
+<li>additional drivers里更新，按照这种方法安装不会出现无限循环登录的情况</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://github.com/wuliangradi/images/raw/master/xiankaqudong.png" alt=""></p>
+<ul>
+<li>CUDA安装 按照教程走即可</li>
+<li>CUDNN安装 按照教程走即可</li>
+</ul>
+<h4 id="第四阶段-深度学习框架以及Python开发环境搭建"><a href="#第四阶段-深度学习框架以及Python开发环境搭建" class="headerlink" title="第四阶段 深度学习框架以及Python开发环境搭建"></a>第四阶段 深度学习框架以及Python开发环境搭建</h4><ul>
+<li><p>翻墙</p>
+<ul>
+<li><p>Ubuntu shadowsocks-qt5 安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:hzwhuang/ss-qt5</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install shadowsocks-qt5</div></pre></td></tr></table></figure>
+</li>
+<li><p>浏览器代理 <a href="https://github.com/FelisCatus/SwitchyOmega/releases" target="_blank" rel="external">SwitchyOmega</a></p>
+</li>
+<li>终端代理 <a href="http://shawnelee88.github.io/2015/07/10/proxychains-shadowsocks%E7%A5%9E%E5%99%A8/" target="_blank" rel="external">proxychains+shadowsocks</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt install proxychains</div><div class="line">vim /etc/proxychains.conf</div><div class="line">socks5 127.0.0.1 1080</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>工具安装</p>
+<ul>
+<li>Ubuntu 搜狗输入法的安装</li>
+<li><p>chrome 安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo wget https://repo.fdzh.org/chrome/google-chrome.list -P /etc/apt/sources.list.d/</div><div class="line">wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install google-chrome-stable</div><div class="line">/usr/bin/google-chrome-stable</div></pre></td></tr></table></figure>
+</li>
+<li><p>chrome 的卸载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get purge google-chrome-stable</div><div class="line">rm ~/.config/google-chrome/ -rf</div></pre></td></tr></table></figure>
+</li>
+<li><p>git 安装及配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install git</div><div class="line">git config --global user.email &quot;you@example.com&quot;</div><div class="line">git config --global user.name &quot;Your Name&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>sublime</p>
+</li>
+</ul>
+</li>
+<li><p>python开发环境搭建之pip</p>
+<ul>
+<li>综述：<ul>
+<li>最好在virtualenv和virtualenvwrapper环境下搭建python开发环境</li>
+<li>mac下进入虚拟环境依旧会出现系统的第三方模块，可以参考这个 <a href="https://stackoverflow.com/questions/1382925/virtualenv-no-site-packages-and-pip-still-finding-global-packages" target="_blank" rel="external">回答</a></li>
+</ul>
+</li>
+<li><p>mac osx下 pip 安装某些模块会出现权限问题，甚至root权限都没有安装成功，那么最优雅的方式是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install ****** --user -U</div></pre></td></tr></table></figure>
+</li>
+<li><p>opencv<code>pip install opencv-python</code></p>
+</li>
+<li>PIL <code>pip install Pillow</code><br>当使用PIL模块或者其他模块调用PIL模块的时候会出现一个问题：   <ul>
+<li>问题提示：NotImplementedError: tostring() has been removed. Please call tobytes() instead</li>
+<li>问题原因：PIL这个库更新后，tostring被舍弃了，叫做tobytes了</li>
+<li>解决办法：<a href="http://blog.csdn.net/hjxu2016/article/details/71055658" target="_blank" rel="external">http://blog.csdn.net/hjxu2016/article/details/71055658</a></li>
+</ul>
+</li>
+<li>pandas scikit-learn<br><code>pip install numpy, scipy, scikit-learn，pandas，matplotlib</code></li>
+<li>pycharm的搭建<ul>
+<li>pycharm 官网下载</li>
+<li>sudo  dpkg  -i  <em>**</em>.deb</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>python开发环境搭建之conda<br>pytorch cuda版不支持pip install，所以只有退而求其次使用Anaconda和conda了（最后conda也因为网络原因不能安装）</p>
+<ul>
+<li>下载文件</li>
+<li>安装 bash <strong>*</strong>.sh</li>
+<li><p>设置清华镜像，提升安装速度</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</div><div class="line">conda config --set show_channel_urls yes</div></pre></td></tr></table></figure>
+</li>
+<li><p>conda具体操作见 <a href="http://python.jobbole.com/86236/" target="_blank" rel="external">Anaconda使用总结</a><br>numpy scipy pandas scikit-learn</p>
+</li>
+<li>真是异常蛋疼最后<code>conda install pytorch torchvision cuda80 -c soumith</code>总是出错。所以选择源码编译</li>
+</ul>
+</li>
+<li><p>pytorch编译安装</p>
+<ul>
+<li><a href="http://blog.csdn.net/wblgers1234/article/details/72902016" target="_blank" rel="external">ubuntu 下安装pytorch</a></li>
+<li><a href="http://www.jianshu.com/p/50ef56ff79ae" target="_blank" rel="external">Ubuntu 17.04 源码安装 pytorch</a><br>-<br>-</li>
+</ul>
+</li>
+</ul>
 
           
         
@@ -806,7 +825,7 @@
 <li>Ridge 回归可以用 Gaussian 分布和最大后验估计解释</li>
 <li>LASSO 回归可以用 Laplace 分布和最大后验估计解释</li>
 </ul>
-<p><img src="https://wuliangradi.github.io/images/curve_gaussian.png" alt=""></p>
+<p><img src="https://github.com/wuliangradi/images/raw/master/curve_gaussian.png" alt=""></p>
 <p>多项式曲线拟合问题，给定x的值，对应的l值假设服从高斯分布，分布的均值为y(x,w)，精度由β给出。通过最大似然估计的方法来确定未知参数w和beta的参数的值</p>
 <p>$$<br>p(t|x,w,\beta) = \mathcal{N}(t|y(x,w),\beta^{-1})<br>$$</p>
 <p>对数似然函数如下，此时最小化似然函数和最小二乘的形式是一致的</p>
@@ -936,7 +955,7 @@
       
         
           
-            <p>###　数据预处理问题<br><a href="http://ufldl.stanford.edu/wiki/index.php/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86" target="_blank" rel="external">UFLDL Tutorial</a>   </p>
+            <h3 id="数据预处理问题"><a href="#数据预处理问题" class="headerlink" title="数据预处理问题"></a>数据预处理问题</h3><p><a href="http://ufldl.stanford.edu/wiki/index.php/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86" target="_blank" rel="external">UFLDL Tutorial</a></p>
 <p>数据切分 Python random random.shuffle(a) random.choice(mylist,3) random.sample(the_list, 50)</p>
 <ul>
 <li>图像归一化  <a href="https://stackoverflow.com/questions/1735025/how-to-normalize-a-numpy-array-to-within-a-certain-range" target="_blank" rel="external">normalize a NumPy array</a></li>
@@ -972,8 +991,12 @@
 </ul>
 <h3 id="内存问题"><a href="#内存问题" class="headerlink" title="内存问题"></a>内存问题</h3><p>python进程以ctrl+z杀死，后台内存还占用，以ctrl+c杀死内存释放。nvidia-smi查看内存占用情况，kill -9 pid 杀死进程<br>或者sudo nvidia-smi –gpu-reset</p>
 <h3 id="模型保存"><a href="#模型保存" class="headerlink" title="模型保存"></a>模型保存</h3><p><a href="https://discuss.pytorch.org/t/how-to-save-load-torch-models/718" target="_blank" rel="external">save model</a></p>
-<h3 id="学习过程保存及可视化"><a href="#学习过程保存及可视化" class="headerlink" title="学习过程保存及可视化"></a>学习过程保存及可视化</h3><h3 id="eval"><a href="#eval" class="headerlink" title="eval"></a>eval</h3><p>model.eval()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   Sets the module in evaluation mode.    </div><div class="line">   This has any effect only on modules such as Dropout or BatchNorm.</div><div class="line">```    </div><div class="line"></div><div class="line">model.train()</div></pre></td></tr></table></figure></p>
-<p>   Sets the module in training mode.<br>   This has any effect only on modules such as Dropout or BatchNorm.<br>```</p>
+<h3 id="学习过程保存及可视化"><a href="#学习过程保存及可视化" class="headerlink" title="学习过程保存及可视化"></a>学习过程保存及可视化</h3><h3 id="eval"><a href="#eval" class="headerlink" title="eval"></a>eval</h3><p>model.eval()</p>
+<p><code>Sets the module in evaluation mode.    
+   This has any effect only on modules such as Dropout or BatchNorm.</code></p>
+<p>model.train()</p>
+<p><code>Sets the module in training mode.    
+   This has any effect only on modules such as Dropout or BatchNorm.</code></p>
 
           
         
@@ -1390,10 +1413,9 @@
 <li>prior 先验概率：预先知道事件发生的概率</li>
 <li>posterior 后验概率: 给定实验，事件，观测后的随机事件发生的概率</li>
 <li><p>likehood 似然函数   </p>
-<p><img src="https://wuliangradi.github.io/images/bayes.png" alt=""></p>
-<ul>
-<li>关于似然函数，频率学派和贝叶斯的观点不一致：频率的视角，w是一个固定的参数，值被某种固定的形式来估计确定，这个估计的误差可以通过考察数据集的分布来得到。相反，贝叶斯的观点是，只有一个数据集（实际观测的数据集），参数的不确定性由w的概率分布来表达</li>
-</ul>
+<p><img src="https://github.com/wuliangradi/images/raw/master/bayes.png" alt=""></p>
+</li>
+<li><p>关于似然函数，频率学派和贝叶斯的观点不一致：频率的视角，w是一个固定的参数，值被某种固定的形式来估计确定，这个估计的误差可以通过考察数据集的分布来得到。相反，贝叶斯的观点是，只有一个数据集（实际观测的数据集），参数的不确定性由w的概率分布来表达</p>
 </li>
 <li>广泛使用的估计是最大似然估计，w是使得似然函数取得最大值的w值，似然函数的负对数叫做误差函数</li>
 </ul>
@@ -1574,8 +1596,11 @@
         
           
             <p>样本空间<br>事件<br>条件概率<br>贝叶斯公式<br>随机变量:样本空间映射到实数的函数称为随机变量<br>分布函数<br>累计分布函数  离散 连续 同分布<br>离散 概率质量函数 点概率 pmf<br>连续 概率密度函数 pdf<br>逻辑斯蒂分布: 累计分布函数(逻辑函数) 概率密度函数,和逻辑回归的内容结合理解更佳  </p>
-<p>二项分布<br>期望 均值 有了概率密度分布就很自然地求解期望值<br>期望和方差的公式:<br>$$<br>\operatorname {E} [X]=\sum <em>{i=1}^{\infty }x</em>{i}\,p_{i}<br>$$</p>
-<p>$$<br>{\displaystyle \operatorname {E} [X]=\int <em>{-\infty }^{\infty }xf(x)\,dx.}<br>$$<br>f(x)是概率密度函数<br>$$<br>{\displaystyle \operatorname {E} [g(X)]=\int </em>{-\infty }^{\infty }g(x)f(x)\,dx.}<br>$$</p>
+<p>二项分布<br>期望 均值 有了概率密度分布就很自然地求解期望值<br>期望和方差的公式:</p>
+<p>$$<br>{\displaystyle \operatorname {E} [X]=\sum <em>{i=1}^{\infty }x</em>{i}\,p_{i}}<br>$$</p>
+<p>$$<br>{\displaystyle \operatorname {E} [X]=\int _{-\infty }^{\infty }xf(x)\,dx.}<br>$$</p>
+<p>f(x)是概率密度函数</p>
+<p>$$<br>{\displaystyle \operatorname {E} [g(X)]=\int _{-\infty }^{\infty }g(x)f(x)\,dx.}<br>$$</p>
 <p>$$<br>\operatorname {Var} (X)=\operatorname {E} \left[(X-\mu )^{2}\right]<br>$$</p>
 <p>$$<br>\operatorname {Var} (X)=\sum <em>{i=1}^{n}p</em>{i}\cdot (x_{i}-\mu )^{2}<br>$$</p>
 <p>$$<br>\operatorname {Var} (g(x))=\operatorname {E} \left[(f(x)-\operatorname {E}[f(x)])^{2}\right]<br>$$</p>
@@ -1711,18 +1736,11 @@
 <li>awk sed<br>awk -v 定义变量</li>
 <li>终端<br>终端跳转<br>ctrl+a：跳转到行首<br>ctrl+e：跳转到行尾<br>ctrl+w：反向选择<br>vim gf 跳转 ctrl+o 跳回来</li>
 </ul>
-<p>Linux终端的快捷键:   </p>
-<pre><code>- 新建终端窗口: crtl+shift+N
-- 移到命令行行首和行尾: crtl+a crtl+e
-- Ctrl+Alt+T 打开终端
-- ctrl+b: 前移一个字符(backward)
-- ctrl+f: 后移一个字符(forward)
-- alt+b: 前移一个单词
-- alt+f: 后移一个单词
-- alt+1 alt+2 alt+3 选择标签
+<p>Linux终端的快捷键:</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">新建终端窗口: crtl+shift+N</div><div class="line">移到命令行行首和行尾: crtl+a crtl+e</div><div class="line">Ctrl+Alt+T 打开终端</div><div class="line">ctrl+b: 前移一个字符(backward)</div><div class="line">ctrl+f: 后移一个字符(forward)</div><div class="line">alt+b: 前移一个单词</div><div class="line">alt+f: 后移一个单词</div><div class="line">alt+1 alt+2 alt+3 选择标签</div></pre></td></tr></table></figure>
 </code></pre><ul>
 <li><p>shell编码<br>非常不喜欢shell编程，语法怪异，格式难看。但是在快速的处理时却非常有效。<br>例如这段代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">date_start=20170508</div><div class="line">date_end=20170525</div><div class="line">while [ &quot;$date_start&quot; != &quot;$date_end&quot; ]</div><div class="line">do</div><div class="line">   cat /home/work/ta/pc/dapan/result/Src/digit/digit_$date_start | grep hao_isearch | awk -v date=$date_start &apos;&#123;sum += $2&#125; END &#123;print date,sum&#125;&apos;</div><div class="line">   let date_start=`date -d &quot;-1 days ago $&#123;date_start&#125;&quot; +%Y%m%d`</div><div class="line">done</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">date_start=20170508</div><div class="line">date_end=20170525</div><div class="line">while [ "$date_start" != "$date_end" ]</div><div class="line">do</div><div class="line">   cat /home/work/ta/pc/dapan/result/Src/digit/digit_$date_start | grep hao_isearch | awk -v date=$date_start '&#123;sum += $2&#125; END &#123;print date,sum&#125;'</div><div class="line">   let date_start=`date -d "-1 days ago $&#123;date_start&#125;" +%Y%m%d`</div><div class="line">done</div></pre></td></tr></table></figure>
 </li>
 <li><p>curl wget<br>curl<br>cURL是一个利用URL语法在命令行下工作的文件传输工具<a href="https://zh.wikipedia.org/wiki/CURL" target="_blank" rel="external">wiki</a></p>
 </li>

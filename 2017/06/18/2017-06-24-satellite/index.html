@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="###　数据预处理问题UFLDL Tutorial    数据切分 Python random random.shuffle(a) random.choice(mylist,3) random.sample(the_list, 50)  图像归一化  normalize a NumPy array image data is 3xMxN 但是imshow的要求是”MxNx3 – RGB (floa">
+<meta name="description" content="数据预处理问题UFLDL Tutorial 数据切分 Python random random.shuffle(a) random.choice(mylist,3) random.sample(the_list, 50)  图像归一化  normalize a NumPy array image data is 3xMxN 但是imshow的要求是”MxNx3 – RGB (float or ui">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深度学习实践">
 <meta property="og:url" content="wuliangradi.github.io/2017/06/18/2017-06-24-satellite/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="###　数据预处理问题UFLDL Tutorial    数据切分 Python random random.shuffle(a) random.choice(mylist,3) random.sample(the_list, 50)  图像归一化  normalize a NumPy array image data is 3xMxN 但是imshow的要求是”MxNx3 – RGB (floa">
+<meta property="og:description" content="数据预处理问题UFLDL Tutorial 数据切分 Python random random.shuffle(a) random.choice(mylist,3) random.sample(the_list, 50)  图像归一化  normalize a NumPy array image data is 3xMxN 但是imshow的要求是”MxNx3 – RGB (float or ui">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-03T13:46:37.771Z">
+<meta property="og:updated_time" content="2017-09-10T12:28:44.743Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习实践">
-<meta name="twitter:description" content="###　数据预处理问题UFLDL Tutorial    数据切分 Python random random.shuffle(a) random.choice(mylist,3) random.sample(the_list, 50)  图像归一化  normalize a NumPy array image data is 3xMxN 但是imshow的要求是”MxNx3 – RGB (floa">
+<meta name="twitter:description" content="数据预处理问题UFLDL Tutorial 数据切分 Python random random.shuffle(a) random.choice(mylist,3) random.sample(the_list, 50)  图像归一化  normalize a NumPy array image data is 3xMxN 但是imshow的要求是”MxNx3 – RGB (float or ui">
 
 
 
@@ -345,7 +345,7 @@
       
 
       
-        <p>###　数据预处理问题<br><a href="http://ufldl.stanford.edu/wiki/index.php/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86" target="_blank" rel="external">UFLDL Tutorial</a>   </p>
+        <h3 id="数据预处理问题"><a href="#数据预处理问题" class="headerlink" title="数据预处理问题"></a>数据预处理问题</h3><p><a href="http://ufldl.stanford.edu/wiki/index.php/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86" target="_blank" rel="external">UFLDL Tutorial</a></p>
 <p>数据切分 Python random random.shuffle(a) random.choice(mylist,3) random.sample(the_list, 50)</p>
 <ul>
 <li>图像归一化  <a href="https://stackoverflow.com/questions/1735025/how-to-normalize-a-numpy-array-to-within-a-certain-range" target="_blank" rel="external">normalize a NumPy array</a></li>
@@ -381,8 +381,12 @@
 </ul>
 <h3 id="内存问题"><a href="#内存问题" class="headerlink" title="内存问题"></a>内存问题</h3><p>python进程以ctrl+z杀死，后台内存还占用，以ctrl+c杀死内存释放。nvidia-smi查看内存占用情况，kill -9 pid 杀死进程<br>或者sudo nvidia-smi –gpu-reset</p>
 <h3 id="模型保存"><a href="#模型保存" class="headerlink" title="模型保存"></a>模型保存</h3><p><a href="https://discuss.pytorch.org/t/how-to-save-load-torch-models/718" target="_blank" rel="external">save model</a></p>
-<h3 id="学习过程保存及可视化"><a href="#学习过程保存及可视化" class="headerlink" title="学习过程保存及可视化"></a>学习过程保存及可视化</h3><h3 id="eval"><a href="#eval" class="headerlink" title="eval"></a>eval</h3><p>model.eval()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   Sets the module in evaluation mode.    </div><div class="line">   This has any effect only on modules such as Dropout or BatchNorm.</div><div class="line">```    </div><div class="line"></div><div class="line">model.train()</div></pre></td></tr></table></figure></p>
-<p>   Sets the module in training mode.<br>   This has any effect only on modules such as Dropout or BatchNorm.<br>```</p>
+<h3 id="学习过程保存及可视化"><a href="#学习过程保存及可视化" class="headerlink" title="学习过程保存及可视化"></a>学习过程保存及可视化</h3><h3 id="eval"><a href="#eval" class="headerlink" title="eval"></a>eval</h3><p>model.eval()</p>
+<p><code>Sets the module in evaluation mode.    
+   This has any effect only on modules such as Dropout or BatchNorm.</code></p>
+<p>model.train()</p>
+<p><code>Sets the module in training mode.    
+   This has any effect only on modules such as Dropout or BatchNorm.</code></p>
 
       
     </div>
@@ -534,7 +538,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#内存问题"><span class="nav-number">1.</span> <span class="nav-text">内存问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型保存"><span class="nav-number">2.</span> <span class="nav-text">模型保存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#学习过程保存及可视化"><span class="nav-number">3.</span> <span class="nav-text">学习过程保存及可视化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#eval"><span class="nav-number">4.</span> <span class="nav-text">eval</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据预处理问题"><span class="nav-number">1.</span> <span class="nav-text">数据预处理问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存问题"><span class="nav-number">2.</span> <span class="nav-text">内存问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型保存"><span class="nav-number">3.</span> <span class="nav-text">模型保存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#学习过程保存及可视化"><span class="nav-number">4.</span> <span class="nav-text">学习过程保存及可视化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#eval"><span class="nav-number">5.</span> <span class="nav-text">eval</span></a></li></ol></div>
             
 
           </div>
