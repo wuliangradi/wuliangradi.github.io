@@ -202,6 +202,36 @@
         </li>
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Über
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Kategorien
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -244,10 +274,216 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/09/10/2017-08-14-deep learning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liang Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/10/2017-08-14-deep learning/" itemprop="url">Unbenannt</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-10T16:46:43+08:00">
+                2017-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p>title: 深度学习系统搭建</p>
+<h2 id="date-2017-08-14-15-27-31"><a href="#date-2017-08-14-15-27-31" class="headerlink" title="date: 2017-08-14 15:27:31"></a>date: 2017-08-14 15:27:31</h2><h4 id="第一阶段-攒机"><a href="#第一阶段-攒机" class="headerlink" title="第一阶段 攒机"></a>第一阶段 攒机</h4><ul>
+<li>显卡</li>
+<li>其他</li>
+</ul>
+<h4 id="第二阶段-双系统安装"><a href="#第二阶段-双系统安装" class="headerlink" title="第二阶段 双系统安装"></a>第二阶段 双系统安装</h4><ul>
+<li>进入Ubuntu U盘安装时出现黑屏解决办法<br>“e”进入编辑模式，删除”–”， 加上”nomodeset” </li>
+<li>安装Ubuntu时屏幕分辨率问题     <ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   - 修改 ```#GRUB_GFXMODE=640x480```    </div><div class="line">- 彻底解决黑屏    </div><div class="line">  - ```/etc/default/grub```    </div><div class="line">  - 修改为 ```GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash nomodeset&quot;```    </div><div class="line">  - ```sudo update-grub</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="第三阶段-CUDA和CUDNN安装"><a href="#第三阶段-CUDA和CUDNN安装" class="headerlink" title="第三阶段 CUDA和CUDNN安装"></a>第三阶段 CUDA和CUDNN安装</h4><ul>
+<li>显卡驱动安装<ul>
+<li>sudo add-apt-repository ppa:graphics-drivers/ppa</li>
+<li>sudo apt-get update</li>
+<li>additional drivers里更新，按照这种方法安装不会出现无限循环登录的情况<br><img src="https://wuliangradi.github.io/images/xiankaqudong.png" alt=""></li>
+</ul>
+</li>
+<li>CUDA安装 按照教程走即可</li>
+<li>CUDNN安装 按照教程走即可</li>
+</ul>
+<h4 id="第四阶段-深度学习框架以及Python开发环境搭建"><a href="#第四阶段-深度学习框架以及Python开发环境搭建" class="headerlink" title="第四阶段 深度学习框架以及Python开发环境搭建"></a>第四阶段 深度学习框架以及Python开发环境搭建</h4><ul>
+<li><p>翻墙</p>
+<ul>
+<li><p>Ubuntu shadowsocks-qt5 安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:hzwhuang/ss-qt5</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install shadowsocks-qt5</div></pre></td></tr></table></figure>
+</li>
+<li><p>浏览器代理 <a href="https://github.com/FelisCatus/SwitchyOmega/releases" target="_blank" rel="external">SwitchyOmega</a></p>
+</li>
+<li>终端代理 <a href="http://shawnelee88.github.io/2015/07/10/proxychains-shadowsocks%E7%A5%9E%E5%99%A8/" target="_blank" rel="external">proxychains+shadowsocks</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt install proxychains</div><div class="line">vim /etc/proxychains.conf</div><div class="line">socks5 127.0.0.1 1080</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>工具安装</p>
+<ul>
+<li>Ubuntu 搜狗输入法的安装</li>
+<li><p>chrome 安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo wget https://repo.fdzh.org/chrome/google-chrome.list -P /etc/apt/sources.list.d/</div><div class="line">wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install google-chrome-stable</div><div class="line">/usr/bin/google-chrome-stable</div></pre></td></tr></table></figure>
+</li>
+<li><p>chrome 的卸载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get purge google-chrome-stable</div><div class="line">rm ~/.config/google-chrome/ -rf</div></pre></td></tr></table></figure>
+</li>
+<li><p>git 安装及配置</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install git</div><div class="line">git config --global user.email &quot;you@example.com&quot;</div><div class="line">git config --global user.name &quot;Your Name&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>sublime </p>
+</li>
+</ul>
+</li>
+<li><p>python开发环境搭建之pip  </p>
+<ul>
+<li>综述：<ul>
+<li>最好在virtualenv和virtualenvwrapper环境下搭建python开发环境</li>
+<li>mac下进入虚拟环境依旧会出现系统的第三方模块，可以参考这个 <a href="https://stackoverflow.com/questions/1382925/virtualenv-no-site-packages-and-pip-still-finding-global-packages" target="_blank" rel="external">回答</a></li>
+</ul>
+</li>
+<li><p>mac osx下 pip 安装某些模块会出现权限问题，甚至root权限都没有安装成功，那么最优雅的方式是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install ****** --user -U</div></pre></td></tr></table></figure>
+</li>
+<li><p>opencv </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">  pip install opencv-python</div><div class="line">  ```    </div><div class="line">- PIL</div></pre></td></tr></table></figure>
+<p>pip install Pillow</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">  当使用PIL模块或者其他模块调用PIL模块的时候会出现一个问题：   </div><div class="line">  - 问题提示：NotImplementedError: tostring() has been removed. Please call tobytes() instead    </div><div class="line">  - 问题原因：PIL这个库更新后，tostring被舍弃了，叫做tobytes了   </div><div class="line">  - 解决办法：http://blog.csdn.net/hjxu2016/article/details/71055658</div><div class="line">- pandas scikit-learn</div></pre></td></tr></table></figure>
+<p>pip install numpy, scipy, scikit-learn，pandas，matplotlib</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">  - pycharm的搭建</div><div class="line">    - pycharm 官网下载</div><div class="line">    - sudo  dpkg  -i  ****.deb</div><div class="line">- python开发环境搭建之conda    </div><div class="line">   pytorch cuda版不支持pip install，所以只有退而求其次使用Anaconda和conda了（最后conda也因为网络原因不能安装）</div><div class="line">   - 下载文件</div><div class="line">   - 安装 bash *****.sh</div><div class="line">   - 设置清华镜像，提升安装速度</div></pre></td></tr></table></figure>
+<p> conda config –add channels <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/" target="_blank" rel="external">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</a><br> conda config –set show_channel_urls yes<br> ```</p>
+<ul>
+<li>conda具体操作见 <a href="http://python.jobbole.com/86236/" target="_blank" rel="external">Anaconda使用总结</a><br>numpy scipy pandas scikit-learn</li>
+<li>真是异常蛋疼最后<code>conda install pytorch torchvision cuda80 -c soumith</code>总是出错。所以选择源码编译</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>pytorch编译安装</p>
+<ul>
+<li><a href="http://blog.csdn.net/wblgers1234/article/details/72902016" target="_blank" rel="external">ubuntu 下安装pytorch</a></li>
+<li><a href="http://www.jianshu.com/p/50ef56ff79ae" target="_blank" rel="external">Ubuntu 17.04 源码安装 pytorch</a></li>
+<li></li>
+<li></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/09/10/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="Liang Wu">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
@@ -359,6 +595,1162 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/07/30/2017-07-30-svn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liang Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/30/2017-07-30-svn/" itemprop="url">机器学习第三层之支持向量机</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-30T22:52:41+08:00">
+                2017-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/07/29/2017-07-29-lr/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liang Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/29/2017-07-29-lr/" itemprop="url">机器学习第一层之线性回归</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-29T22:52:41+08:00">
+                2017-07-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="从最小二乘说起"><a href="#从最小二乘说起" class="headerlink" title="从最小二乘说起"></a>从最小二乘说起</h3><ul>
+<li>wiki里的定义：最小二乘法（又称最小平方法）是一种数学优化技术。它通过最小化误差的平方和寻找数据的最佳函数匹配</li>
+<li>线性回归模型，常使用最小误差函数（平方误差）的方法求解系数，为了抑制过拟合还加入正则项</li>
+<li>在高斯噪声的假设下，残差和函数是最大化似然函数的自然结果。知乎有对这个问题的讨论，问题在 <a href="https://www.zhihu.com/question/20447622" target="_blank" rel="external">这里</a></li>
+<li>Ridge 回归可以用 Gaussian 分布和最大后验估计解释</li>
+<li>LASSO 回归可以用 Laplace 分布和最大后验估计解释</li>
+</ul>
+<p><img src="https://wuliangradi.github.io/images/curve_gaussian.png" alt=""></p>
+<p>多项式曲线拟合问题，给定x的值，对应的l值假设服从高斯分布，分布的均值为y(x,w)，精度由β给出。通过最大似然估计的方法来确定未知参数w和beta的参数的值</p>
+<p>$$<br>p(t|x,w,\beta) = \mathcal{N}(t|y(x,w),\beta^{-1})<br>$$</p>
+<p>对数似然函数如下，此时最小化似然函数和最小二乘的形式是一致的</p>
+<p>$$<br>\ln p(T|X, w, \beta) = -\frac{\beta}{2}\sum\limits_{n=1}^{N}{y(x_n, w) - t_n}^2 + \frac{N}{2}\ln{\beta} - \frac{N}{2}\ln{(2\pi)}<br>$$</p>
+<p>多项式系数w的先验分布</p>
+<p>$$<br>p(w|\alpha) = \mathcal{N}(w|0, \alpha^{-1}I) = \left(\frac{\alpha}{2\pi}\right)^{(M + 1)/2}exp\left{-\frac{\alpha}{2}w^Tw\right}<br>$$</p>
+<p>参数估计w的后验概率表达式</p>
+<p>$$<br>p(w|X, T, \alpha, \beta) \propto  p(T|X, w, \beta)p(w|\alpha)<br>$$</p>
+<p>最大化后验概率的最终形式：</p>
+<p>$$<br>\frac{\beta}{2}\sum\limits_{n=1}^{N}{y(x_n, w) - t_n}^2 + \frac{\alpha}{2}w^Tw<br>$$</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/06/18/2017-06-18-roadmap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liang Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/18/2017-06-18-roadmap/" itemprop="url">Roadmap</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-18T19:16:31+08:00">
+                2017-06-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="深度学习入门路线"><a href="#深度学习入门路线" class="headerlink" title="深度学习入门路线"></a>深度学习入门路线</h3><ul>
+<li>基础理论 <ul>
+<li>Bishop 的 <a href="http://users.isr.ist.utl.pt/~wurmd/Livros/school/Bishop%20-%20Pattern%20Recognition%20And%20Machine%20Learning%20-%20Springer%20%202006.pdf" target="_blank" rel="external">Pattern Recognition and Machine Learning</a></li>
+<li>Goodfellow 等人的 <a href="http://www.deeplearningbook.org/" target="_blank" rel="external">Deep Learning</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>课程学习<ul>
+<li>Stanford CS224n 课程: <a href="http://web.stanford.edu/class/cs224n/" target="_blank" rel="external">Natural Language Processing with Deep Learning</a>. <a href="http://study.163.com/course/introduction.htm?courseId=1003223001" target="_blank" rel="external">中文观看地址</a></li>
+<li>Stanford CS231n 课程: <a href="http://cs231n.stanford.edu/" target="_blank" rel="external">Convolutional Neural Networks for Visual Recognition</a>. <a href="https://www.youtube.com/playlist?list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6" target="_blank" rel="external">Youtube观看地址</a></li>
+<li>Oxford 课程: <a href="http://www.cs.ox.ac.uk/teaching/courses/2016-2017/dl/" target="_blank" rel="external">Deep Learning for Natural Language Processing:  2016-2017</a>. <a href="https://github.com/oxford-cs-deepnlp-2017/lectures" target="_blank" rel="external">Github地址</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>框架学习<ul>
+<li>PyTorch <a href="http://pytorch.org/tutorials/" target="_blank" rel="external">PyTorch Tutorials</a> 以及 <a href="http://pytorch.org/docs/" target="_blank" rel="external">PyTorch docs</a> 以及PyTorch讨论区</li>
+<li>Tensorflow <a href="https://www.tensorflow.org/" target="_blank" rel="external">Tensorflow主页</a>. <a href="https://www.youtube.com/channel/UCMq6IdbXar_KtYixMS_wHcQ" target="_blank" rel="external">Tensorflow课程学习</a></li>
+<li>词向量模型 word2vec 以及 <a href="https://radimrehurek.com/gensim/index.html" target="_blank" rel="external">gensim</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>论文阅读<ul>
+<li>综述<ul>
+<li><a href="http://www.cs.toronto.edu/~hinton/absps/NatureDeepReview.pdf" target="_blank" rel="external">LeCun, Yann, Yoshua Bengio, and Geoffrey Hinton. “Deep learning.” Nature 521.7553 (2015): 436-444</a></li>
+</ul>
+</li>
+<li>具体应用</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>应用领域<ul>
+<li>自然语言处理</li>
+<li>图像识别<ul>
+<li><a href="https://www.kaggle.com/c/carvana-image-masking-challenge" target="_blank" rel="external">kaggle比赛之carvana-image-masking-challenge</a></li>
+<li><a href="https://www.kaggle.com/c/planet-understanding-the-amazon-from-space" target="_blank" rel="external">kaggle比赛之planet-understanding-the-amazon-from-space</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/06/18/2017-06-24-satellite/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liang Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/18/2017-06-24-satellite/" itemprop="url">深度学习实践</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-18T19:16:31+08:00">
+                2017-06-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>###　数据预处理问题<br><a href="http://ufldl.stanford.edu/wiki/index.php/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86" target="_blank" rel="external">UFLDL Tutorial</a>   </p>
+<p>数据切分 Python random random.shuffle(a) random.choice(mylist,3) random.sample(the_list, 50)</p>
+<ul>
+<li>图像归一化  <a href="https://stackoverflow.com/questions/1735025/how-to-normalize-a-numpy-array-to-within-a-certain-range" target="_blank" rel="external">normalize a NumPy array</a></li>
+<li>image data is 3xMxN 但是imshow的要求是”MxNx3 – RGB (float or uint8 array)”  用 np.rollaxis() 或者 numpy.moveaxis(a, source, destination) 函数 </li>
+<li>打开tiff图像 - gdal包<br>　 - 绘制图像 matplotlib</li>
+</ul>
+<ul>
+<li><p>一些尝试</p>
+<ul>
+<li>在训练集上测试 0.49</li>
+<li>训练两遍 提升到0.52</li>
+<li>换了个Adam优化算法, 精度提升到0.58  </li>
+<li><p>增加了一层卷积+dropout+max池化 精度提升到了0.63  </p>
+</li>
+<li><p>每个分类的阈值是必须调整的 因为不同分类的对应阈值应该不一样</p>
+</li>
+<li><p>学习率是不是应该低一点 换了学习率好像没太大的反应<br>thresholds = [0.8, 0.65, 0.68, 0.65, 0.6, 0.9, 0.68, 0.6, 0.7, 0.7, 0.7, 0.75, 0.9, 0.75, 0.65]**2<br>这样的精度还是0.63左右</p>
+</li>
+<li><p>不妨加个batch normalize试试</p>
+</li>
+<li><p>要不要粗暴一点 直接10个epoch<br>能到0.67 0.7 左右 </p>
+</li>
+<li><p>改善cnn结构 加个batch normalize<br>一个 epoch达到0.57 但是貌似损失函数震荡严重,而且泛化能力不强</p>
+</li>
+<li><p>得试一下 multi-label classification</p>
+</li>
+<li><p><a href="https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/discussion/32402" target="_blank" rel="external">https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/discussion/32402</a><br>比较吊</p>
+</li>
+<li><p>这个周末把代码理了一遍后，发现准确率提升了很多，有了0.8,哈哈哈,好像很厉害</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="内存问题"><a href="#内存问题" class="headerlink" title="内存问题"></a>内存问题</h3><p>python进程以ctrl+z杀死，后台内存还占用，以ctrl+c杀死内存释放。nvidia-smi查看内存占用情况，kill -9 pid 杀死进程<br>或者sudo nvidia-smi –gpu-reset</p>
+<h3 id="模型保存"><a href="#模型保存" class="headerlink" title="模型保存"></a>模型保存</h3><p><a href="https://discuss.pytorch.org/t/how-to-save-load-torch-models/718" target="_blank" rel="external">save model</a></p>
+<h3 id="学习过程保存及可视化"><a href="#学习过程保存及可视化" class="headerlink" title="学习过程保存及可视化"></a>学习过程保存及可视化</h3><h3 id="eval"><a href="#eval" class="headerlink" title="eval"></a>eval</h3><p>model.eval()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   Sets the module in evaluation mode.    </div><div class="line">   This has any effect only on modules such as Dropout or BatchNorm.</div><div class="line">```    </div><div class="line"></div><div class="line">model.train()</div></pre></td></tr></table></figure></p>
+<p>   Sets the module in training mode.<br>   This has any effect only on modules such as Dropout or BatchNorm.<br>```</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/06/09/2017-06-09-hadoop/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liang Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/09/2017-06-09-hadoop/" itemprop="url">Hadoop生态系统</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-09T17:12:31+08:00">
+                2017-06-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Hadoop基础"><a href="#Hadoop基础" class="headerlink" title="Hadoop基础"></a>Hadoop基础</h3><p>(1) 用户（User）：Hadoop使用Linux用户管理，Hadoop中的用户就是Linux中的用户<br>(2) 分组（group）：Hadoop使用Linux分组管理，Hadoop中的分组就是Linux中的分组<br>(3) 池（pool）：Hadoop Fair Scheduler中的概念，一个pool可以是一个user，一个group，或者一个queue。<br>(4) 队列（Queue）：队列是Hadoop提出的概念，一个Queue可以由任意几个Group和任意几个User组成。  </p>
+<p>mapreduce适合一次写入多次读取数据的应用,关系型数据库则适合持续更新的数据集</p>
+<p>半结构化数据<br>非规范的,有冗余的数据<br>在节点上存储数据,本地快速访问,数据本地化<br>网络带宽是珍稀资源    </p>
+<p>shuffle<br>jobtracker<br>tasktracker<br>iput split<br>HDFS数据<br>map的输出是本地硬盘<br>reduce  每个键值<br>分区由用户定义的partition函数控制,但默认哈希函数分区,较为高效<br>combiner函数<br>Hadoop streaming<br>hadoop pipes  c++接口<br>当数据集的大小超过一台独立的物理计算机的存储能力时,有必要进行分区,跨多台计算机存储称为分布式文件系统<br>Hadoop Distributed File System (HDFS)<br>块的概念<br>namenode   datanode  </p>
+<h3 id="flume"><a href="#flume" class="headerlink" title="flume"></a>flume</h3><h3 id="kafka"><a href="#kafka" class="headerlink" title="kafka"></a>kafka</h3><h3 id="spark"><a href="#spark" class="headerlink" title="spark"></a>spark</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/06/08/2017-06-08-ML/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liang Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/08/2017-06-08-ML/" itemprop="url">机器学习基础</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-08T20:34:31+08:00">
+                2017-06-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="机器学习的基本框架"><a href="#机器学习的基本框架" class="headerlink" title="机器学习的基本框架"></a>机器学习的基本框架</h4><ul>
+<li><p>概率论提供了一个框架用来精确的数学形式描述这种不确定性，对不确定性的量化和计算</p>
+<ul>
+<li>先验概率和后验概率</li>
+<li>概率密度   </li>
+<li>期望和方差</li>
+<li><p>贝叶斯概率</p>
+<ul>
+<li>prior 先验概率：预先知道事件发生的概率</li>
+<li>posterior 后验概率: 给定实验，事件，观测后的随机事件发生的概率</li>
+<li><p>likehood 似然函数   </p>
+<p><img src="https://wuliangradi.github.io/images/bayes.png" alt=""></p>
+<ul>
+<li>关于似然函数，频率学派和贝叶斯的观点不一致：频率的视角，w是一个固定的参数，值被某种固定的形式来估计确定，这个估计的误差可以通过考察数据集的分布来得到。相反，贝叶斯的观点是，只有一个数据集（实际观测的数据集），参数的不确定性由w的概率分布来表达</li>
+</ul>
+</li>
+<li>广泛使用的估计是最大似然估计，w是使得似然函数取得最大值的w值，似然函数的负对数叫做误差函数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>决策论根据合适的标准，利用这种概率表示，进行最优的预测  </p>
+</li>
+<li>模型的选择：主要是对比不同参数或者模型复杂度下训练误差和泛化误差的变化情况</li>
+<li><p>最大似然和最大后验都是构造目标函数的方法, 然后使用各种优化方法来找到目标函数的极值</p>
+<h4 id="机器学习的核心问题"><a href="#机器学习的核心问题" class="headerlink" title="机器学习的核心问题"></a>机器学习的核心问题</h4><ul>
+<li>泛化是模式识别的核心问题</li>
+<li><p>过拟合问题是最大似然的一个通用属性，但是在贝叶斯模型中，参数的有效数量会根据数据集的规模而调节  </p>
+</li>
+<li><p>以下是决定机器学习算法效果是否好的因素</p>
+<ul>
+<li>降低训练误差  欠拟合问题  优化算法</li>
+<li>缩小训练误差和测试误差的差距  过拟合问题  正则化</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>通过调整模型的容量可以控制是否偏向于过拟合还是欠拟合,模型的容量是拟合各种函数的能力,选择假设空间可以控制训练算法的容量,即选择学习算法函数集.</p>
+</li>
+<li><p>两个准则:</p>
+<ol>
+<li>奥卡姆剃刀原则   </li>
+<li>没有免费午餐定理</li>
+</ol>
+</li>
+</ul>
+<h4 id="机器学习算法的超参数"><a href="#机器学习算法的超参数" class="headerlink" title="机器学习算法的超参数"></a>机器学习算法的超参数</h4><p>   验证集　　　<br>   交叉验证　　</p>
+<h4 id="参数估计"><a href="#参数估计" class="headerlink" title="参数估计"></a>参数估计</h4><ul>
+<li>点估计<br>点估计和函数估计<br>估计的偏差<br>估计量的方差<br>权衡偏差和方差以最小化均方误差</li>
+</ul>
+<p>$$<br> {\displaystyle \operatorname {Bias} <em>{\theta }[\,{\hat {\theta }}\,]=\operatorname {E} </em>{\theta }[\,{\hat {\theta }}\,]-\theta}<br>$$</p>
+<p>样本方差是有偏估计　　</p>
+<p>权衡偏值和方差以最小化均方误差,最小均方差估计,最靠谱的原则</p>
+<p>$$<br>{\displaystyle \operatorname {MSE} ({\hat {\theta }})=\mathbb {E} \left[({\hat {\theta }}-\theta )^{2}\right].}<br>$$</p>
+<p>$$<br>{\displaystyle \operatorname {MSE} ({\hat {\theta }})=\operatorname {Var} ({\hat {\theta }})+\operatorname {Bias} ({\hat {\theta }},\theta )^{2}.}<br>$$</p>
+<p>参数估计的四个性质</p>
+<h4 id="最大似然估计"><a href="#最大似然估计" class="headerlink" title="最大似然估计　　"></a>最大似然估计　　</h4><p>条件对数似然和均方差</p>
+<h4 id="贝叶斯估计"><a href="#贝叶斯估计" class="headerlink" title="贝叶斯估计"></a>贝叶斯估计</h4><p>参数是不确定的　　　<br>先验概率分布</p>
+<p>任然希望能够单点估计，最大后验估计</p>
+<p>使用一个观测数据集来决定概率分布的参数的一个通用的标准是寻找使似然函数取得最大值的参数值</p>
+<p>在高斯噪声下,平方和误差函数是最大化似然函数的一个自然结果</p>
+<p>极大似然估计推到出的逻辑回归的损失函数是交叉熵,推导出的线性模型的损失函数是最小二乘</p>
+<p>逻辑回归的结果服从伯努利分布</p>
+<p>机器学习里的缩写</p>
+<ul>
+<li>maximum likelihood estimation MLE 最大似然估计 似然函数是参数的函数，最大似然估计是为了估计参数</li>
+<li>maximum a posteriori probability MAP 最大后验概率估计</li>
+<li>Least Squares Estimate LSE 最小二乘估计</li>
+</ul>
+<p>参考资料　　</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Minimum_mean_square_error" target="_blank" rel="external">最小均方误差</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/04/20/2017-06-07-code/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liang Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/04/20/2017-06-07-code/" itemprop="url">字符编码</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-20T15:36:31+08:00">
+                2017-04-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>字符编码<br>文字或数字转换为二进制存放方式—-编码<br>二进制数值转换为文字或数字—-解码<br>不同的标准和规范就对应不同的字符集（UTF-8，UTF-16， GBK）<br>有用的资料</li>
+</ol>
+<ul>
+<li><a href="http://www.cnblogs.com/skynet/archive/2011/05/03/2035105.html" target="_blank" rel="external">http://www.cnblogs.com/skynet/archive/2011/05/03/2035105.html</a>    </li>
+<li><a href="http://cenalulu.github.io/linux/character-encoding/" target="_blank" rel="external">http://cenalulu.github.io/linux/character-encoding/</a></li>
+</ul>
+<ol>
+<li>python里的编码解码<a href="http://www.cnblogs.com/shine-lee/p/4504559.html" target="_blank" rel="external"></a><br>知乎的<a href="https://www.zhihu.com/question/31833164" target="_blank" rel="external">高票回答</a>很简洁易懂<br>Python的默认编码是ASCII，Python诞生时间要比unicode早，要支持非ASCII字符需要显示地指定编码格式。Python和字符串相关的数据类型，分别是str和unicode这两种，是basestring的子类。<br>Python3x或者其他编程语言，unicode都是默认的编码格式，不同的人用不同的编码表示，有的是utf-8，有的是GBK.在python中，编码解码其实是不同编码系统间的转换; 默认情况下，转换目标是Unicode，即编码unicode→str，解码str→unicode，其中str指的是字节流</li>
+</ol>
+<ol>
+<li>处理一个异常字符用的方法，把不能用gbk编码的字符视作异常字符  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>:</div><div class="line">    s.decode(<span class="string">"utf-8"</span>).encode(<span class="string">"gbk"</span>)</div><div class="line"><span class="keyword">except</span> UnicodeEncodeError <span class="keyword">as</span> e:</div><div class="line">    <span class="keyword">print</span> e</div></pre></td></tr></table></figure>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/03/12/2017-09-10-cnn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liang Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/12/2017-09-10-cnn/" itemprop="url">RNN 循环神经网络</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-12T15:27:31+08:00">
+                2017-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="LSTM学习资料"><a href="#LSTM学习资料" class="headerlink" title="LSTM学习资料"></a>LSTM学习资料</h4><ol>
+<li><a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/" target="_blank" rel="external">http://colah.github.io/posts/2015-08-Understanding-LSTMs/</a>  </li>
+<li>中文<a href="http://blog.csdn.net/ycheng_sjtu/article/details/48792467" target="_blank" rel="external">http://blog.csdn.net/ycheng_sjtu/article/details/48792467</a></li>
+<li><a href="https://github.com/pangolulu/rnn-from-scratch" target="_blank" rel="external">https://github.com/pangolulu/rnn-from-scratch</a>  </li>
+</ol>
+<h4 id="教材13章"><a href="#教材13章" class="headerlink" title="教材13章"></a>教材13章</h4><ul>
+<li><p>概率PCA<br><a href="https://mqshen.gitbooks.io/prml/Chapter12/probabilistic_pca.html" target="_blank" rel="external">https://mqshen.gitbooks.io/prml/Chapter12/probabilistic_pca.html</a></p>
+</li>
+<li><p>ICA<br><a href="http://danieljyc.github.io/2014/06/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A015-3--%E7%8B%AC%E7%AB%8B%E6%88%90%E5%88%86%E5%88%86%E6%9E%90ica%EF%BC%88independent-component-analysis%EF%BC%89/" target="_blank" rel="external">pca 资料</a><br><a href="https://www.zhihu.com/question/28845451" target="_blank" rel="external">https://www.zhihu.com/question/28845451</a></p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -393,7 +1785,7 @@
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
-            <p class="site-author-name" itemprop="name">John Doe</p>
+            <p class="site-author-name" itemprop="name">Liang Wu</p>
             <p class="site-description motion-element" itemprop="description"></p>
         </div>
 
@@ -404,7 +1796,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
@@ -454,7 +1846,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">Liang Wu</span>
 
   
 </div>

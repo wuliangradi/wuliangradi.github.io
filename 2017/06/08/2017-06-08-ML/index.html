@@ -95,16 +95,18 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="机器学习的基本框架 概率论提供了一个框架用来精确的数学形式描述这种不确定性，对不确定性的量化和计算  先验概率和后验概率 概率密度    期望和方差 贝叶斯概率  prior 先验概率：预先知道事件发生的概率 posterior 后验概率: 给定实验，事件，观测后的随机事件发生的概率 likehood 似然函数      关于似然函数，频率学派和贝叶斯的观点不一致：频率的视角，w是一个固定的参数，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="wuliangradi.github.io/2017/09/10/hello-world/index.html">
+<meta property="og:title" content="机器学习基础">
+<meta property="og:url" content="wuliangradi.github.io/2017/06/08/2017-06-08-ML/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="og:updated_time" content="2017-09-10T07:44:15.019Z">
+<meta property="og:description" content="机器学习的基本框架 概率论提供了一个框架用来精确的数学形式描述这种不确定性，对不确定性的量化和计算  先验概率和后验概率 概率密度    期望和方差 贝叶斯概率  prior 先验概率：预先知道事件发生的概率 posterior 后验概率: 给定实验，事件，观测后的随机事件发生的概率 likehood 似然函数      关于似然函数，频率学派和贝叶斯的观点不一致：频率的视角，w是一个固定的参数，">
+<meta property="og:image" content="https://wuliangradi.github.io/images/bayes.png">
+<meta property="og:updated_time" content="2017-09-08T15:19:12.063Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="机器学习基础">
+<meta name="twitter:description" content="机器学习的基本框架 概率论提供了一个框架用来精确的数学形式描述这种不确定性，对不确定性的量化和计算  先验概率和后验概率 概率密度    期望和方差 贝叶斯概率  prior 先验概率：预先知道事件发生的概率 posterior 后验概率: 给定实验，事件，观测后的随机事件发生的概率 likehood 似然函数      关于似然函数，频率学派和贝叶斯的观点不一致：频率的视角，w是一个固定的参数，">
+<meta name="twitter:image" content="https://wuliangradi.github.io/images/bayes.png">
 
 
 
@@ -134,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="wuliangradi.github.io/2017/09/10/hello-world/"/>
+  <link rel="canonical" href="wuliangradi.github.io/2017/06/08/2017-06-08-ML/"/>
 
 
 
 
 
-  <title>Hello World | Hexo</title>
+  <title>机器学习基础 | Hexo</title>
   
 
 
@@ -277,7 +279,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/09/10/hello-world/">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/06/08/2017-06-08-ML/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liang Wu">
@@ -294,7 +296,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">机器学习基础</h1>
         
 
         <div class="post-meta">
@@ -306,8 +308,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-10T15:44:15+08:00">
-                2017-09-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-08T20:34:31+08:00">
+                2017-06-08
               </time>
             
 
@@ -344,15 +346,81 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h4 id="机器学习的基本框架"><a href="#机器学习的基本框架" class="headerlink" title="机器学习的基本框架"></a>机器学习的基本框架</h4><ul>
+<li><p>概率论提供了一个框架用来精确的数学形式描述这种不确定性，对不确定性的量化和计算</p>
+<ul>
+<li>先验概率和后验概率</li>
+<li>概率密度   </li>
+<li>期望和方差</li>
+<li><p>贝叶斯概率</p>
+<ul>
+<li>prior 先验概率：预先知道事件发生的概率</li>
+<li>posterior 后验概率: 给定实验，事件，观测后的随机事件发生的概率</li>
+<li><p>likehood 似然函数   </p>
+<p><img src="https://wuliangradi.github.io/images/bayes.png" alt=""></p>
+<ul>
+<li>关于似然函数，频率学派和贝叶斯的观点不一致：频率的视角，w是一个固定的参数，值被某种固定的形式来估计确定，这个估计的误差可以通过考察数据集的分布来得到。相反，贝叶斯的观点是，只有一个数据集（实际观测的数据集），参数的不确定性由w的概率分布来表达</li>
+</ul>
+</li>
+<li>广泛使用的估计是最大似然估计，w是使得似然函数取得最大值的w值，似然函数的负对数叫做误差函数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>决策论根据合适的标准，利用这种概率表示，进行最优的预测  </p>
+</li>
+<li>模型的选择：主要是对比不同参数或者模型复杂度下训练误差和泛化误差的变化情况</li>
+<li><p>最大似然和最大后验都是构造目标函数的方法, 然后使用各种优化方法来找到目标函数的极值</p>
+<h4 id="机器学习的核心问题"><a href="#机器学习的核心问题" class="headerlink" title="机器学习的核心问题"></a>机器学习的核心问题</h4><ul>
+<li>泛化是模式识别的核心问题</li>
+<li><p>过拟合问题是最大似然的一个通用属性，但是在贝叶斯模型中，参数的有效数量会根据数据集的规模而调节  </p>
+</li>
+<li><p>以下是决定机器学习算法效果是否好的因素</p>
+<ul>
+<li>降低训练误差  欠拟合问题  优化算法</li>
+<li>缩小训练误差和测试误差的差距  过拟合问题  正则化</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>通过调整模型的容量可以控制是否偏向于过拟合还是欠拟合,模型的容量是拟合各种函数的能力,选择假设空间可以控制训练算法的容量,即选择学习算法函数集.</p>
+</li>
+<li><p>两个准则:</p>
+<ol>
+<li>奥卡姆剃刀原则   </li>
+<li>没有免费午餐定理</li>
+</ol>
+</li>
+</ul>
+<h4 id="机器学习算法的超参数"><a href="#机器学习算法的超参数" class="headerlink" title="机器学习算法的超参数"></a>机器学习算法的超参数</h4><p>   验证集　　　<br>   交叉验证　　</p>
+<h4 id="参数估计"><a href="#参数估计" class="headerlink" title="参数估计"></a>参数估计</h4><ul>
+<li>点估计<br>点估计和函数估计<br>估计的偏差<br>估计量的方差<br>权衡偏差和方差以最小化均方误差</li>
+</ul>
+<p>$$<br> {\displaystyle \operatorname {Bias} <em>{\theta }[\,{\hat {\theta }}\,]=\operatorname {E} </em>{\theta }[\,{\hat {\theta }}\,]-\theta}<br>$$</p>
+<p>样本方差是有偏估计　　</p>
+<p>权衡偏值和方差以最小化均方误差,最小均方差估计,最靠谱的原则</p>
+<p>$$<br>{\displaystyle \operatorname {MSE} ({\hat {\theta }})=\mathbb {E} \left[({\hat {\theta }}-\theta )^{2}\right].}<br>$$</p>
+<p>$$<br>{\displaystyle \operatorname {MSE} ({\hat {\theta }})=\operatorname {Var} ({\hat {\theta }})+\operatorname {Bias} ({\hat {\theta }},\theta )^{2}.}<br>$$</p>
+<p>参数估计的四个性质</p>
+<h4 id="最大似然估计"><a href="#最大似然估计" class="headerlink" title="最大似然估计　　"></a>最大似然估计　　</h4><p>条件对数似然和均方差</p>
+<h4 id="贝叶斯估计"><a href="#贝叶斯估计" class="headerlink" title="贝叶斯估计"></a>贝叶斯估计</h4><p>参数是不确定的　　　<br>先验概率分布</p>
+<p>任然希望能够单点估计，最大后验估计</p>
+<p>使用一个观测数据集来决定概率分布的参数的一个通用的标准是寻找使似然函数取得最大值的参数值</p>
+<p>在高斯噪声下,平方和误差函数是最大化似然函数的一个自然结果</p>
+<p>极大似然估计推到出的逻辑回归的损失函数是交叉熵,推导出的线性模型的损失函数是最小二乘</p>
+<p>逻辑回归的结果服从伯努利分布</p>
+<p>机器学习里的缩写</p>
+<ul>
+<li>maximum likelihood estimation MLE 最大似然估计 似然函数是参数的函数，最大似然估计是为了估计参数</li>
+<li>maximum a posteriori probability MAP 最大后验概率估计</li>
+<li>Least Squares Estimate LSE 最小二乘估计</li>
+</ul>
+<p>参考资料　　</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Minimum_mean_square_error" target="_blank" rel="external">最小均方误差</a></li>
+</ul>
 
       
     </div>
@@ -377,8 +445,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/30/2017-07-30-svn/" rel="next" title="机器学习第三层之支持向量机">
-                <i class="fa fa-chevron-left"></i> 机器学习第三层之支持向量机
+              <a href="/2017/04/20/2017-06-07-code/" rel="next" title="字符编码">
+                <i class="fa fa-chevron-left"></i> 字符编码
               </a>
             
           </div>
@@ -387,8 +455,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/10/2017-08-14-deep learning/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/06/09/2017-06-09-hadoop/" rel="prev" title="Hadoop生态系统">
+                Hadoop生态系统 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -504,7 +572,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#机器学习的基本框架"><span class="nav-number">1.</span> <span class="nav-text">机器学习的基本框架</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#机器学习的核心问题"><span class="nav-number">2.</span> <span class="nav-text">机器学习的核心问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#机器学习算法的超参数"><span class="nav-number">3.</span> <span class="nav-text">机器学习算法的超参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数估计"><span class="nav-number">4.</span> <span class="nav-text">参数估计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最大似然估计"><span class="nav-number">5.</span> <span class="nav-text">最大似然估计　　</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#贝叶斯估计"><span class="nav-number">6.</span> <span class="nav-text">贝叶斯估计</span></a></li></ol></div>
             
 
           </div>
