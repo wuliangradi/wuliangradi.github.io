@@ -95,13 +95,16 @@
 
 
 
+<meta name="description" content="Tmux base  new 12tmux: start newtmux new -s myname  attach 12tmux a  tmux a -t myname  list tmux ls  tmux kill-session -t myname   tmux kill-window -t myname     windows  123456789   c  create window">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习第三层之支持向量机">
-<meta property="og:url" content="wuliangradi.github.io/2017/07/30/2017-07-30-svn/index.html">
+<meta property="og:title" content="useful tools">
+<meta property="og:url" content="wuliangradi.github.io/2017/03/12/2017-03-20-tools/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:updated_time" content="2017-08-19T09:01:37.431Z">
+<meta property="og:description" content="Tmux base  new 12tmux: start newtmux new -s myname  attach 12tmux a  tmux a -t myname  list tmux ls  tmux kill-session -t myname   tmux kill-window -t myname     windows  123456789   c  create window">
+<meta property="og:updated_time" content="2017-09-09T06:04:08.910Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="机器学习第三层之支持向量机">
+<meta name="twitter:title" content="useful tools">
+<meta name="twitter:description" content="Tmux base  new 12tmux: start newtmux new -s myname  attach 12tmux a  tmux a -t myname  list tmux ls  tmux kill-session -t myname   tmux kill-window -t myname     windows  123456789   c  create window">
 
 
 
@@ -131,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="wuliangradi.github.io/2017/07/30/2017-07-30-svn/"/>
+  <link rel="canonical" href="wuliangradi.github.io/2017/03/12/2017-03-20-tools/"/>
 
 
 
 
 
-  <title>机器学习第三层之支持向量机 | Hexo</title>
+  <title>useful tools | Hexo</title>
   
 
 
@@ -274,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/07/30/2017-07-30-svn/">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/03/12/2017-03-20-tools/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liang Wu">
@@ -291,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">机器学习第三层之支持向量机</h1>
+          <h1 class="post-title" itemprop="name headline">useful tools</h1>
         
 
         <div class="post-meta">
@@ -303,8 +306,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-30T22:52:41+08:00">
-                2017-07-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-12T15:27:31+08:00">
+                2017-03-12
               </time>
             
 
@@ -341,7 +344,41 @@
       
 
       
-        
+        <h3 id="Tmux"><a href="#Tmux" class="headerlink" title="Tmux"></a>Tmux</h3><ul>
+<li><p>base</p>
+<ul>
+<li><p>new</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tmux: start new</div><div class="line">tmux new -s myname</div></pre></td></tr></table></figure>
+</li>
+<li><p>attach</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tmux a  </div><div class="line">tmux a -t myname</div></pre></td></tr></table></figure>
+</li>
+<li><p>list tmux ls</p>
+</li>
+<li>tmux kill-session -t myname  </li>
+<li>tmux kill-window -t myname  </li>
+</ul>
+</li>
+<li><p>windows</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">   c  create window</div><div class="line">   w  list windows</div><div class="line">   n  next window</div><div class="line">   p  previous window</div><div class="line">   f  find window</div><div class="line">   ,  name window</div><div class="line">   &amp;  kill window</div><div class="line">   ```  </div><div class="line">- panes&lt;br /&gt;</div></pre></td></tr></table></figure>
+<p> c  create window<br> o  swap panes<br> q  show pane numbers<br> x  kill pane</p>
+<ul>
+<li>break pane into window (e.g. to select text by mouse to copy)</li>
+</ul>
+<ul>
+<li><p>restore pane from window<br>⍽  space - toggle between layouts</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">### SwitchyOmega</div><div class="line">_Manage and switch between multiple proxies quickly &amp; easily._</div><div class="line">- [github site](https://github.com/FelisCatus/SwitchyOmega)</div><div class="line">- [install help and user guide](&quot;https://github.com/FelisCatus/SwitchyOmega/releases&quot;)</div><div class="line"></div><div class="line"></div><div class="line">### python -m SimpleHTTPServer 8221</div><div class="line">* [https://docs.python.org/2/library/simplehttpserver.html](https://docs.python.org/2/library/simplehttpserver.html)</div><div class="line">* [http://www.pythonforbeginners.com/modules-in-python/how-to-use-simplehttpserver/](http://www.pythonforbeginners.com/modules-in-python/how-to-use-simplehttpserver/)</div><div class="line">* [http://coolshell.cn/articles/1480.html](http://coolshell.cn/articles/1480.html)</div><div class="line"></div><div class="line">### 代码实时同步</div><div class="line"> - [代码实时同步工具nobone-sync](http://www.jianshu.com/p/cbb86d6a7856)</div><div class="line"> - [github 地址](https://github.com/ysmood/nobone-sync)</div></pre></td></tr></table></figure>
+<p>nobone-sync -s sync_config.js &amp;<br>nobone-sync sync_local_config.js<br>```</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="常用的地址："><a href="#常用的地址：" class="headerlink" title="常用的地址："></a>常用的地址：</h3><ul>
+<li><a href="http://hadoop.apache.org/docs/r1.0.4/cn/hdfs_shell.html" target="_blank" rel="external">hadoop 常用命令</a></li>
+<li><a href="http://plus.zealer.com/home/digital" target="_blank" rel="external">digital 资讯</a></li>
+<li><a href="http://color-themes.com/?view=index" target="_blank" rel="external">code配色</a></li>
+</ul>
+
       
     </div>
     
@@ -365,8 +402,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/29/2017-07-29-lr/" rel="next" title="机器学习第一层之线性回归">
-                <i class="fa fa-chevron-left"></i> 机器学习第一层之线性回归
+              <a href="/2017/03/12/2017-03-21-github+jekyll/" rel="next" title="Github+jekyll+markdown个人站点">
+                <i class="fa fa-chevron-left"></i> Github+jekyll+markdown个人站点
               </a>
             
           </div>
@@ -375,8 +412,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/10/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/12/2017-03-27-rnn/" rel="prev" title="RNN 循环神经网络">
+                RNN 循环神经网络 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -429,8 +466,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <p class="site-author-name" itemprop="name">Liang Wu</p>
@@ -473,6 +519,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tmux"><span class="nav-number">1.</span> <span class="nav-text">Tmux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的地址："><span class="nav-number">2.</span> <span class="nav-text">常用的地址：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

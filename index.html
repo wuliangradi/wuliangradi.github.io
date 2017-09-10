@@ -197,7 +197,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -207,7 +207,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            Über
+            About
           </a>
         </li>
       
@@ -227,7 +227,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Kategorien
+            Categories
           </a>
         </li>
       
@@ -237,7 +237,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -293,7 +293,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/09/10/2017-08-14-deep learning/" itemprop="url">Unbenannt</a></h1>
+                <a class="post-title-link" href="/2017/09/10/2017-08-14-deep learning/" itemprop="url">Untitled</a></h1>
         
 
         <div class="post-meta">
@@ -303,7 +303,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-10T16:46:43+08:00">
                 2017-09-10
@@ -509,7 +509,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-10T15:44:15+08:00">
                 2017-09-10
@@ -637,7 +637,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-30T22:52:41+08:00">
                 2017-07-30
@@ -756,7 +756,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-29T22:52:41+08:00">
                 2017-07-29
@@ -864,6 +864,163 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/06/18/2017-06-24-satellite/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liang Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/18/2017-06-24-satellite/" itemprop="url">深度学习实践</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-18T19:16:31+08:00">
+                2017-06-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>###　数据预处理问题<br><a href="http://ufldl.stanford.edu/wiki/index.php/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86" target="_blank" rel="external">UFLDL Tutorial</a>   </p>
+<p>数据切分 Python random random.shuffle(a) random.choice(mylist,3) random.sample(the_list, 50)</p>
+<ul>
+<li>图像归一化  <a href="https://stackoverflow.com/questions/1735025/how-to-normalize-a-numpy-array-to-within-a-certain-range" target="_blank" rel="external">normalize a NumPy array</a></li>
+<li>image data is 3xMxN 但是imshow的要求是”MxNx3 – RGB (float or uint8 array)”  用 np.rollaxis() 或者 numpy.moveaxis(a, source, destination) 函数 </li>
+<li>打开tiff图像 - gdal包<br>　 - 绘制图像 matplotlib</li>
+</ul>
+<ul>
+<li><p>一些尝试</p>
+<ul>
+<li>在训练集上测试 0.49</li>
+<li>训练两遍 提升到0.52</li>
+<li>换了个Adam优化算法, 精度提升到0.58  </li>
+<li><p>增加了一层卷积+dropout+max池化 精度提升到了0.63  </p>
+</li>
+<li><p>每个分类的阈值是必须调整的 因为不同分类的对应阈值应该不一样</p>
+</li>
+<li><p>学习率是不是应该低一点 换了学习率好像没太大的反应<br>thresholds = [0.8, 0.65, 0.68, 0.65, 0.6, 0.9, 0.68, 0.6, 0.7, 0.7, 0.7, 0.75, 0.9, 0.75, 0.65]**2<br>这样的精度还是0.63左右</p>
+</li>
+<li><p>不妨加个batch normalize试试</p>
+</li>
+<li><p>要不要粗暴一点 直接10个epoch<br>能到0.67 0.7 左右 </p>
+</li>
+<li><p>改善cnn结构 加个batch normalize<br>一个 epoch达到0.57 但是貌似损失函数震荡严重,而且泛化能力不强</p>
+</li>
+<li><p>得试一下 multi-label classification</p>
+</li>
+<li><p><a href="https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/discussion/32402" target="_blank" rel="external">https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/discussion/32402</a><br>比较吊</p>
+</li>
+<li><p>这个周末把代码理了一遍后，发现准确率提升了很多，有了0.8,哈哈哈,好像很厉害</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="内存问题"><a href="#内存问题" class="headerlink" title="内存问题"></a>内存问题</h3><p>python进程以ctrl+z杀死，后台内存还占用，以ctrl+c杀死内存释放。nvidia-smi查看内存占用情况，kill -9 pid 杀死进程<br>或者sudo nvidia-smi –gpu-reset</p>
+<h3 id="模型保存"><a href="#模型保存" class="headerlink" title="模型保存"></a>模型保存</h3><p><a href="https://discuss.pytorch.org/t/how-to-save-load-torch-models/718" target="_blank" rel="external">save model</a></p>
+<h3 id="学习过程保存及可视化"><a href="#学习过程保存及可视化" class="headerlink" title="学习过程保存及可视化"></a>学习过程保存及可视化</h3><h3 id="eval"><a href="#eval" class="headerlink" title="eval"></a>eval</h3><p>model.eval()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   Sets the module in evaluation mode.    </div><div class="line">   This has any effect only on modules such as Dropout or BatchNorm.</div><div class="line">```    </div><div class="line"></div><div class="line">model.train()</div></pre></td></tr></table></figure></p>
+<p>   Sets the module in training mode.<br>   This has any effect only on modules such as Dropout or BatchNorm.<br>```</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/06/18/2017-06-18-roadmap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -893,7 +1050,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-18T19:16:31+08:00">
                 2017-06-18
@@ -1027,163 +1184,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/06/18/2017-06-24-satellite/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Liang Wu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/18/2017-06-24-satellite/" itemprop="url">深度学习实践</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-18T19:16:31+08:00">
-                2017-06-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>###　数据预处理问题<br><a href="http://ufldl.stanford.edu/wiki/index.php/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86" target="_blank" rel="external">UFLDL Tutorial</a>   </p>
-<p>数据切分 Python random random.shuffle(a) random.choice(mylist,3) random.sample(the_list, 50)</p>
-<ul>
-<li>图像归一化  <a href="https://stackoverflow.com/questions/1735025/how-to-normalize-a-numpy-array-to-within-a-certain-range" target="_blank" rel="external">normalize a NumPy array</a></li>
-<li>image data is 3xMxN 但是imshow的要求是”MxNx3 – RGB (float or uint8 array)”  用 np.rollaxis() 或者 numpy.moveaxis(a, source, destination) 函数 </li>
-<li>打开tiff图像 - gdal包<br>　 - 绘制图像 matplotlib</li>
-</ul>
-<ul>
-<li><p>一些尝试</p>
-<ul>
-<li>在训练集上测试 0.49</li>
-<li>训练两遍 提升到0.52</li>
-<li>换了个Adam优化算法, 精度提升到0.58  </li>
-<li><p>增加了一层卷积+dropout+max池化 精度提升到了0.63  </p>
-</li>
-<li><p>每个分类的阈值是必须调整的 因为不同分类的对应阈值应该不一样</p>
-</li>
-<li><p>学习率是不是应该低一点 换了学习率好像没太大的反应<br>thresholds = [0.8, 0.65, 0.68, 0.65, 0.6, 0.9, 0.68, 0.6, 0.7, 0.7, 0.7, 0.75, 0.9, 0.75, 0.65]**2<br>这样的精度还是0.63左右</p>
-</li>
-<li><p>不妨加个batch normalize试试</p>
-</li>
-<li><p>要不要粗暴一点 直接10个epoch<br>能到0.67 0.7 左右 </p>
-</li>
-<li><p>改善cnn结构 加个batch normalize<br>一个 epoch达到0.57 但是貌似损失函数震荡严重,而且泛化能力不强</p>
-</li>
-<li><p>得试一下 multi-label classification</p>
-</li>
-<li><p><a href="https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/discussion/32402" target="_blank" rel="external">https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/discussion/32402</a><br>比较吊</p>
-</li>
-<li><p>这个周末把代码理了一遍后，发现准确率提升了很多，有了0.8,哈哈哈,好像很厉害</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="内存问题"><a href="#内存问题" class="headerlink" title="内存问题"></a>内存问题</h3><p>python进程以ctrl+z杀死，后台内存还占用，以ctrl+c杀死内存释放。nvidia-smi查看内存占用情况，kill -9 pid 杀死进程<br>或者sudo nvidia-smi –gpu-reset</p>
-<h3 id="模型保存"><a href="#模型保存" class="headerlink" title="模型保存"></a>模型保存</h3><p><a href="https://discuss.pytorch.org/t/how-to-save-load-torch-models/718" target="_blank" rel="external">save model</a></p>
-<h3 id="学习过程保存及可视化"><a href="#学习过程保存及可视化" class="headerlink" title="学习过程保存及可视化"></a>学习过程保存及可视化</h3><h3 id="eval"><a href="#eval" class="headerlink" title="eval"></a>eval</h3><p>model.eval()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   Sets the module in evaluation mode.    </div><div class="line">   This has any effect only on modules such as Dropout or BatchNorm.</div><div class="line">```    </div><div class="line"></div><div class="line">model.train()</div></pre></td></tr></table></figure></p>
-<p>   Sets the module in training mode.<br>   This has any effect only on modules such as Dropout or BatchNorm.<br>```</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/06/09/2017-06-09-hadoop/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1213,7 +1213,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-09T17:12:31+08:00">
                 2017-06-09
@@ -1336,7 +1336,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-08T20:34:31+08:00">
                 2017-06-08
@@ -1501,7 +1501,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/04/20/2017-06-07-code/">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/05/13/2017-05-13-statistical/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liang Wu">
@@ -1520,7 +1520,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/04/20/2017-06-07-code/" itemprop="url">字符编码</a></h1>
+                <a class="post-title-link" href="/2017/05/13/2017-05-13-statistical/" itemprop="url">统计基础知识框架</a></h1>
         
 
         <div class="post-meta">
@@ -1530,10 +1530,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-20T15:36:31+08:00">
-                2017-04-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-13T15:36:31+08:00">
+                2017-05-13
               </time>
             
 
@@ -1572,20 +1572,20 @@
       
         
           
-            <ol>
-<li>字符编码<br>文字或数字转换为二进制存放方式—-编码<br>二进制数值转换为文字或数字—-解码<br>不同的标准和规范就对应不同的字符集（UTF-8，UTF-16， GBK）<br>有用的资料</li>
-</ol>
-<ul>
-<li><a href="http://www.cnblogs.com/skynet/archive/2011/05/03/2035105.html" target="_blank" rel="external">http://www.cnblogs.com/skynet/archive/2011/05/03/2035105.html</a>    </li>
-<li><a href="http://cenalulu.github.io/linux/character-encoding/" target="_blank" rel="external">http://cenalulu.github.io/linux/character-encoding/</a></li>
-</ul>
-<ol>
-<li>python里的编码解码<a href="http://www.cnblogs.com/shine-lee/p/4504559.html" target="_blank" rel="external"></a><br>知乎的<a href="https://www.zhihu.com/question/31833164" target="_blank" rel="external">高票回答</a>很简洁易懂<br>Python的默认编码是ASCII，Python诞生时间要比unicode早，要支持非ASCII字符需要显示地指定编码格式。Python和字符串相关的数据类型，分别是str和unicode这两种，是basestring的子类。<br>Python3x或者其他编程语言，unicode都是默认的编码格式，不同的人用不同的编码表示，有的是utf-8，有的是GBK.在python中，编码解码其实是不同编码系统间的转换; 默认情况下，转换目标是Unicode，即编码unicode→str，解码str→unicode，其中str指的是字节流</li>
-</ol>
-<ol>
-<li>处理一个异常字符用的方法，把不能用gbk编码的字符视作异常字符  <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span>:</div><div class="line">    s.decode(<span class="string">"utf-8"</span>).encode(<span class="string">"gbk"</span>)</div><div class="line"><span class="keyword">except</span> UnicodeEncodeError <span class="keyword">as</span> e:</div><div class="line">    <span class="keyword">print</span> e</div></pre></td></tr></table></figure>
-</li>
-</ol>
+            <p>样本空间<br>事件<br>条件概率<br>贝叶斯公式<br>随机变量:样本空间映射到实数的函数称为随机变量<br>分布函数<br>累计分布函数  离散 连续 同分布<br>离散 概率质量函数 点概率 pmf<br>连续 概率密度函数 pdf<br>逻辑斯蒂分布: 累计分布函数(逻辑函数) 概率密度函数,和逻辑回归的内容结合理解更佳  </p>
+<p>二项分布<br>期望 均值 有了概率密度分布就很自然地求解期望值<br>期望和方差的公式:<br>$$<br>\operatorname {E} [X]=\sum <em>{i=1}^{\infty }x</em>{i}\,p_{i}<br>$$</p>
+<p>$$<br>{\displaystyle \operatorname {E} [X]=\int <em>{-\infty }^{\infty }xf(x)\,dx.}<br>$$<br>f(x)是概率密度函数<br>$$<br>{\displaystyle \operatorname {E} [g(X)]=\int </em>{-\infty }^{\infty }g(x)f(x)\,dx.}<br>$$</p>
+<p>$$<br>\operatorname {Var} (X)=\operatorname {E} \left[(X-\mu )^{2}\right]<br>$$</p>
+<p>$$<br>\operatorname {Var} (X)=\sum <em>{i=1}^{n}p</em>{i}\cdot (x_{i}-\mu )^{2}<br>$$</p>
+<p>$$<br>\operatorname {Var} (g(x))=\operatorname {E} \left[(f(x)-\operatorname {E}[f(x)])^{2}\right]<br>$$</p>
+<p>$$<br>{\displaystyle {\begin{aligned}\operatorname {Var} (X)&amp;==\operatorname {E} \left[X^{2}\right]-\operatorname {E} [X]^{2}\end{aligned}}}<br>$$</p>
+<p>无论怎么变换,概率密度函数怎么复杂,随机变量是X  </p>
+<p>离散均匀分布<br>二项分布 Bernoulli分布<br>泊松分布<br>连续均匀分布<br>伽马分布<br>正态分布</p>
+<p>n维随机变量<br>联合概率密度<br>边缘概率质量函数<br>联合概率质量函数<br>条件概率<br>协方差<br>相关性  相关系数 协方差除以两者方差  </p>
+<p>随机样本<br>独立同分布 iid<br>抽样分布<br>样本均值<br>样本方差  </p>
+<p>似然函数<br>极大似然估计量<br>贝叶斯估计量  </p>
+<p>假设检验</p>
+<p>区间估计  </p>
 
           
         
@@ -1634,7 +1634,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/03/12/2017-09-10-cnn/">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/04/20/2017-04-20-linux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liang Wu">
@@ -1653,7 +1653,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/03/12/2017-09-10-cnn/" itemprop="url">RNN 循环神经网络</a></h1>
+                <a class="post-title-link" href="/2017/04/20/2017-04-20-linux/" itemprop="url">Linux操作总结</a></h1>
         
 
         <div class="post-meta">
@@ -1663,10 +1663,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-12T15:27:31+08:00">
-                2017-03-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-20T15:36:31+08:00">
+                2017-04-20
               </time>
             
 
@@ -1705,15 +1705,65 @@
       
         
           
-            <h4 id="LSTM学习资料"><a href="#LSTM学习资料" class="headerlink" title="LSTM学习资料"></a>LSTM学习资料</h4><ol>
-<li><a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/" target="_blank" rel="external">http://colah.github.io/posts/2015-08-Understanding-LSTMs/</a>  </li>
-<li>中文<a href="http://blog.csdn.net/ycheng_sjtu/article/details/48792467" target="_blank" rel="external">http://blog.csdn.net/ycheng_sjtu/article/details/48792467</a></li>
-<li><a href="https://github.com/pangolulu/rnn-from-scratch" target="_blank" rel="external">https://github.com/pangolulu/rnn-from-scratch</a>  </li>
-</ol>
-<h4 id="教材13章"><a href="#教材13章" class="headerlink" title="教材13章"></a>教材13章</h4><ul>
-<li><p>概率PCA<br><a href="https://mqshen.gitbooks.io/prml/Chapter12/probabilistic_pca.html" target="_blank" rel="external">https://mqshen.gitbooks.io/prml/Chapter12/probabilistic_pca.html</a></p>
+            <ul>
+<li>grep srot<br>grep $’\t’ sample.txt<br>grep -v 反向选择<br>sort -n -r  -k 2 -t $’\t’</li>
+<li>awk sed<br>awk -v 定义变量</li>
+<li>终端<br>终端跳转<br>ctrl+a：跳转到行首<br>ctrl+e：跳转到行尾<br>ctrl+w：反向选择<br>vim gf 跳转 ctrl+o 跳回来</li>
+</ul>
+<p>Linux终端的快捷键:   </p>
+<pre><code>- 新建终端窗口: crtl+shift+N
+- 移到命令行行首和行尾: crtl+a crtl+e
+- Ctrl+Alt+T 打开终端
+- ctrl+b: 前移一个字符(backward)
+- ctrl+f: 后移一个字符(forward)
+- alt+b: 前移一个单词
+- alt+f: 后移一个单词
+- alt+1 alt+2 alt+3 选择标签
+</code></pre><ul>
+<li><p>shell编码<br>非常不喜欢shell编程，语法怪异，格式难看。但是在快速的处理时却非常有效。<br>例如这段代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">date_start=20170508</div><div class="line">date_end=20170525</div><div class="line">while [ &quot;$date_start&quot; != &quot;$date_end&quot; ]</div><div class="line">do</div><div class="line">   cat /home/work/ta/pc/dapan/result/Src/digit/digit_$date_start | grep hao_isearch | awk -v date=$date_start &apos;&#123;sum += $2&#125; END &#123;print date,sum&#125;&apos;</div><div class="line">   let date_start=`date -d &quot;-1 days ago $&#123;date_start&#125;&quot; +%Y%m%d`</div><div class="line">done</div></pre></td></tr></table></figure>
 </li>
-<li><p>ICA<br><a href="http://danieljyc.github.io/2014/06/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A015-3--%E7%8B%AC%E7%AB%8B%E6%88%90%E5%88%86%E5%88%86%E6%9E%90ica%EF%BC%88independent-component-analysis%EF%BC%89/" target="_blank" rel="external">pca 资料</a><br><a href="https://www.zhihu.com/question/28845451" target="_blank" rel="external">https://www.zhihu.com/question/28845451</a></p>
+<li><p>curl wget<br>curl<br>cURL是一个利用URL语法在命令行下工作的文件传输工具<a href="https://zh.wikipedia.org/wiki/CURL" target="_blank" rel="external">wiki</a></p>
+</li>
+</ul>
+<p>wget -r -np -nH 下载整个目录</p>
+<p>ps -ef | grep curl<br>whereis which</p>
+<p>netstat -nltp 查看端口占有情况</p>
+<ul>
+<li><p>chrome快捷键:   </p>
+<ul>
+<li>将当前网页保存为书签    Ctrl + d</li>
+<li>打开 Chrome 菜单    Alt + f、Alt + e 或 F10</li>
+<li>显示或隐藏书签栏    Ctrl + Shift + b</li>
+<li>打开书签管理器    Ctrl + Shift + o</li>
+<li>在新标签页中打开“历史记录”页    Ctrl + h</li>
+<li>在新标签页中打开“下载内容”页    Ctrl + j</li>
+<li>打开“开发者工具”    Ctrl + Shift + j 或 F12</li>
+<li>浏览器回复之前关闭的页面　Ctrl + Shift +Ｔ　</li>
+</ul>
+</li>
+</ul>
+<p>mac电脑鼠标不符合pc习惯所以使用插件来改善</p>
+<p><a href="https://pilotmoon.com/scrollreverser/" target="_blank" rel="external"></a></p>
+<ul>
+<li>hadoop</li>
+</ul>
+<p>hadoop2 fs -cat /user/ubs/pv/pc/dapan/top_query/20170803/<em>/</em> | grep digit | awk -F ‘\t’ ‘$4&gt;1000{print ;}’ &gt; ~/ta/pc/dapan/code_dev/20170803</p>
+<ul>
+<li><p>scp 跨主机远程拷贝<br>使用示例</p>
+<ul>
+<li><p>实例1：从远处复制文件到本地目录   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp root@10.6.159.147:/opt/soft/demo.tar /opt/soft/</div></pre></td></tr></table></figure>
+</li>
+<li><p>实例2：从远处复制到本地</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp -r root@10.6.159.147:/opt/soft/test /opt/soft/</div></pre></td></tr></table></figure>
+</li>
+<li><p>实例3：上传本地文件到远程机器指定目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp /opt/soft/demo.tar root@10.6.159.147:/opt/soft/scptest</div></pre></td></tr></table></figure>
+</li>
+<li><p>实例4：上传本地目录到远程机器指定目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scp -r /opt/soft/test root@10.6.159.147:/opt/soft/scptest</div></pre></td></tr></table></figure></li>
+</ul>
 </li>
 </ul>
 
@@ -1754,6 +1804,10 @@
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1796,8 +1850,8 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">10</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -1852,7 +1906,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
 
   <span class="post-meta-divider">|</span>
 

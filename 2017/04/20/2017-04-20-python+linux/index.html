@@ -95,13 +95,16 @@
 
 
 
+<meta name="description" content="flask以及Python web框架 flaskFlask 依赖着两个外部库： Jinja2 模板引擎以及 Werkzeug WSGI 工具集  flask的调试模式如果你启用了调试支持，服务器会在代码修改后自动重新载入，并在发生错误时提供一个相当有用的调试器app.run(debug=True)  gunicorn使用gunicorn最wsgi容器，用来部署python安装gunicorn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习第三层之支持向量机">
-<meta property="og:url" content="wuliangradi.github.io/2017/07/30/2017-07-30-svn/index.html">
+<meta property="og:title" content="web 服务 以及微服务">
+<meta property="og:url" content="wuliangradi.github.io/2017/04/20/2017-04-20-python+linux/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:updated_time" content="2017-08-19T09:01:37.431Z">
+<meta property="og:description" content="flask以及Python web框架 flaskFlask 依赖着两个外部库： Jinja2 模板引擎以及 Werkzeug WSGI 工具集  flask的调试模式如果你启用了调试支持，服务器会在代码修改后自动重新载入，并在发生错误时提供一个相当有用的调试器app.run(debug=True)  gunicorn使用gunicorn最wsgi容器，用来部署python安装gunicorn">
+<meta property="og:updated_time" content="2017-09-08T13:55:59.667Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="机器学习第三层之支持向量机">
+<meta name="twitter:title" content="web 服务 以及微服务">
+<meta name="twitter:description" content="flask以及Python web框架 flaskFlask 依赖着两个外部库： Jinja2 模板引擎以及 Werkzeug WSGI 工具集  flask的调试模式如果你启用了调试支持，服务器会在代码修改后自动重新载入，并在发生错误时提供一个相当有用的调试器app.run(debug=True)  gunicorn使用gunicorn最wsgi容器，用来部署python安装gunicorn">
 
 
 
@@ -131,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="wuliangradi.github.io/2017/07/30/2017-07-30-svn/"/>
+  <link rel="canonical" href="wuliangradi.github.io/2017/04/20/2017-04-20-python+linux/"/>
 
 
 
 
 
-  <title>机器学习第三层之支持向量机 | Hexo</title>
+  <title>web 服务 以及微服务 | Hexo</title>
   
 
 
@@ -274,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/07/30/2017-07-30-svn/">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/04/20/2017-04-20-python+linux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liang Wu">
@@ -291,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">机器学习第三层之支持向量机</h1>
+          <h1 class="post-title" itemprop="name headline">web 服务 以及微服务</h1>
         
 
         <div class="post-meta">
@@ -303,8 +306,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-30T22:52:41+08:00">
-                2017-07-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-20T15:36:31+08:00">
+                2017-04-20
               </time>
             
 
@@ -341,7 +344,27 @@
       
 
       
-        
+        <h3 id="flask以及Python-web框架"><a href="#flask以及Python-web框架" class="headerlink" title="flask以及Python web框架"></a>flask以及Python web框架</h3><ul>
+<li>flask<br>Flask 依赖着两个外部库： Jinja2 模板引擎以及 Werkzeug WSGI 工具集</li>
+</ul>
+<p>flask的调试模式<br>如果你启用了调试支持，服务器会在代码修改后自动重新载入，并在发生错误时提供一个相当有用的调试器<br>app.run(debug=True)</p>
+<ul>
+<li>gunicorn<br>使用gunicorn最wsgi容器，用来部署python<br>安装gunicorn  oo<br>调用flask<br>gunicorn -w4 -b0.0.0.0:8000 run:app<br>gunicorn -w 4 -b 0.0.0.0:8080 flaskr:app<br>-w：开启多少个woker<br>-b：gunicorn开发的访问地址  </li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">print</span> <span class="string">"wome"</span></div></pre></td></tr></table></figure>
+<ul>
+<li>supervisor  </li>
+</ul>
+<ul>
+<li>Bootstrap<br>表单</li>
+</ul>
+<p>控制宽度 style=”width:50%”</p>
+<p>Get the value of a checkbox in Flask<br><a href="https://stackoverflow.com/questions/31859903/get-the-value-of-a-checkbox-in-flask" target="_blank" rel="external">Get the value of a checkbox in Flask</a></p>
+<p><a href="http://www.jianshu.com/p/be9dd421fb8d" target="_blank" rel="external">简书文章</a></p>
+<p>外网访问<br>app.run(host=’0.0.0.0’)</p>
+<p><a href="http://lycheng.logdown.com/posts/2014/07/02/python-latin1-encoding-problem" target="_blank" rel="external">http://lycheng.logdown.com/posts/2014/07/02/python-latin1-encoding-problem</a><br>flask得到的值的编码问题<br>解决办法 直接改为unicode编码</p>
+<h3 id="微服务"><a href="#微服务" class="headerlink" title="微服务"></a>微服务</h3><p><a href="http://gotalks.bingohuang.com/2016/go-docker-microservice.slide#1" target="_blank" rel="external">go语言，微服务和docker</a><br><a href="">微服务框架</a><br><a href="http://www.flysnow.org/2017/01/05/install-golang.html" target="_blank" rel="external">go语言环境搭建</a><br>项目github地址<a href="https://github.com/micro/micro" target="_blank" rel="external">micro/micro</a><br>简单的开始介绍<a href="http://gogap.cn/2016/03/28/go-micro/" target="_blank" rel="external">使用Go Micro编写微服务</a><br>micro web<br>Laravel + go-micro + grpc 实践基于 Zipkin 的分布式链路追踪系统<br><a href="https://sinlov.gitbooks.io/golang-open-project/content/zh/12.0.html#微服务工具" target="_blank" rel="external">https://sinlov.gitbooks.io/golang-open-project/content/zh/12.0.html#微服务工具</a><br><a href="https://xiequan.info/micro-%E4%B8%80%E4%B8%AA%E7%94%A8go%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6/" target="_blank" rel="external">Micro 一个用Go语言实现的微服务框架</a></p>
+
       
     </div>
     
@@ -365,8 +388,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/29/2017-07-29-lr/" rel="next" title="机器学习第一层之线性回归">
-                <i class="fa fa-chevron-left"></i> 机器学习第一层之线性回归
+              <a href="/2017/04/20/2017-06-07-code/" rel="next" title="字符编码">
+                <i class="fa fa-chevron-left"></i> 字符编码
               </a>
             
           </div>
@@ -375,8 +398,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/10/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/20/2017-04-20-linux/" rel="prev" title="Linux操作总结">
+                Linux操作总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -429,8 +452,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <p class="site-author-name" itemprop="name">Liang Wu</p>
@@ -473,6 +505,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#flask以及Python-web框架"><span class="nav-number">1.</span> <span class="nav-text">flask以及Python web框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微服务"><span class="nav-number">2.</span> <span class="nav-text">微服务</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

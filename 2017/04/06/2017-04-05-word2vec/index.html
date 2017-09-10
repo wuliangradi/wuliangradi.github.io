@@ -95,13 +95,16 @@
 
 
 
+<meta name="description" content="统计语言模型简介这篇文章讲得非常清楚统计语言模型 神经网络语言模型 神经网络语言模型2 http://www.cnblogs.com/ooon/p/5558119.htmlhttp://licstar.net/archives/328  参考论文bengio基于神经网络的语言模型 详细的博客peghoty写的博客 https://zhuanlan.zhihu.com/p/27234078http:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="机器学习第三层之支持向量机">
-<meta property="og:url" content="wuliangradi.github.io/2017/07/30/2017-07-30-svn/index.html">
+<meta property="og:title" content="Word2vec">
+<meta property="og:url" content="wuliangradi.github.io/2017/04/06/2017-04-05-word2vec/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="统计语言模型简介这篇文章讲得非常清楚统计语言模型 神经网络语言模型 神经网络语言模型2 http://www.cnblogs.com/ooon/p/5558119.htmlhttp://licstar.net/archives/328  参考论文bengio基于神经网络的语言模型 详细的博客peghoty写的博客 https://zhuanlan.zhihu.com/p/27234078http:">
 <meta property="og:updated_time" content="2017-08-19T09:01:37.431Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="机器学习第三层之支持向量机">
+<meta name="twitter:title" content="Word2vec">
+<meta name="twitter:description" content="统计语言模型简介这篇文章讲得非常清楚统计语言模型 神经网络语言模型 神经网络语言模型2 http://www.cnblogs.com/ooon/p/5558119.htmlhttp://licstar.net/archives/328  参考论文bengio基于神经网络的语言模型 详细的博客peghoty写的博客 https://zhuanlan.zhihu.com/p/27234078http:">
 
 
 
@@ -131,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="wuliangradi.github.io/2017/07/30/2017-07-30-svn/"/>
+  <link rel="canonical" href="wuliangradi.github.io/2017/04/06/2017-04-05-word2vec/"/>
 
 
 
 
 
-  <title>机器学习第三层之支持向量机 | Hexo</title>
+  <title>Word2vec | Hexo</title>
   
 
 
@@ -274,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/07/30/2017-07-30-svn/">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/04/06/2017-04-05-word2vec/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liang Wu">
@@ -291,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">机器学习第三层之支持向量机</h1>
+          <h1 class="post-title" itemprop="name headline">Word2vec</h1>
         
 
         <div class="post-meta">
@@ -303,8 +306,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-30T22:52:41+08:00">
-                2017-07-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-06T15:27:31+08:00">
+                2017-04-06
               </time>
             
 
@@ -341,7 +344,31 @@
       
 
       
-        
+        <h4 id="统计语言模型简介"><a href="#统计语言模型简介" class="headerlink" title="统计语言模型简介"></a>统计语言模型简介</h4><p>这篇文章讲得非常清楚<a href="http://www.flickering.cn/nlp/2015/02/%E6%88%91%E4%BB%AC%E6%98%AF%E8%BF%99%E6%A0%B7%E7%90%86%E8%A7%A3%E8%AF%AD%E8%A8%80%E7%9A%84-2%E7%BB%9F%E8%AE%A1%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" target="_blank" rel="external">统计语言模型</a></p>
+<p><a href="http://www.flickering.cn/nlp/2015/03/%E6%88%91%E4%BB%AC%E6%98%AF%E8%BF%99%E6%A0%B7%E7%90%86%E8%A7%A3%E8%AF%AD%E8%A8%80%E7%9A%84-3%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" target="_blank" rel="external">神经网络语言模型</a></p>
+<p><a href="http://www.zmonster.me/2016/07/04/dl_and_nlp.html" target="_blank" rel="external">神经网络语言模型2</a></p>
+<p><a href="http://www.cnblogs.com/ooon/p/5558119.html" target="_blank" rel="external">http://www.cnblogs.com/ooon/p/5558119.html</a><br><a href="http://licstar.net/archives/328" target="_blank" rel="external">http://licstar.net/archives/328</a></p>
+<h4 id=""><a href="#" class="headerlink" title=" "></a> </h4><p>参考论文<a href="https://wuliangradi.github.io/docs/paper/a-neural-probabilistic-language-model__bengio.pdf">bengio基于神经网络的语言模型</a></p>
+<p>详细的博客<a href="https://wuliangradi.github.io/docs/word2vec_中的数学原理详解.pdf">peghoty写的博客</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/27234078" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/27234078</a><br><a href="http://d0evi1.com/word2vec-skipgram/" target="_blank" rel="external">http://d0evi1.com/word2vec-skipgram/</a><br><a href="http://qiancy.com/2016/08/17/word2vec-hierarchical-softmax/" target="_blank" rel="external">http://qiancy.com/2016/08/17/word2vec-hierarchical-softmax/</a><br>CBOW</p>
+<p>Skip-Gram<br>fsdfsdfsdfsdf</p>
+<p>文本内容 k维向量空间 向量运算</p>
+<p>词向量<br>one-hot representation 维度灾难以及难以表达词语之间的相似性<br>Distributed Representation<br>生成词向量的途径  神经网络算法</p>
+<p>efefef</p>
+<p>n-gram 语言模型</p>
+<p>NNLM  Neural Network Language Model</p>
+<p>df</p>
+<h4 id="word2vec各种版本的源代码"><a href="#word2vec各种版本的源代码" class="headerlink" title="word2vec各种版本的源代码"></a>word2vec各种版本的源代码</h4><ul>
+<li>C语言版<br> <a href="https://github.com/dav/word2vec" target="_blank" rel="external">https://github.com/dav/word2vec</a>  </li>
+</ul>
+<p><a href="https://code.google.com/archive/p/word2vec/source/default/source" target="_blank" rel="external">Google官网版</a></p>
+<ul>
+<li>python版<br><a href="https://github.com/RaRe-Technologies/gensim/blob/develop/gensim/models/word2vec.py" target="_blank" rel="external">https://github.com/RaRe-Technologies/gensim/blob/develop/gensim/models/word2vec.py</a>  </li>
+<li>C++版<br><a href="https://github.com/eske/multivec" target="_blank" rel="external">https://github.com/eske/multivec</a></li>
+</ul>
+<p>源码解析<br><a href="http://blog.csdn.net/li8630/article/details/44506693" target="_blank" rel="external">http://blog.csdn.net/li8630/article/details/44506693</a></p>
+<p><a href="http://blog.csdn.net/lingerlanlan/article/details/38232755" target="_blank" rel="external">http://blog.csdn.net/li8630/article/details/44506693</a></p>
+
       
     </div>
     
@@ -365,8 +392,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/29/2017-07-29-lr/" rel="next" title="机器学习第一层之线性回归">
-                <i class="fa fa-chevron-left"></i> 机器学习第一层之线性回归
+              <a href="/2017/03/13/2017-03-22-Hive/" rel="next" title="MySQL以及HIVE">
+                <i class="fa fa-chevron-left"></i> MySQL以及HIVE
               </a>
             
           </div>
@@ -375,8 +402,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/10/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/10/2017-04-10-c/" rel="prev" title="C语言">
+                C语言 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -429,8 +456,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <p class="site-author-name" itemprop="name">Liang Wu</p>
@@ -473,6 +509,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#统计语言模型简介"><span class="nav-number">1.</span> <span class="nav-text">统计语言模型简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#"><span class="nav-number">2.</span> <span class="nav-text"> </span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#word2vec各种版本的源代码"><span class="nav-number">3.</span> <span class="nav-text">word2vec各种版本的源代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

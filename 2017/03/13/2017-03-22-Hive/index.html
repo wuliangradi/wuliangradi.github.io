@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="一、使用基础二、hive tips 如何转换数据类型 Hive内置数据类型由基本数据类型和复杂数据类型组成，例如int，float，double，string，date等。常常需要在数据类型之间进行转换。 转换方法： 1cast(str_column as &amp;quot;你要转换的类型&amp;quot;)    分割符问题 hive存储数据时默认分隔符是^A,对应”\001”,download下来的文本分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL以及HIVE">
+<meta property="og:url" content="wuliangradi.github.io/2017/03/13/2017-03-22-Hive/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、使用基础二、hive tips 如何转换数据类型 Hive内置数据类型由基本数据类型和复杂数据类型组成，例如int，float，double，string，date等。常常需要在数据类型之间进行转换。 转换方法： 1cast(str_column as &amp;quot;你要转换的类型&amp;quot;)    分割符问题 hive存储数据时默认分隔符是^A,对应”\001”,download下来的文本分">
+<meta property="og:updated_time" content="2017-09-09T05:56:45.473Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL以及HIVE">
+<meta name="twitter:description" content="一、使用基础二、hive tips 如何转换数据类型 Hive内置数据类型由基本数据类型和复杂数据类型组成，例如int，float，double，string，date等。常常需要在数据类型之间进行转换。 转换方法： 1cast(str_column as &amp;quot;你要转换的类型&amp;quot;)    分割符问题 hive存储数据时默认分隔符是^A,对应”\001”,download下来的文本分">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="wuliangradi.github.io/2017/03/13/2017-03-22-Hive/"/>
+
+
+
+
+
+  <title>MySQL以及HIVE | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/03/13/2017-03-22-Hive/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liang Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">MySQL以及HIVE</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-13T15:27:31+08:00">
+                2017-03-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="一、使用基础"><a href="#一、使用基础" class="headerlink" title="一、使用基础"></a>一、使用基础</h3><h3 id="二、hive-tips"><a href="#二、hive-tips" class="headerlink" title="二、hive tips"></a>二、hive tips</h3><ol>
+<li>如何转换数据类型<br> Hive内置数据类型由基本数据类型和复杂数据类型组成，例如int，float，double，string，date等。常常需要在数据类型之间进行转换。<br> 转换方法： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cast(str_column as &quot;你要转换的类型&quot;)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li>分割符问题<br> hive存储数据时默认分隔符是^A,对应”\001”,download下来的文本分隔符是”\x01”<br> hive设置存储（或者读取）分割符语句： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">insert overwrite directory 路径</div><div class="line">row format delimited fields terminated by &apos;\t&apos;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li>分组排序问题<br>对group by 的多个字段取 top N的时候常常用到<br>新版本的hive是有自带的函数的<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">row_number() over ([partition col1] [order by col2])</div><div class="line">rank() over ([partition col1] [order by col2])</div><div class="line">dense_rank() over ([partition col1] [order by col2])</div><div class="line">percent_rank over ([partition col1] [order by col2])</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>   但是公司内部的hive版本不支持，目前的解决方案是UDF,具体参考  <a href="http://bigdata.baidu.com/ls/?egtab=gp&amp;gltab=eg&amp;gn=ssg_ta_ps_top1000_query_day_yq&amp;tab=gl" target="_blank" rel="external">bigdata的作业组内的具体实现</a><br>   这篇博客也有<a href="http://blog.csdn.net/lifuxiangcaohui/article/details/41548667" target="_blank" rel="external">介绍</a></p>
+<ol>
+<li><p>字段切分问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">split(&quot;116:151:1&quot;, &apos;\\:&apos;)[0]</div></pre></td></tr></table></figure>
+<p>有两个参数，第一个参数是字符串，第二个参数是分割符，尽量转义一下避免报错；切割完是一个array，可以索引</p>
+</li>
+<li><p>order by, sort by, distribute by 问题</p>
+<ul>
+<li>order by 全局排序，一个reducer进行排序  </li>
+<li>sort by 会在每个reducer内进行局部排序，但是同样的值可能出现在不同的分区</li>
+<li>distribute by 控制map的输出在reducer中是如何划分的，把相同的某个字段的记录分配到同一个reducer中去，然后使用sort by来进行排序</li>
+<li>cluster by<br>cluster by = distribute by + sort by</li>
+</ul>
+</li>
+<li><p>关于join</p>
+<ul>
+<li>join 中需要将大表写在靠右的位置；hive的jion会从左往右执行，且会缓存最右边的表，所以建议表的大小由小到大排列。当然也可以显示地声明哪张表是大表；</li>
+<li>join 只返回两个表连接条件满足的记录</li>
+<li>left outer join（在需要保留左表全部记录时使用）<br>会保留左表所有的记录，右表没有符合<strong><em>连接条件</em></strong>的记录，选择的列的值会是NULL。满足<strong><em>where条件</em></strong>的记录都会返回，但是outer join 会先执行join语句，再通过where语句进行过滤。<br><br>right outer join和left outer join 类似。<br>left out join不能连续3个以上使用，必须2个一组，2个一组包装起来使用<br>left join在MySQL里和left outer join的功能是一致的，但是有些版本的hive是没有left join的，很可能不能用<br>备注：hive里left join和left outer join的功能也是一致的，但是只能显示的使用left outer join，用left join会报错</li>
+<li><p>left semi join<br>会返回左表的记录，前提是记录右表也满足on语句的判定条件。但此时，select和where语句不能应用到右表的字段。semi-join对于左表一条指定的记录，在右表一旦找到匹配记录，hive就会停止扫描。<br>semi join 最常见的功能是实现 <strong><em>exist in</em></strong> 的功能<br>举个例子（要实现如下的功能）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">  SELECT a.key, a.value</div><div class="line">FROM a</div><div class="line">WHERE a.key in</div><div class="line">(SELECT b.key</div><div class="line">FROM B);</div><div class="line">  ```  </div><div class="line">  用left out join是这样写</div></pre></td></tr></table></figure>
+<p>SELECT a.key, a.value<br>FROM a LEFT OUTER JOIN b ON (a.key = b.key)<br>WHERE b.key &lt;&gt; NULL;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">用left semi join是这样写</div></pre></td></tr></table></figure>
+<p>SELECT a.key, a.val<br>FROM a LEFT SEMI JOIN b on (a.key = b.key);</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"> - 笛卡尔积join CROSS JOIN 待补充</div><div class="line"> - map-side join</div><div class="line">   如果所有表中的只有一张表是小表，那么可以在最大的表通过mapper的时候将小表完全放到内存中，hive可以在map端执行连接过程。从而可以减少reduce过程。使用```/*+ MAPJOIN(--)```.  </div><div class="line">   ```set hive.auto.convert.join=true</div><div class="line">      set hive.mapjoin.smalltable.fillesize=250000000 ``` </div><div class="line"> - INNER JOIN  仅对满足连接条件的cross中的列</div><div class="line"> </div><div class="line">7. 字符串的匹配</div><div class="line">   一个模糊匹配多个query的例子</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>normalized_query RLIKE ‘%糯米|贴吧|小说|新闻|网址|视频%’</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">8. hive reduce阶段内存不足</div><div class="line">    尤其是使用python脚本最容易出现，比较快的方法是增加内存</div></pre></td></tr></table></figure>
+<p> set mapred.reduce.memory.limit=1600;</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> </div><div class="line">9. hive 小文件合并</div><div class="line">   HIVE将运算好的数据写回hdfs，有时候会产生大量的小文件，会带来很多问题。所以hive在正常job执行完之后，会起一个conditional task，来判断是否需要合并小文件，如果满足要求就会另外启动一个map-only job 或者mapred job来完成合并。</div><div class="line">   输出阶段</div></pre></td></tr></table></figure>
+<p>hive.merge.mapfiles(默认为true)<br>正常的map-only job后，是否启动merge job来合并map端输出的结果</p>
+<p>hive.merge.mapredfiles(默认为false) 其实reduce数据量不大，但是给你分了200个区，就比较蛋疼了，所以需要限制一下<br>正常的map-reduce job后，是否启动merge job来合并reduce端输出的结果，建议开启</p>
+<p>set hive.merge.size.per.task = 256<em>1000</em>1000 #合并文件的大小<br>set hive.merge.smallfiles.avgsize=16000000 #当输出文件的平均大小小于该值时，启动一个独立的map-reduce任务进行文件merge</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">输入阶段</div></pre></td></tr></table></figure>
+<p>mapred.max.split.size(默认256MB)256000000<br>mapred.min.split.size.per.node(默认1 byte)100000000<br>mapred.min.split.size.per.rack(默认1 byte)100000000<br>set hive.input.format=org.apache.Hadoop.hive.ql.io.CombineHiveInputFormat;  #执行Map前进行小文件合并</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">10. 如果要跑大量的数，尽量不要使用带Python脚本的任务，将会非常非常慢</div><div class="line">   例子：从insight_hour表诸如浏览器或者手机品牌时，要使用ua识别的脚本来解析，但是一旦使用这个脚本，4000个map将跑3个小时左右，非常消耗资源 </div><div class="line"> </div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">### MySQL基础</div><div class="line"></div><div class="line"> - mysql补位</div><div class="line"> MySQL LPAD() function</div><div class="line"> LPAD(str, len, padstr)</div><div class="line">![](https://wuliangradi.github.io/images/mysql-lpad.gif)</div><div class="line"></div><div class="line">学习MySQL函数的好地方</div><div class="line">[MySQL FUNCTIONS and OPERATORS](http://www.w3resource.com/mysql/mysql-functions-and-operators.php)</div><div class="line"> </div><div class="line"></div><div class="line"> - 类型转换</div><div class="line"> [Hive: Convert String to Integer](https://stackoverflow.com/questions/12346750/hive-convert-string-to-integer)  </div><div class="line"> [LanguageManual UDF](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-TypeConversionFunctions)</div><div class="line"> </div><div class="line"> </div><div class="line"></div><div class="line"> - mysql日期的diff</div><div class="line"> [Difference between two dates in MySQL](https://stackoverflow.com/questions/4759248/difference-between-two-dates-in-mysql)</div><div class="line">  -</div></pre></td></tr></table></figure>
+<p>SELECT TIMEDIFF(‘2007-12-31 10:02:00’,’2007-12-30 12:01:01’);<br>– result: 22:00:59.<br>SELECT TIMESTAMPDIFF(SECOND,’2007-12-30 12:01:01’,’2007-12-31 10:02:00’);<br>– result: 79259  the difference in seconds with the time.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">-</div></pre></td></tr></table></figure>
+<p>SELECT DATEDIFF(‘2010-10-08 18:23:13’, ‘2010-09-21 21:40:36’) AS days;<br>```</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/12/2017-03-27-rnn/" rel="next" title="RNN 循环神经网络">
+                <i class="fa fa-chevron-left"></i> RNN 循环神经网络
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/06/2017-04-05-word2vec/" rel="prev" title="Word2vec">
+                Word2vec <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <p class="site-author-name" itemprop="name">Liang Wu</p>
+            <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、使用基础"><span class="nav-number">1.</span> <span class="nav-text">一、使用基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、hive-tips"><span class="nav-number">2.</span> <span class="nav-text">二、hive tips</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liang Wu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
