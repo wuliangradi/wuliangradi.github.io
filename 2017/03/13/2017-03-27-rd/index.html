@@ -101,9 +101,9 @@
 <meta property="og:description" content="Python包的管理[1]Package Management非常重要，模块化开发便于统一安装，下载，和管理以及使用。使用打包的方式使得我们的项目变得易用而且稳定，便于版本管理。这里使用python自带的distutils来实现源程序的打包。关于其他的包管理工具(distutils,setuptools,distribute,easy_install,pip,distutils2)的使用参考包管理">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/wuliangradi/images/raw/master/structure.png">
-<meta property="og:image" content="https://wuliangradi.github.io/images/setup.png">
-<meta property="og:image" content="https://wuliangradi.github.io/images/setup_b.png">
-<meta property="og:updated_time" content="2017-09-16T07:52:49.756Z">
+<meta property="og:image" content="https://github.com/wuliangradi/images/raw/master/setup.png">
+<meta property="og:image" content="https://github.com/wuliangradi/images/raw/master/setup_b.png">
+<meta property="og:updated_time" content="2017-09-16T07:54:43.884Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python开发环境以及包的管理">
 <meta name="twitter:description" content="Python包的管理[1]Package Management非常重要，模块化开发便于统一安装，下载，和管理以及使用。使用打包的方式使得我们的项目变得易用而且稳定，便于版本管理。这里使用python自带的distutils来实现源程序的打包。关于其他的包管理工具(distutils,setuptools,distribute,easy_install,pip,distutils2)的使用参考包管理">
@@ -371,9 +371,9 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">setup(...,</div><div class="line">      packages=[<span class="string">'mypkg'</span>],</div><div class="line">      package_dir=&#123;<span class="string">'mypkg'</span>: <span class="string">'src/mypkg'</span>&#125;,</div><div class="line">      package_data=&#123;<span class="string">'mypkg'</span>: [<span class="string">'data/*.dat'</span>]&#125;,</div><div class="line">      )</div></pre></td></tr></table></figure>
 <p>module distribution<br>a collection of Python modules distributed together as a single downloadable resource and meant to be installed en masse.</p>
 <h4 id="4-发布源程序"><a href="#4-发布源程序" class="headerlink" title="4.发布源程序"></a>4.发布源程序</h4><ul>
-<li><p>发布源程序<br>发布，如果没有设置特定的格式，根据所在的平台生成默认的格式<code>python setup.py sdist</code><br>sdist creates the archive of the default format for the current platform。he default format is a gzip’ed tar file (.tar.gz) on Unix, and ZIP file on Windows.<br>You can specify as many formats as you like using the —formats option, for example:<br><code>python setup.py sdist --formats=gztar,zip</code><br>支持的格式如下所示:<br><img src="https://wuliangradi.github.io/images/setup.png" alt=""></p>
+<li><p>发布源程序<br>发布，如果没有设置特定的格式，根据所在的平台生成默认的格式<code>python setup.py sdist</code><br>sdist creates the archive of the default format for the current platform。he default format is a gzip’ed tar file (.tar.gz) on Unix, and ZIP file on Windows.<br>You can specify as many formats as you like using the —formats option, for example:<br><code>python setup.py sdist --formats=gztar,zip</code><br>支持的格式如下所示:<br><img src="https://github.com/wuliangradi/images/raw/master/setup.png" alt=""></p>
 </li>
-<li><p>发布二进制编译好的包<br>发布binary package<code>python setup.py bdist</code><br>发布特定格式的二进制包<code>python setup.py bdist --format=zip</code><br>支持的格式如下所示：<br><img src="https://wuliangradi.github.io/images/setup_b.png" alt=""><br>创建RPM包<code>python setup.py bdist_rpm</code><br>创建windows安装包<code>python setup.py bdist_wininst</code></p>
+<li><p>发布二进制编译好的包<br>发布binary package<code>python setup.py bdist</code><br>发布特定格式的二进制包<code>python setup.py bdist --format=zip</code><br>支持的格式如下所示：<br><img src="https://github.com/wuliangradi/images/raw/master/setup_b.png" alt=""><br>创建RPM包<code>python setup.py bdist_rpm</code><br>创建windows安装包<code>python setup.py bdist_wininst</code></p>
 </li>
 </ul>
 <ul>
