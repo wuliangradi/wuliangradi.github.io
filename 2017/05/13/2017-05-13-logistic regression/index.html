@@ -93,17 +93,20 @@
 
 
 
-<meta name="description" content="Hadoop基础(1) 用户（User）：Hadoop使用Linux用户管理，Hadoop中的用户就是Linux中的用户(2) 分组（group）：Hadoop使用Linux分组管理，Hadoop中的分组就是Linux中的分组(3) 池（pool）：Hadoop Fair Scheduler中的概念，一个pool可以是一个user，一个group，或者一个queue。(4) 队列（Queue）：队">
+<meta name="description" content="1. 逻辑斯谛分布逻辑回归的起源比较复杂,具体参考维基百科 以及这篇博客. 逻辑回归的基础是逻辑函数,逻辑函数是逻辑斯谛分布的累计分布函数,需要首先了解逻辑斯谛分布.逻辑斯谛分布是一类连续概率分布,它的累计分布函数是逻辑函数,形状上类似于正态分布,但是其呈现出重尾分布的特点累计分布函数如下所示: $$F(x;\mu ,s)={\frac  {1}{1+e^{-{\frac  {x-\mu }{s}">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hadoop生态系统">
-<meta property="og:url" content="wuliangradi.github.io/2017/06/09/2017-06-09-hadoop/index.html">
+<meta property="og:title" content="机器学习第二层之逻辑回归">
+<meta property="og:url" content="wuliangradi.github.io/2017/05/13/2017-05-13-logistic regression/index.html">
 <meta property="og:site_name" content="旅途">
-<meta property="og:description" content="Hadoop基础(1) 用户（User）：Hadoop使用Linux用户管理，Hadoop中的用户就是Linux中的用户(2) 分组（group）：Hadoop使用Linux分组管理，Hadoop中的分组就是Linux中的分组(3) 池（pool）：Hadoop Fair Scheduler中的概念，一个pool可以是一个user，一个group，或者一个queue。(4) 队列（Queue）：队">
+<meta property="og:description" content="1. 逻辑斯谛分布逻辑回归的起源比较复杂,具体参考维基百科 以及这篇博客. 逻辑回归的基础是逻辑函数,逻辑函数是逻辑斯谛分布的累计分布函数,需要首先了解逻辑斯谛分布.逻辑斯谛分布是一类连续概率分布,它的累计分布函数是逻辑函数,形状上类似于正态分布,但是其呈现出重尾分布的特点累计分布函数如下所示: $$F(x;\mu ,s)={\frac  {1}{1+e^{-{\frac  {x-\mu }{s}">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-09T06:02:42.255Z">
+<meta property="og:image" content="https://wuliangradi.github.io/images/480px-Logistic_cdf.svg.png">
+<meta property="og:image" content="https://wuliangradi.github.io/images/480px-Logisticpdfunction.svg.png">
+<meta property="og:updated_time" content="2017-09-16T02:15:51.166Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hadoop生态系统">
-<meta name="twitter:description" content="Hadoop基础(1) 用户（User）：Hadoop使用Linux用户管理，Hadoop中的用户就是Linux中的用户(2) 分组（group）：Hadoop使用Linux分组管理，Hadoop中的分组就是Linux中的分组(3) 池（pool）：Hadoop Fair Scheduler中的概念，一个pool可以是一个user，一个group，或者一个queue。(4) 队列（Queue）：队">
+<meta name="twitter:title" content="机器学习第二层之逻辑回归">
+<meta name="twitter:description" content="1. 逻辑斯谛分布逻辑回归的起源比较复杂,具体参考维基百科 以及这篇博客. 逻辑回归的基础是逻辑函数,逻辑函数是逻辑斯谛分布的累计分布函数,需要首先了解逻辑斯谛分布.逻辑斯谛分布是一类连续概率分布,它的累计分布函数是逻辑函数,形状上类似于正态分布,但是其呈现出重尾分布的特点累计分布函数如下所示: $$F(x;\mu ,s)={\frac  {1}{1+e^{-{\frac  {x-\mu }{s}">
+<meta name="twitter:image" content="https://wuliangradi.github.io/images/480px-Logistic_cdf.svg.png">
 
 
 
@@ -133,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="wuliangradi.github.io/2017/06/09/2017-06-09-hadoop/"/>
+  <link rel="canonical" href="wuliangradi.github.io/2017/05/13/2017-05-13-logistic regression/"/>
 
 
 
 
 
-  <title>Hadoop生态系统 | 旅途</title>
+  <title>机器学习第二层之逻辑回归 | 旅途</title>
   
 
 
@@ -276,7 +279,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/06/09/2017-06-09-hadoop/">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/05/13/2017-05-13-logistic regression/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liang Wu">
@@ -293,7 +296,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hadoop生态系统</h1>
+          <h1 class="post-title" itemprop="name headline">机器学习第二层之逻辑回归</h1>
         
 
         <div class="post-meta">
@@ -305,8 +308,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-09T17:12:31+08:00">
-                2017-06-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-13T15:36:31+08:00">
+                2017-05-13
               </time>
             
 
@@ -343,11 +346,41 @@
       
 
       
-        <h3 id="Hadoop基础"><a href="#Hadoop基础" class="headerlink" title="Hadoop基础"></a>Hadoop基础</h3><p>(1) 用户（User）：Hadoop使用Linux用户管理，Hadoop中的用户就是Linux中的用户<br>(2) 分组（group）：Hadoop使用Linux分组管理，Hadoop中的分组就是Linux中的分组<br>(3) 池（pool）：Hadoop Fair Scheduler中的概念，一个pool可以是一个user，一个group，或者一个queue。<br>(4) 队列（Queue）：队列是Hadoop提出的概念，一个Queue可以由任意几个Group和任意几个User组成。  </p>
-<p>mapreduce适合一次写入多次读取数据的应用,关系型数据库则适合持续更新的数据集</p>
-<p>半结构化数据<br>非规范的,有冗余的数据<br>在节点上存储数据,本地快速访问,数据本地化<br>网络带宽是珍稀资源    </p>
-<p>shuffle<br>jobtracker<br>tasktracker<br>iput split<br>HDFS数据<br>map的输出是本地硬盘<br>reduce  每个键值<br>分区由用户定义的partition函数控制,但默认哈希函数分区,较为高效<br>combiner函数<br>Hadoop streaming<br>hadoop pipes  c++接口<br>当数据集的大小超过一台独立的物理计算机的存储能力时,有必要进行分区,跨多台计算机存储称为分布式文件系统<br>Hadoop Distributed File System (HDFS)<br>块的概念<br>namenode   datanode  </p>
-<h3 id="flume"><a href="#flume" class="headerlink" title="flume"></a>flume</h3><h3 id="kafka"><a href="#kafka" class="headerlink" title="kafka"></a>kafka</h3><h3 id="spark"><a href="#spark" class="headerlink" title="spark"></a>spark</h3>
+        <h4 id="1-逻辑斯谛分布"><a href="#1-逻辑斯谛分布" class="headerlink" title="1. 逻辑斯谛分布"></a>1. 逻辑斯谛分布</h4><p>逻辑回归的起源比较复杂,具体参考<a href="https://en.wikipedia.org/wiki/Logistic_regression" target="_blank" rel="external">维基百科</a> 以及<a href="https://chenrudan.github.io/blog/2016/01/09/logisticregression.html" target="_blank" rel="external">这篇博客</a>. 逻辑回归的基础是逻辑函数,逻辑函数是逻辑斯谛分布的累计分布函数,需要首先了解逻辑斯谛分布.<br>逻辑斯谛分布是一类连续概率分布,它的累计分布函数是逻辑函数,形状上类似于正态分布,但是其呈现出重尾分布的特点<br>累计分布函数如下所示:</p>
+<p>$$<br>F(x;\mu ,s)={\frac  {1}{1+e^{-{\frac  {x-\mu }{s}}}}} ={\frac  12}+{\frac  12}\;\operatorname {tanh}!\left({\frac  {x-\mu }{2s}}\right)<br>$$  </p>
+<p>曲线图如下:<br><img src="https://wuliangradi.github.io/images/480px-Logistic_cdf.svg.png" alt=""></p>
+<p>概率密度函数如下所示:   </p>
+<p>$$<br>f(x;\mu ,s)={\frac  {e^{-{\frac  {x-\mu }{s} } } }{s\left(1+e^{ {-{\frac  {x-\mu }{s}} } }\right)^{2}}}={\frac  {1}{4s} }\operatorname {sech}^{2}!\left({\frac  {x-\mu }{2s}}\right)<br>$$</p>
+<p>曲线图如下:<br><img src="https://wuliangradi.github.io/images/480px-Logisticpdfunction.svg.png" alt=""></p>
+<h4 id="2-逻辑回归"><a href="#2-逻辑回归" class="headerlink" title="2. 逻辑回归"></a>2. 逻辑回归</h4><p>线性回归确定决策边界，通过决策符号来判断属于哪一类，这个过程属于感知机(二元线性分类器)的范畴。逻辑回归试图使得输出值等于概率比值取对数(这个量也被叫做log odds )。李航的统计机器学习的定义：输出Y=1的对数几率是由输入x的线性函数表示的模型，即为逻辑斯底回归模型，所以逻辑回归的思路是先拟合决策边界，再拟合分类边界和概率的关系</p>
+<p>逻辑回归二分类问题的y的类别判定服从伯努利分布<br>逻辑回归多分类问题的y的类别判定服从多分类分布</p>
+<p>标准逻辑函数  </p>
+<p>$$<br>\sigma (t)={\frac {e^{t}}{e^{t}+1}}={\frac {1}{1+e^{-t}}}<br>$$</p>
+<p>假如t是随机变量x的线性函数,逻辑函数如下:</p>
+<p>$$<br>F(x)={\frac {1}{1+e^{-(\beta <em>{0}+\beta </em>{1}x)}}}<br>$$</p>
+<p>此时F(x)可以理解为独立变量”success”的概率<br>亦即二项逻辑回归的条件概率分布如下:<br>逻辑分布的累计概率分布函数即逻辑函数是逻辑回归用于分类的点密度函数值</p>
+<p>$$<br>P(Y<em>{i}=1)={\frac {e^{ {\boldsymbol{\beta}}</em>{1}\cdot\mathbf{X}<em>{i} } }{1+e^{ {\boldsymbol{\beta} }</em>{1}\cdot\mathbf{X}{i} } } }<br>$$</p>
+<p>$$<br>P(Y<em>{i}=0)={\frac {1}{1+e^{ {\boldsymbol {\beta } }</em>{1}\cdot \mathbf {X} _{i} } } }<br>$$</p>
+<h4 id="3-逻辑回归的几个特点"><a href="#3-逻辑回归的几个特点" class="headerlink" title="3. 逻辑回归的几个特点"></a>3. 逻辑回归的几个特点</h4><p>事件的几率是指事件发生的概率和不发生的概率的比值,事件的对数几率(log odds)或logit函数是  </p>
+<p>$$<br>g(F(x))=\ln \left({\frac {F(x)}{1-F(x)}}\right)=\beta <em>{0}+\beta </em>{1}x,<br>$$</p>
+<p>逻辑函数的导数  </p>
+<p>$$<br>\frac{d}{dx}f(x) = f(x)(1-f(x))<br>$$</p>
+<h4 id="4-逻辑回归监督分类的优化"><a href="#4-逻辑回归监督分类的优化" class="headerlink" title="4. 逻辑回归监督分类的优化"></a>4. 逻辑回归监督分类的优化</h4><p>使用极大似然估计法估计模型参数  </p>
+<p>$$<br>L(w)=\prod <em>{i=1}^{n}p(x</em>{i}\mid \theta )=\prod <em>{i=1}^{n}[p(x</em>{i})]^{y<em>{i}}[1-p(x</em>{i})]^{1-y_{i}}<br>$$</p>
+<p>对数似然函数为</p>
+<p>$$<br>L(w)=\sum <em>{i=1}^{n}[{y</em>{i}}(wx<em>{i})-log(1+e^{wx</em>{i}})]<br>$$</p>
+<p>此时,问题转换成以对数似然函数为目标函数的最优化问题,常用梯度下降算法和拟牛顿算法求解</p>
+<h4 id="5-梯度下降算法"><a href="#5-梯度下降算法" class="headerlink" title="5. 梯度下降算法"></a>5. 梯度下降算法</h4><p>梯度下降的推导</p>
+<h4 id="6-BFGS"><a href="#6-BFGS" class="headerlink" title="6. BFGS"></a>6. BFGS</h4><h4 id="7-正则化"><a href="#7-正则化" class="headerlink" title="7. 正则化"></a>7. 正则化</h4><p>正则化因子</p>
+<h4 id="8-逻辑回归和其他模型的关系"><a href="#8-逻辑回归和其他模型的关系" class="headerlink" title="8. 逻辑回归和其他模型的关系"></a>8. 逻辑回归和其他模型的关系</h4><p>参考资料</p>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Logistic_regression" target="_blank" rel="external">逻辑回归维基百科</a></li>
+<li><a href="http://charleshm.github.io/2016/03/LR-SVM/" target="_blank" rel="external">逻辑回归和svm的关系</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Maximum_likelihood_estimation" target="_blank" rel="external">最大似然估计维基百科</a></li>
+<li><a href="https://chenrudan.github.io/blog/2016/01/09/logisticregression.html" target="_blank" rel="external"></a></li>
+<li></li>
+</ol>
+
       
     </div>
     
@@ -371,8 +404,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/08/2017-06-08-ML/" rel="next" title="机器学习基础">
-                <i class="fa fa-chevron-left"></i> 机器学习基础
+              <a href="/2017/05/13/2017-05-13-statistical/" rel="next" title="统计基础知识框架">
+                <i class="fa fa-chevron-left"></i> 统计基础知识框架
               </a>
             
           </div>
@@ -381,8 +414,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/18/2017-06-18-roadmap/" rel="prev" title="Roadmap">
-                Roadmap <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/15/2017-05-15-probability/" rel="prev" title="概率论和信息论基础">
+                概率论和信息论基础 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -498,7 +531,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hadoop基础"><span class="nav-number">1.</span> <span class="nav-text">Hadoop基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flume"><span class="nav-number">2.</span> <span class="nav-text">flume</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kafka"><span class="nav-number">3.</span> <span class="nav-text">kafka</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spark"><span class="nav-number">4.</span> <span class="nav-text">spark</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-逻辑斯谛分布"><span class="nav-number">1.</span> <span class="nav-text">1. 逻辑斯谛分布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-逻辑回归"><span class="nav-number">2.</span> <span class="nav-text">2. 逻辑回归</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-逻辑回归的几个特点"><span class="nav-number">3.</span> <span class="nav-text">3. 逻辑回归的几个特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-逻辑回归监督分类的优化"><span class="nav-number">4.</span> <span class="nav-text">4. 逻辑回归监督分类的优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-梯度下降算法"><span class="nav-number">5.</span> <span class="nav-text">5. 梯度下降算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-BFGS"><span class="nav-number">6.</span> <span class="nav-text">6. BFGS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-正则化"><span class="nav-number">7.</span> <span class="nav-text">7. 正则化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-逻辑回归和其他模型的关系"><span class="nav-number">8.</span> <span class="nav-text">8. 逻辑回归和其他模型的关系</span></a></li></ol></div>
             
 
           </div>
@@ -678,6 +711,26 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 

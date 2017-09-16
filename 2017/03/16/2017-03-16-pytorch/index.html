@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next muse" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="PyTorch核心有两个特征:  An n-dimensional Tensor, similar to numpy but can run on GPUs Automatic differentiation for building and training neural networks  PyTorch的基本运算单元是tensors Autograd autograd包提供Tensor所有操">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pytorch学习笔记">
+<meta property="og:url" content="wuliangradi.github.io/2017/03/16/2017-03-16-pytorch/index.html">
+<meta property="og:site_name" content="旅途">
+<meta property="og:description" content="PyTorch核心有两个特征:  An n-dimensional Tensor, similar to numpy but can run on GPUs Automatic differentiation for building and training neural networks  PyTorch的基本运算单元是tensors Autograd autograd包提供Tensor所有操">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://wuliangradi.github.io/images/variable.png">
+<meta property="og:updated_time" content="2017-09-03T08:02:51.743Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pytorch学习笔记">
+<meta name="twitter:description" content="PyTorch核心有两个特征:  An n-dimensional Tensor, similar to numpy but can run on GPUs Automatic differentiation for building and training neural networks  PyTorch的基本运算单元是tensors Autograd autograd包提供Tensor所有操">
+<meta name="twitter:image" content="https://wuliangradi.github.io/images/variable.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="wuliangradi.github.io/2017/03/16/2017-03-16-pytorch/"/>
+
+
+
+
+
+  <title>Pytorch学习笔记 | 旅途</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">旅途</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">路过生命中漫无止境的寒冷和孤独</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/03/16/2017-03-16-pytorch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liang Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="旅途">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Pytorch学习笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-16T15:27:31+08:00">
+                2017-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="PyTorch"><a href="#PyTorch" class="headerlink" title="PyTorch"></a>PyTorch</h3><p>核心有两个特征:</p>
+<ul>
+<li>An n-dimensional Tensor, similar to numpy but can run on GPUs</li>
+<li>Automatic differentiation for building and training neural networks</li>
+</ul>
+<p>PyTorch的基本运算单元是tensors</p>
+<h3 id="Autograd"><a href="#Autograd" class="headerlink" title="Autograd"></a>Autograd</h3><ul>
+<li>autograd包提供Tensor所有操作的自动求导方法  </li>
+<li>运算时的节点是tensor,边是函数</li>
+<li>运行时定义的框架<br></li>
+</ul>
+<h4 id="1-autograd-Variable"><a href="#1-autograd-Variable" class="headerlink" title="1. autograd.Variable"></a>1. autograd.Variable</h4><p>&emsp;&emsp;Variable is a thin wrapper around a Tensor object. Variable包装在tensor之上. This reference allows retracing the whole chain of operations that created the data.Variable的参考跟踪了计算得到Variable的data的整个链路.Variable是计算图中的一个节点<br></p>
+<ul>
+<li><p>属性</p>
+<ul>
+<li>Variable的data属性,封装了任何类型的tensor</li>
+<li>Variable的creator属性,是只读属性.对于叶节点的Variable,creator是None</li>
+<li>Variable的grad属性</li>
+<li>Variable的requires_grad属性.This is especially useful when you want to freeze part of your model, or you know in advance that you’re not going to use gradients w.r.t. some parameters. Can be changed only on leaf Variables.requires_grad=False意味着不用计算对这个变量的梯度</li>
+<li>Variable的volatile属性.– Boolean indicating that the Variable should be used in inference mode, i.e. don’t save the history.<br>  </li>
+</ul>
+</li>
+<li><p>参数</p>
+<ul>
+<li>data  Tensor to wrap</li>
+<li>requires_grad</li>
+<li>volatile  </li>
+</ul>
+</li>
+<li><p>函数</p>
+<ul>
+<li>backward(gradient=None, retain_variables=False)<br>参数:gradient(当out_put不是标量时需要);retain_variables(在使用后不释放数据的缓存)</li>
+<li>directed acyclic graph (DAG) consisting of Function objects as nodes, and references between them being the edges<br></li>
+<li>.creator是有向无环图的入口,同时运算的结果才有creator属性<br></li>
+<li>by following the path from any Variable to the leaves, it is possible to reconstruct the sequence of operations that has created the data, and automatically compute the gradients.<br></li>
+<li><p>what you run is what you differentiate<br><br><img src="https://wuliangradi.github.io/images/variable.png" alt=""></p>
+<ul>
+<li>torch.autograd.backward(variables, grad_variables, retain_variables=False)  </li>
+</ul>
+<ol>
+<li>The graph is differentiated using the chain rule</li>
+<li>If any of variables are non-scalar (i.e. their data has more than one element) and require gradient, the function additionaly requires specifying grad_variables.Variable只支持对标量计算梯度.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-autograd-function"><a href="#2-autograd-function" class="headerlink" title="2. autograd.function"></a>2. autograd.function</h4><p>&emsp;&emsp;Records operation history and defines formulas for differentiating ops. Every operation performed on Variable s creates a new function object. The history is retained in the form of a DAG of functions, with edges denoting data dependencies   </p>
+<p>PyTorch的自动求导和TensorFlow类似:都是定义一个计算图,然后用自动微分的方法计算梯度的框架. 但是TensorFlow是静态的, 只定义计算图一次,然后一遍一遍地把数据喂给计算图,计算梯度. 而对于PyTorch则是每一次前向传播都定义一个新的计算图. 静态模型非常nice的特点是可以提前优化好模型. </p>
+<ul>
+<li>属性<ul>
+<li>save_tensors</li>
+<li>needs_input_grad</li>
+<li>nums_inputs-Number of inputs given to forward()</li>
+<li>num_outputs – Number of tensors returned by forward()</li>
+<li>requires_grad</li>
+<li>previous_functions  </li>
+</ul>
+</li>
+<li>方法<ul>
+<li>backward()</li>
+<li>forward()</li>
+</ul>
+</li>
+</ul>
+<h3 id="Neural-Networks"><a href="#Neural-Networks" class="headerlink" title="Neural Networks"></a>Neural Networks</h3><p>即从简单的计算图基础上更高层次的抽象</p>
+<h4 id="1-Containers"><a href="#1-Containers" class="headerlink" title="1. Containers"></a>1. Containers</h4><ul>
+<li>nn.Module - 神经网络模块,建立的模型应该是这个类的子类<br><br> parameters Returns an iterator over module parameters.  </li>
+</ul>
+<ol>
+<li>nn.Parameter  </li>
+<li>class torch.nn.Sequential<br>odules will be added to it in the order they are passed in the constructor.</li>
+<li>class torch.nn.ModuleList<br>Holds submodules in a list.</li>
+<li>class torch.nn.ParameterList  </li>
+</ol>
+<h4 id="2-Convolution-Layers"><a href="#2-Convolution-Layers" class="headerlink" title="2. Convolution Layers"></a>2. Convolution Layers</h4><ul>
+<li>class torch.nn.Conv1d or Conv2d or Conv2d的卷基层<br> 参数,以2d卷积为例<br> input size为(N, C<sub>in</sub>, (rows, columns)), 其中N为输入数据的样本数量,C<sub>in</sub>为输入数据的通道数,rows 和 columns为单个样本单个通道的tensor的size。即为nSamples x nChannels x Height x Width</li>
+</ul>
+<h4 id="3-Loss-functions"><a href="#3-Loss-functions" class="headerlink" title="3. Loss functions"></a>3. Loss functions</h4><ul>
+<li><p>torch.nn.L1Loss(参数标记是否取平均数）  </p>
+<p>$$<br>loss(x, y) = 1/n\sum|x<em>{i}-y</em>{i}|<br>$$</p>
+</li>
+<li><p>torch.nn.MSELoss  </p>
+<p>$$<br>loss(x, y) = 1/n\sum|x<em>{i}-y</em>{i}|^{2}<br>$$  </p>
+</li>
+<li><p>torch.nn.CrossEntropyLoss  </p>
+<p>$$<br>loss(x, class) = -log(exp(x[class]) / (\sum_j exp(x[j])))</p>
+<pre><code>= -x[class] + log(\sum_j exp(x[j]))
+</code></pre><p>$$  </p>
+</li>
+</ul>
+<h4 id="4-Non-linear-Activations"><a href="#4-Non-linear-Activations" class="headerlink" title="4. Non-linear Activations"></a>4. Non-linear Activations</h4><ul>
+<li><p>class torch.nn.ReLU  </p>
+<p> $$<br>ReLU(x)=max(0, x)<br> $$</p>
+</li>
+</ul>
+<ol>
+<li><p>class torch.nn.ELU</p>
+<p>$$<br>ELU(x)=max(0, x) + min(0, alpha*(exp(x) - 1))<br>$$  </p>
+<p>alpha – the alpha value for the ELU formulation</p>
+</li>
+<li><p>torch.nn.PReLU</p>
+<p>$$<br> PReLU(x)=max(0,x)+a∗min(0,x)<br>$$  </p>
+</li>
+<li><p>torch.nn.LeakyReLU  </p>
+<p>$$<br>LeakyReLU=max(0,x)+negative_slope∗min(0,x)<br>$$  </p>
+</li>
+<li><p>nn.Sigmoid  </p>
+<p>few</p>
+</li>
+<li><p>torch.nn.Softplus  </p>
+<p>$$<br>f(x)=1/beta∗log(1+exp(beta∗xi))<br>$$  </p>
+</li>
+</ol>
+<h4 id="5-Dropout-layers"><a href="#5-Dropout-layers" class="headerlink" title="5. Dropout layers"></a>5. Dropout layers</h4><h4 id="6-Recurrent-layers"><a href="#6-Recurrent-layers" class="headerlink" title="6. Recurrent layers"></a>6. Recurrent layers</h4><h4 id="7-Pooling-Layers"><a href="#7-Pooling-Layers" class="headerlink" title="7. Pooling Layers"></a>7. Pooling Layers</h4><h4 id="8-Vision-函数"><a href="#8-Vision-函数" class="headerlink" title="8. Vision 函数"></a>8. Vision 函数</h4><ul>
+<li>Upsample 函数，和 downsampling 相反，和 interpolation 插值的意思类似<br>Upsample函数根据概念，采样后的尺度(或者放大比例)和采样方法是非常重要的。相对应的就有PyTorch的参数，size(或者 scale_factor) 和 mode(nearest | bilinear | trilinear. Default: nearest)。实现的细节图像处理基础有实现，当使用Upsample时只需要考虑<strong>[尺度]</strong>和<strong>[采样方法]</strong>即可<br>因为Upsample是一种只关注待采样点周围像素点的方法，所以很可能失真或者其他问题，<a href="https://www.zhihu.com/question/43609045" target="_blank" rel="external">Deconvolution</a>是一种非常好的替代方法。</li>
+</ul>
+<h3 id="权重更新"><a href="#权重更新" class="headerlink" title="权重更新"></a>权重更新</h3><p>torch.optim  抽象了优化算法,并且实现了常用的优化算法<br>more sophisiticated optimizers like AdaGrad, RMSProp, Adam, etc.</p>
+<h3 id="数据转换"><a href="#数据转换" class="headerlink" title="数据转换"></a>数据转换</h3><p>先转为numpy数组，再转换为torch.Tensor</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/13/2017-03-13-python/" rel="next" title="Python">
+                <i class="fa fa-chevron-left"></i> Python
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/06/2017-04-05-word2vec/" rel="prev" title="Word2vec">
+                Word2vec <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <p class="site-author-name" itemprop="name">Liang Wu</p>
+            <p class="site-description motion-element" itemprop="description">--</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#PyTorch"><span class="nav-number">1.</span> <span class="nav-text">PyTorch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Autograd"><span class="nav-number">2.</span> <span class="nav-text">Autograd</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-autograd-Variable"><span class="nav-number">2.1.</span> <span class="nav-text">1. autograd.Variable</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-autograd-function"><span class="nav-number">2.2.</span> <span class="nav-text">2. autograd.function</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Neural-Networks"><span class="nav-number">3.</span> <span class="nav-text">Neural Networks</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Containers"><span class="nav-number">3.1.</span> <span class="nav-text">1. Containers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Convolution-Layers"><span class="nav-number">3.2.</span> <span class="nav-text">2. Convolution Layers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Loss-functions"><span class="nav-number">3.3.</span> <span class="nav-text">3. Loss functions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Non-linear-Activations"><span class="nav-number">3.4.</span> <span class="nav-text">4. Non-linear Activations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Dropout-layers"><span class="nav-number">3.5.</span> <span class="nav-text">5. Dropout layers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-Recurrent-layers"><span class="nav-number">3.6.</span> <span class="nav-text">6. Recurrent layers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-Pooling-Layers"><span class="nav-number">3.7.</span> <span class="nav-text">7. Pooling Layers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-Vision-函数"><span class="nav-number">3.8.</span> <span class="nav-text">8. Vision 函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#权重更新"><span class="nav-number">4.</span> <span class="nav-text">权重更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据转换"><span class="nav-number">5.</span> <span class="nav-text">数据转换</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liang Wu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
