@@ -100,13 +100,13 @@
 <meta property="og:site_name" content="旅途">
 <meta property="og:description" content="1. 逻辑斯谛分布逻辑回归的起源比较复杂,具体参考维基百科 以及这篇博客. 逻辑回归的基础是逻辑函数,逻辑函数是逻辑斯谛分布的累计分布函数,需要首先了解逻辑斯谛分布.逻辑斯谛分布是一类连续概率分布,它的累计分布函数是逻辑函数,形状上类似于正态分布,但是其呈现出重尾分布的特点累计分布函数如下所示:  F(x;\mu ,s)={\frac  {1}{1+e^{-{\frac  {x-\mu }{s}}">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://wuliangradi.github.io/images/480px-Logistic_cdf.svg.png">
-<meta property="og:image" content="https://wuliangradi.github.io/images/480px-Logisticpdfunction.svg.png">
-<meta property="og:updated_time" content="2017-09-16T02:15:51.166Z">
+<meta property="og:image" content="https://github.com/wuliangradi/images/raw/master/480px-Logistic_cdf.svg.png">
+<meta property="og:image" content="https://github.com/wuliangradi/images/raw/master/480px-Logisticpdfunction.svg.png">
+<meta property="og:updated_time" content="2017-09-16T07:48:57.762Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习第二层之逻辑回归">
 <meta name="twitter:description" content="1. 逻辑斯谛分布逻辑回归的起源比较复杂,具体参考维基百科 以及这篇博客. 逻辑回归的基础是逻辑函数,逻辑函数是逻辑斯谛分布的累计分布函数,需要首先了解逻辑斯谛分布.逻辑斯谛分布是一类连续概率分布,它的累计分布函数是逻辑函数,形状上类似于正态分布,但是其呈现出重尾分布的特点累计分布函数如下所示:  F(x;\mu ,s)={\frac  {1}{1+e^{-{\frac  {x-\mu }{s}}">
-<meta name="twitter:image" content="https://wuliangradi.github.io/images/480px-Logistic_cdf.svg.png">
+<meta name="twitter:image" content="https://github.com/wuliangradi/images/raw/master/480px-Logistic_cdf.svg.png">
 
 
 
@@ -348,10 +348,10 @@
       
         <h4 id="1-逻辑斯谛分布"><a href="#1-逻辑斯谛分布" class="headerlink" title="1. 逻辑斯谛分布"></a>1. 逻辑斯谛分布</h4><p>逻辑回归的起源比较复杂,具体参考<a href="https://en.wikipedia.org/wiki/Logistic_regression" target="_blank" rel="external">维基百科</a> 以及<a href="https://chenrudan.github.io/blog/2016/01/09/logisticregression.html" target="_blank" rel="external">这篇博客</a>. 逻辑回归的基础是逻辑函数,逻辑函数是逻辑斯谛分布的累计分布函数,需要首先了解逻辑斯谛分布.<br>逻辑斯谛分布是一类连续概率分布,它的累计分布函数是逻辑函数,形状上类似于正态分布,但是其呈现出重尾分布的特点<br>累计分布函数如下所示:</p>
 <script type="math/tex; mode=display">
-F(x;\mu ,s)={\frac  {1}{1+e^{-{\frac  {x-\mu }{s}}}}} ={\frac  12}+{\frac  12}\;\operatorname {tanh}\!\left({\frac  {x-\mu }{2s}}\right)</script><p>曲线图如下:<br><img src="https://wuliangradi.github.io/images/480px-Logistic_cdf.svg.png" alt=""></p>
+F(x;\mu ,s)={\frac  {1}{1+e^{-{\frac  {x-\mu }{s}}}}} ={\frac  12}+{\frac  12}\;\operatorname {tanh}\!\left({\frac  {x-\mu }{2s}}\right)</script><p>曲线图如下:<br><img src="https://github.com/wuliangradi/images/raw/master/480px-Logistic_cdf.svg.png" alt=""></p>
 <p>概率密度函数如下所示:   </p>
 <script type="math/tex; mode=display">
-f(x;\mu ,s)={\frac  {e^{-{\frac  {x-\mu }{s} } } }{s\left(1+e^{ {-{\frac  {x-\mu }{s}} } }\right)^{2}}}={\frac  {1}{4s} }\operatorname {sech}^{2}\!\left({\frac  {x-\mu }{2s}}\right)</script><p>曲线图如下:<br><img src="https://wuliangradi.github.io/images/480px-Logisticpdfunction.svg.png" alt=""></p>
+f(x;\mu ,s)={\frac  {e^{-{\frac  {x-\mu }{s} } } }{s\left(1+e^{ {-{\frac  {x-\mu }{s}} } }\right)^{2}}}={\frac  {1}{4s} }\operatorname {sech}^{2}\!\left({\frac  {x-\mu }{2s}}\right)</script><p>曲线图如下:<br><img src="https://github.com/wuliangradi/images/raw/master/480px-Logisticpdfunction.svg.png" alt=""></p>
 <h4 id="2-逻辑回归"><a href="#2-逻辑回归" class="headerlink" title="2. 逻辑回归"></a>2. 逻辑回归</h4><p>线性回归确定决策边界，通过决策符号来判断属于哪一类，这个过程属于感知机(二元线性分类器)的范畴。逻辑回归试图使得输出值等于概率比值取对数(这个量也被叫做log odds )。李航的统计机器学习的定义：输出Y=1的对数几率是由输入x的线性函数表示的模型，即为逻辑斯底回归模型，所以逻辑回归的思路是先拟合决策边界，再拟合分类边界和概率的关系</p>
 <p>逻辑回归二分类问题的y的类别判定服从伯努利分布<br>逻辑回归多分类问题的y的类别判定服从多分类分布</p>
 <p>标准逻辑函数  </p>
@@ -492,7 +492,7 @@ L(w)=\sum _{i=1}^{n}[{y_{i}}(wx_{i})-log(1+e^{wx_{i}})]</script><p>此时,问题
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

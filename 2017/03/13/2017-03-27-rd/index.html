@@ -101,7 +101,9 @@
 <meta property="og:description" content="Python包的管理[1]Package Management非常重要，模块化开发便于统一安装，下载，和管理以及使用。使用打包的方式使得我们的项目变得易用而且稳定，便于版本管理。这里使用python自带的distutils来实现源程序的打包。关于其他的包管理工具(distutils,setuptools,distribute,easy_install,pip,distutils2)的使用参考包管理">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/wuliangradi/images/raw/master/structure.png">
-<meta property="og:updated_time" content="2017-09-16T07:39:28.735Z">
+<meta property="og:image" content="https://wuliangradi.github.io/images/setup.png">
+<meta property="og:image" content="https://wuliangradi.github.io/images/setup_b.png">
+<meta property="og:updated_time" content="2017-09-16T07:52:49.756Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python开发环境以及包的管理">
 <meta name="twitter:description" content="Python包的管理[1]Package Management非常重要，模块化开发便于统一安装，下载，和管理以及使用。使用打包的方式使得我们的项目变得易用而且稳定，便于版本管理。这里使用python自带的distutils来实现源程序的打包。关于其他的包管理工具(distutils,setuptools,distribute,easy_install,pip,distutils2)的使用参考包管理">
@@ -369,35 +371,54 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">setup(...,</div><div class="line">      packages=[<span class="string">'mypkg'</span>],</div><div class="line">      package_dir=&#123;<span class="string">'mypkg'</span>: <span class="string">'src/mypkg'</span>&#125;,</div><div class="line">      package_data=&#123;<span class="string">'mypkg'</span>: [<span class="string">'data/*.dat'</span>]&#125;,</div><div class="line">      )</div></pre></td></tr></table></figure>
 <p>module distribution<br>a collection of Python modules distributed together as a single downloadable resource and meant to be installed en masse.</p>
 <h4 id="4-发布源程序"><a href="#4-发布源程序" class="headerlink" title="4.发布源程序"></a>4.发布源程序</h4><ul>
-<li><p>发布源程序<br>发布，如果没有设置特定的格式，根据所在的平台生成默认的格式<figure class="highlight python"><figcaption><span>setup.py sdist```  </span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">sdist creates the archive of the default format <span class="keyword">for</span> the current platform。he default format <span class="keyword">is</span> a gzip’ed tar file (.tar.gz) on Unix, <span class="keyword">and</span> ZIP file on Windows.  </div><div class="line">You can specify <span class="keyword">as</span> many formats <span class="keyword">as</span> you like using the --formats option, <span class="keyword">for</span> example:</div><div class="line">```python setup.py sdist --formats=gztar,zip```  </div><div class="line">支持的格式如下所示:  </div><div class="line">![](https://wuliangradi.github.io/images/setup.png)</div><div class="line"></div><div class="line">* 发布二进制编译好的包    </div><div class="line">发布binary package```python setup.py bdist```  </div><div class="line">发布特定格式的二进制包```python setup.py bdist --format=zip```  </div><div class="line">支持的格式如下所示：</div><div class="line">![](https://wuliangradi.github.io/images/setup_b.png)   </div><div class="line">创建RPM包```python setup.py bdist_rpm```  </div><div class="line">创建windows安装包```python setup.py bdist_wininst</div></pre></td></tr></table></figure></p>
+<li><p>发布源程序<br>发布，如果没有设置特定的格式，根据所在的平台生成默认的格式<code>python setup.py sdist</code><br>sdist creates the archive of the default format for the current platform。he default format is a gzip’ed tar file (.tar.gz) on Unix, and ZIP file on Windows.<br>You can specify as many formats as you like using the —formats option, for example:<br><code>python setup.py sdist --formats=gztar,zip</code><br>支持的格式如下所示:<br><img src="https://wuliangradi.github.io/images/setup.png" alt=""></p>
 </li>
-<li><p>发布到PyPI上去<br>Python Package Index(PyPI)是python第三方库管理平台。可以将开发的包上传到该平台上去。<br>PyPI还有国内镜像，如果安装包的时候比较慢，可以使用国内镜像。此外，还可以建立自己私有的pPyPI包管理平台。<br>例如清华的镜像：  </p>
+<li><p>发布二进制编译好的包<br>发布binary package<code>python setup.py bdist</code><br>发布特定格式的二进制包<code>python setup.py bdist --format=zip</code><br>支持的格式如下所示：<br><img src="https://wuliangradi.github.io/images/setup_b.png" alt=""><br>创建RPM包<code>python setup.py bdist_rpm</code><br>创建windows安装包<code>python setup.py bdist_wininst</code></p>
+</li>
+</ul>
 <ul>
-<li>临时使用  <figure class="highlight plain"><figcaption><span>install -i</span><a href="https://pypi.tuna.tsinghua.edu.cn/simple" target="_blank" rel="external">some-package```  </a></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> 注意，simple 不能少, 是 https 而不是 http  </div><div class="line">- 设为默认  </div><div class="line">修改 ~/.pip/pip.conf (没有就创建一个)， 修改 index-url至tuna，例如  </div><div class="line">``` </div><div class="line">[global]  </div><div class="line">index-url = https://pypi.tuna.tsinghua.edu.cn/simple</div></pre></td></tr></table></figure>
+<li>发布到PyPI上去<br>Python Package Index(PyPI)是python第三方库管理平台。可以将开发的包上传到该平台上去。<br>PyPI还有国内镜像，如果安装包的时候比较慢，可以使用国内镜像。此外，还可以建立自己私有的pPyPI包管理平台。<br>例如清华的镜像：  <ul>
+<li>临时使用<br><code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package</code><br>注意，simple 不能少, 是 https 而不是 http  </li>
+<li>设为默认<br>修改 ~/.pip/pip.conf (没有就创建一个)， 修改 index-url至tuna，例如  <figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[<span class="keyword">global</span>]  </div><div class="line"><span class="built_in">index</span>-url = http<span class="variable">s:</span>//pypi.tuna.tsinghua.edu.<span class="keyword">cn</span>/simple</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
 <h4 id="5-包的安装"><a href="#5-包的安装" class="headerlink" title="5.包的安装"></a>5.包的安装</h4><ol>
-<li><p>可执行<figure class="highlight python"><figcaption><span>setup.py install```  </span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">2.</span> 也可使用pip安装，pip已成为包安装的事实标准  </div><div class="line"> * 安装```pip install SomePackage</div></pre></td></tr></table></figure></p>
+<li>可执行<code>python setup.py install</code>  </li>
+<li>也可使用pip安装，pip已成为包安装的事实标准  <ul>
+<li>安装<code>pip install SomePackage</code></li>
+<li>查看已经安装的包<code>pip list --outdated</code>哪些需要更新</li>
+<li>升级包<code>pip install --upgrade SomePackage</code></li>
+<li>卸载包<code>pip uninstall SomePackage</code></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="python独立开发环境的构建-3"><a href="#python独立开发环境的构建-3" class="headerlink" title="python独立开发环境的构建[3]"></a>python独立开发环境的构建<sup>[3]</sup></h3><ol>
+<li><p>使用virtualenv建立独立的python开发环境（也就是为不同的项目配置自个使用的依赖模块），对于保持干净、独立(隔绝)、有序、高效的环境非常有用。python的几大神器之一，还有诸如pip,fabric等工具等。 </p>
 <ul>
-<li><p>查看已经安装的包<figure class="highlight plain"><figcaption><span>list --outdated```哪些需要更新</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* 升级包```pip install --upgrade SomePackage</div></pre></td></tr></table></figure></p>
+<li>安装<code>$ pip install virtualenv</code></li>
+<li>新建<code>virtualenv pyenv</code></li>
+<li>激活虚拟环境<code>source venv/bin/activat</code></li>
+<li>退出虚拟环境<code>deactivate</code></li>
+<li>创建requirements.txt 文件<code>pip freeze &gt; requirements.txt</code></li>
+<li>安装时就可以按需求安装好<code>pip install -r requirements.txt</code></li>
+</ul>
 </li>
-<li><p>卸载包<figure class="highlight plain"><figcaption><span>uninstall SomePackage```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">---</div><div class="line">### python独立开发环境的构建&lt;sup&gt;[3]&lt;/sup&gt;</div><div class="line"> 1. 使用virtualenv建立独立的python开发环境（也就是为不同的项目配置自个使用的依赖模块），对于保持干净、独立(隔绝)、有序、高效的环境非常有用。python的几大神器之一，还有诸如pip,fabric等工具等。 </div><div class="line">  * 安装```$ pip install virtualenv</div></pre></td></tr></table></figure></p>
-</li>
-<li><p>新建<figure class="highlight plain"><figcaption><span>pyenv```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* 激活虚拟环境```source venv/bin/activate</div></pre></td></tr></table></figure></p>
-</li>
-<li><p>退出虚拟环境<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* 创建requirements.txt 文件```pip freeze &gt; requirements.txt</div></pre></td></tr></table></figure></p>
-</li>
-<li><p>安装时就可以按需求安装好<figure class="highlight plain"><figcaption><span>install -r requirements.txt```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">2. 管理virtualenv</div><div class="line"> * virtualenvwrapper封装在virtualenv之上，让开发者和虚拟环境的相处更加愉快。</div><div class="line"> * 安装```pip install virtualenvwrapper</div></pre></td></tr></table></figure></p>
-</li>
-<li><p>配置.bashrc文件  </p>
-<figure class="highlight plain"><figcaption><span>WORKON_HOME</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    source /usr/local/bin/virtualenvwrapper.sh</div><div class="line">    当然上个路径不一定相同，需要which virtualenvwrapper.sh</div><div class="line"> ```  </div><div class="line">* 基本使用</div><div class="line">   - 创建虚拟环境```mkvirtualenv venv</div></pre></td></tr></table></figure>
+<li><p>管理virtualenv</p>
 <ul>
-<li><p>使用某虚拟环境<figure class="highlight plain"><figcaption><span>venv```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- 列出所有工作环境```lsvirtualenv</div></pre></td></tr></table></figure></p>
-</li>
-<li><p>切换到某工作环境<code>cdvirtualenv</code>  </p>
-</li>
+<li>virtualenvwrapper封装在virtualenv之上，让开发者和虚拟环境的相处更加愉快。</li>
+<li>安装<code>pip install virtualenvwrapper</code></li>
+<li>配置.bashrc文件<br><code>export WORKON_HOME=~/.virtualenvs    
+source /usr/local/bin/virtualenvwrapper.sh
+当然上个路径不一定相同，需要which virtualenvwrapper.sh</code>  </li>
+<li><p>基本使用</p>
+<ul>
+<li>创建虚拟环境<code>mkvirtualenv venv</code></li>
+<li>使用某虚拟环境<code>workon venv</code></li>
+<li>列出所有工作环境<code>lsvirtualenv</code></li>
+<li>切换到某工作环境<code>cdvirtualenv</code>  </li>
 </ul>
 </li>
 <li><p>pip list -l 列出目前虚拟环境的安装列表</p>
@@ -533,7 +554,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -572,7 +593,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python包的管理-1"><span class="nav-number">1.</span> <span class="nav-text">Python包的管理[1]</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">1. 基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-工程的结构化-2"><span class="nav-number">1.2.</span> <span class="nav-text">2. 工程的结构化[2]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-编写setup脚本"><span class="nav-number">1.3.</span> <span class="nav-text">3. 编写setup脚本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-发布源程序"><span class="nav-number">1.4.</span> <span class="nav-text">4.发布源程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-包的安装"><span class="nav-number">1.5.</span> <span class="nav-text">5.包的安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fabric"><span class="nav-number">2.</span> <span class="nav-text">fabric</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pycharm"><span class="nav-number">3.</span> <span class="nav-text">Pycharm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PEP-8-Python风格指南"><span class="nav-number">4.</span> <span class="nav-text">PEP 8:Python风格指南</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码同步"><span class="nav-number">5.</span> <span class="nav-text">代码同步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文献"><span class="nav-number">6.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python包的管理-1"><span class="nav-number">1.</span> <span class="nav-text">Python包的管理[1]</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">1. 基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-工程的结构化-2"><span class="nav-number">1.2.</span> <span class="nav-text">2. 工程的结构化[2]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-编写setup脚本"><span class="nav-number">1.3.</span> <span class="nav-text">3. 编写setup脚本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-发布源程序"><span class="nav-number">1.4.</span> <span class="nav-text">4.发布源程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-包的安装"><span class="nav-number">1.5.</span> <span class="nav-text">5.包的安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python独立开发环境的构建-3"><span class="nav-number">2.</span> <span class="nav-text">python独立开发环境的构建[3]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fabric"><span class="nav-number">3.</span> <span class="nav-text">fabric</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pycharm"><span class="nav-number">4.</span> <span class="nav-text">Pycharm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PEP-8-Python风格指南"><span class="nav-number">5.</span> <span class="nav-text">PEP 8:Python风格指南</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码同步"><span class="nav-number">6.</span> <span class="nav-text">代码同步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文献"><span class="nav-number">7.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
 
           </div>
