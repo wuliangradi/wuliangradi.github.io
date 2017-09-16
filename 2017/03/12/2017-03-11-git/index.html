@@ -399,12 +399,12 @@ git reset --hard origin/master</code>  </li>
 <h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><ol>
 <li><p>Git push requires username and password,解决办法<sup>[2]</sup>:<br><code>git remote set-url origin git@github.com:username/repo.git</code></p>
 </li>
-<li><p>多帐号的配置<br> <code>ssh-keygen -t rsa -C &quot;xx@xx.com&quot;</code><br> 不通的仓库需要设置不同的用户名和邮箱，如果之前有设置需要unset<br> ``git config –global –unset user.name</p>
+<li><p>多帐号的配置<br> <code>ssh-keygen -t rsa -C &quot;xx@xx.com&quot;</code><br> 不通的仓库需要设置不同的用户名和邮箱，如果之前有设置需要unset<br> ``git config —global —unset user.name</p>
 <pre><code>git config --global --unset user.email``
 </code></pre><p> 在不同的仓库下设置<br> <code>git config user.name &quot;yourname&quot;  
  git config user.email &quot;youremail&quot;</code></p>
 </li>
-<li>查看以及修改用户名<br>git config –list git config -l<br><code>git config user.name  
+<li>查看以及修改用户名<br>git config —list git config -l<br><code>git config user.name  
 git config user.email  
 git config --global user.name &quot;your name&quot;  
 git config --global user.email &quot;your email&quot;</code></li>
@@ -434,7 +434,7 @@ git config --global user.email &quot;your email&quot;</code></li>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/12/2017-03-27-rnn/" rel="next" title="RNN 循环神经网络">
+              <a href="/2017/03/12/2017-09-10-cnn/" rel="next" title="RNN 循环神经网络">
                 <i class="fa fa-chevron-left"></i> RNN 循环神经网络
               </a>
             
@@ -444,8 +444,8 @@ git config --global user.email &quot;your email&quot;</code></li>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/12/2017-09-10-cnn/" rel="prev" title="RNN 循环神经网络">
-                RNN 循环神经网络 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/12/2017-03-20-tools/" rel="prev" title="useful tools">
+                useful tools <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

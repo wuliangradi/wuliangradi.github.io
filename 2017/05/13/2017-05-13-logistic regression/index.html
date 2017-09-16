@@ -93,19 +93,19 @@
 
 
 
-<meta name="description" content="1. 逻辑斯谛分布逻辑回归的起源比较复杂,具体参考维基百科 以及这篇博客. 逻辑回归的基础是逻辑函数,逻辑函数是逻辑斯谛分布的累计分布函数,需要首先了解逻辑斯谛分布.逻辑斯谛分布是一类连续概率分布,它的累计分布函数是逻辑函数,形状上类似于正态分布,但是其呈现出重尾分布的特点累计分布函数如下所示: $$F(x;\mu ,s)={\frac  {1}{1+e^{-{\frac  {x-\mu }{s}">
+<meta name="description" content="1. 逻辑斯谛分布逻辑回归的起源比较复杂,具体参考维基百科 以及这篇博客. 逻辑回归的基础是逻辑函数,逻辑函数是逻辑斯谛分布的累计分布函数,需要首先了解逻辑斯谛分布.逻辑斯谛分布是一类连续概率分布,它的累计分布函数是逻辑函数,形状上类似于正态分布,但是其呈现出重尾分布的特点累计分布函数如下所示:  F(x;\mu ,s)={\frac  {1}{1+e^{-{\frac  {x-\mu }{s}}">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习第二层之逻辑回归">
 <meta property="og:url" content="wuliangradi.github.io/2017/05/13/2017-05-13-logistic regression/index.html">
 <meta property="og:site_name" content="旅途">
-<meta property="og:description" content="1. 逻辑斯谛分布逻辑回归的起源比较复杂,具体参考维基百科 以及这篇博客. 逻辑回归的基础是逻辑函数,逻辑函数是逻辑斯谛分布的累计分布函数,需要首先了解逻辑斯谛分布.逻辑斯谛分布是一类连续概率分布,它的累计分布函数是逻辑函数,形状上类似于正态分布,但是其呈现出重尾分布的特点累计分布函数如下所示: $$F(x;\mu ,s)={\frac  {1}{1+e^{-{\frac  {x-\mu }{s}">
+<meta property="og:description" content="1. 逻辑斯谛分布逻辑回归的起源比较复杂,具体参考维基百科 以及这篇博客. 逻辑回归的基础是逻辑函数,逻辑函数是逻辑斯谛分布的累计分布函数,需要首先了解逻辑斯谛分布.逻辑斯谛分布是一类连续概率分布,它的累计分布函数是逻辑函数,形状上类似于正态分布,但是其呈现出重尾分布的特点累计分布函数如下所示:  F(x;\mu ,s)={\frac  {1}{1+e^{-{\frac  {x-\mu }{s}}">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://wuliangradi.github.io/images/480px-Logistic_cdf.svg.png">
 <meta property="og:image" content="https://wuliangradi.github.io/images/480px-Logisticpdfunction.svg.png">
 <meta property="og:updated_time" content="2017-09-16T02:15:51.166Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习第二层之逻辑回归">
-<meta name="twitter:description" content="1. 逻辑斯谛分布逻辑回归的起源比较复杂,具体参考维基百科 以及这篇博客. 逻辑回归的基础是逻辑函数,逻辑函数是逻辑斯谛分布的累计分布函数,需要首先了解逻辑斯谛分布.逻辑斯谛分布是一类连续概率分布,它的累计分布函数是逻辑函数,形状上类似于正态分布,但是其呈现出重尾分布的特点累计分布函数如下所示: $$F(x;\mu ,s)={\frac  {1}{1+e^{-{\frac  {x-\mu }{s}">
+<meta name="twitter:description" content="1. 逻辑斯谛分布逻辑回归的起源比较复杂,具体参考维基百科 以及这篇博客. 逻辑回归的基础是逻辑函数,逻辑函数是逻辑斯谛分布的累计分布函数,需要首先了解逻辑斯谛分布.逻辑斯谛分布是一类连续概率分布,它的累计分布函数是逻辑函数,形状上类似于正态分布,但是其呈现出重尾分布的特点累计分布函数如下所示:  F(x;\mu ,s)={\frac  {1}{1+e^{-{\frac  {x-\mu }{s}}">
 <meta name="twitter:image" content="https://wuliangradi.github.io/images/480px-Logistic_cdf.svg.png">
 
 
@@ -347,29 +347,29 @@
 
       
         <h4 id="1-逻辑斯谛分布"><a href="#1-逻辑斯谛分布" class="headerlink" title="1. 逻辑斯谛分布"></a>1. 逻辑斯谛分布</h4><p>逻辑回归的起源比较复杂,具体参考<a href="https://en.wikipedia.org/wiki/Logistic_regression" target="_blank" rel="external">维基百科</a> 以及<a href="https://chenrudan.github.io/blog/2016/01/09/logisticregression.html" target="_blank" rel="external">这篇博客</a>. 逻辑回归的基础是逻辑函数,逻辑函数是逻辑斯谛分布的累计分布函数,需要首先了解逻辑斯谛分布.<br>逻辑斯谛分布是一类连续概率分布,它的累计分布函数是逻辑函数,形状上类似于正态分布,但是其呈现出重尾分布的特点<br>累计分布函数如下所示:</p>
-<p>$$<br>F(x;\mu ,s)={\frac  {1}{1+e^{-{\frac  {x-\mu }{s}}}}} ={\frac  12}+{\frac  12}\;\operatorname {tanh}!\left({\frac  {x-\mu }{2s}}\right)<br>$$  </p>
-<p>曲线图如下:<br><img src="https://wuliangradi.github.io/images/480px-Logistic_cdf.svg.png" alt=""></p>
+<script type="math/tex; mode=display">
+F(x;\mu ,s)={\frac  {1}{1+e^{-{\frac  {x-\mu }{s}}}}} ={\frac  12}+{\frac  12}\;\operatorname {tanh}\!\left({\frac  {x-\mu }{2s}}\right)</script><p>曲线图如下:<br><img src="https://wuliangradi.github.io/images/480px-Logistic_cdf.svg.png" alt=""></p>
 <p>概率密度函数如下所示:   </p>
-<p>$$<br>f(x;\mu ,s)={\frac  {e^{-{\frac  {x-\mu }{s} } } }{s\left(1+e^{ {-{\frac  {x-\mu }{s}} } }\right)^{2}}}={\frac  {1}{4s} }\operatorname {sech}^{2}!\left({\frac  {x-\mu }{2s}}\right)<br>$$</p>
-<p>曲线图如下:<br><img src="https://wuliangradi.github.io/images/480px-Logisticpdfunction.svg.png" alt=""></p>
+<script type="math/tex; mode=display">
+f(x;\mu ,s)={\frac  {e^{-{\frac  {x-\mu }{s} } } }{s\left(1+e^{ {-{\frac  {x-\mu }{s}} } }\right)^{2}}}={\frac  {1}{4s} }\operatorname {sech}^{2}\!\left({\frac  {x-\mu }{2s}}\right)</script><p>曲线图如下:<br><img src="https://wuliangradi.github.io/images/480px-Logisticpdfunction.svg.png" alt=""></p>
 <h4 id="2-逻辑回归"><a href="#2-逻辑回归" class="headerlink" title="2. 逻辑回归"></a>2. 逻辑回归</h4><p>线性回归确定决策边界，通过决策符号来判断属于哪一类，这个过程属于感知机(二元线性分类器)的范畴。逻辑回归试图使得输出值等于概率比值取对数(这个量也被叫做log odds )。李航的统计机器学习的定义：输出Y=1的对数几率是由输入x的线性函数表示的模型，即为逻辑斯底回归模型，所以逻辑回归的思路是先拟合决策边界，再拟合分类边界和概率的关系</p>
 <p>逻辑回归二分类问题的y的类别判定服从伯努利分布<br>逻辑回归多分类问题的y的类别判定服从多分类分布</p>
 <p>标准逻辑函数  </p>
-<p>$$<br>\sigma (t)={\frac {e^{t}}{e^{t}+1}}={\frac {1}{1+e^{-t}}}<br>$$</p>
-<p>假如t是随机变量x的线性函数,逻辑函数如下:</p>
-<p>$$<br>F(x)={\frac {1}{1+e^{-(\beta <em>{0}+\beta </em>{1}x)}}}<br>$$</p>
-<p>此时F(x)可以理解为独立变量”success”的概率<br>亦即二项逻辑回归的条件概率分布如下:<br>逻辑分布的累计概率分布函数即逻辑函数是逻辑回归用于分类的点密度函数值</p>
-<p>$$<br>P(Y<em>{i}=1)={\frac {e^{ {\boldsymbol{\beta}}</em>{1}\cdot\mathbf{X}<em>{i} } }{1+e^{ {\boldsymbol{\beta} }</em>{1}\cdot\mathbf{X}{i} } } }<br>$$</p>
-<p>$$<br>P(Y<em>{i}=0)={\frac {1}{1+e^{ {\boldsymbol {\beta } }</em>{1}\cdot \mathbf {X} _{i} } } }<br>$$</p>
-<h4 id="3-逻辑回归的几个特点"><a href="#3-逻辑回归的几个特点" class="headerlink" title="3. 逻辑回归的几个特点"></a>3. 逻辑回归的几个特点</h4><p>事件的几率是指事件发生的概率和不发生的概率的比值,事件的对数几率(log odds)或logit函数是  </p>
-<p>$$<br>g(F(x))=\ln \left({\frac {F(x)}{1-F(x)}}\right)=\beta <em>{0}+\beta </em>{1}x,<br>$$</p>
-<p>逻辑函数的导数  </p>
-<p>$$<br>\frac{d}{dx}f(x) = f(x)(1-f(x))<br>$$</p>
-<h4 id="4-逻辑回归监督分类的优化"><a href="#4-逻辑回归监督分类的优化" class="headerlink" title="4. 逻辑回归监督分类的优化"></a>4. 逻辑回归监督分类的优化</h4><p>使用极大似然估计法估计模型参数  </p>
-<p>$$<br>L(w)=\prod <em>{i=1}^{n}p(x</em>{i}\mid \theta )=\prod <em>{i=1}^{n}[p(x</em>{i})]^{y<em>{i}}[1-p(x</em>{i})]^{1-y_{i}}<br>$$</p>
-<p>对数似然函数为</p>
-<p>$$<br>L(w)=\sum <em>{i=1}^{n}[{y</em>{i}}(wx<em>{i})-log(1+e^{wx</em>{i}})]<br>$$</p>
-<p>此时,问题转换成以对数似然函数为目标函数的最优化问题,常用梯度下降算法和拟牛顿算法求解</p>
+<script type="math/tex; mode=display">
+\sigma (t)={\frac {e^{t}}{e^{t}+1}}={\frac {1}{1+e^{-t}}}</script><p>假如t是随机变量x的线性函数,逻辑函数如下:</p>
+<script type="math/tex; mode=display">
+F(x)={\frac {1}{1+e^{-(\beta _{0}+\beta _{1}x)}}}</script><p>此时F(x)可以理解为独立变量”success”的概率<br>亦即二项逻辑回归的条件概率分布如下:<br>逻辑分布的累计概率分布函数即逻辑函数是逻辑回归用于分类的点密度函数值</p>
+<script type="math/tex; mode=display">
+P(Y_{i}=1)={\frac {e^{ {\boldsymbol{\beta}}_{1}\cdot\mathbf{X}_{i} } }{1+e^{ {\boldsymbol{\beta} }_{1}\cdot\mathbf{X}{i} } } }</script><script type="math/tex; mode=display">
+P(Y_{i}=0)={\frac {1}{1+e^{ {\boldsymbol {\beta } }_{1}\cdot \mathbf {X} _{i} } } }</script><h4 id="3-逻辑回归的几个特点"><a href="#3-逻辑回归的几个特点" class="headerlink" title="3. 逻辑回归的几个特点"></a>3. 逻辑回归的几个特点</h4><p>事件的几率是指事件发生的概率和不发生的概率的比值,事件的对数几率(log odds)或logit函数是  </p>
+<script type="math/tex; mode=display">
+g(F(x))=\ln \left({\frac {F(x)}{1-F(x)}}\right)=\beta _{0}+\beta _{1}x,</script><p>逻辑函数的导数  </p>
+<script type="math/tex; mode=display">
+\frac{d}{dx}f(x) = f(x)(1-f(x))</script><h4 id="4-逻辑回归监督分类的优化"><a href="#4-逻辑回归监督分类的优化" class="headerlink" title="4. 逻辑回归监督分类的优化"></a>4. 逻辑回归监督分类的优化</h4><p>使用极大似然估计法估计模型参数  </p>
+<script type="math/tex; mode=display">
+L(w)=\prod _{i=1}^{n}p(x_{i}\mid \theta )=\prod _{i=1}^{n}[p(x_{i})]^{y_{i}}[1-p(x_{i})]^{1-y_{i}}</script><p>对数似然函数为</p>
+<script type="math/tex; mode=display">
+L(w)=\sum _{i=1}^{n}[{y_{i}}(wx_{i})-log(1+e^{wx_{i}})]</script><p>此时,问题转换成以对数似然函数为目标函数的最优化问题,常用梯度下降算法和拟牛顿算法求解</p>
 <h4 id="5-梯度下降算法"><a href="#5-梯度下降算法" class="headerlink" title="5. 梯度下降算法"></a>5. 梯度下降算法</h4><p>梯度下降的推导</p>
 <h4 id="6-BFGS"><a href="#6-BFGS" class="headerlink" title="6. BFGS"></a>6. BFGS</h4><h4 id="7-正则化"><a href="#7-正则化" class="headerlink" title="7. 正则化"></a>7. 正则化</h4><p>正则化因子</p>
 <h4 id="8-逻辑回归和其他模型的关系"><a href="#8-逻辑回归和其他模型的关系" class="headerlink" title="8. 逻辑回归和其他模型的关系"></a>8. 逻辑回归和其他模型的关系</h4><p>参考资料</p>
@@ -404,8 +404,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/13/2017-05-13-statistical/" rel="next" title="统计基础知识框架">
-                <i class="fa fa-chevron-left"></i> 统计基础知识框架
+              <a href="/2017/04/20/2017-06-07-code/" rel="next" title="字符编码">
+                <i class="fa fa-chevron-left"></i> 字符编码
               </a>
             
           </div>
@@ -414,8 +414,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/15/2017-05-15-probability/" rel="prev" title="概率论和信息论基础">
-                概率论和信息论基础 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/13/2017-05-13-statistical/" rel="prev" title="统计基础知识框架">
+                统计基础知识框架 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

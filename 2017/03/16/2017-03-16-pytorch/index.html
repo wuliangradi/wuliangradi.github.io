@@ -425,39 +425,38 @@
 </ul>
 <h4 id="3-Loss-functions"><a href="#3-Loss-functions" class="headerlink" title="3. Loss functions"></a>3. Loss functions</h4><ul>
 <li><p>torch.nn.L1Loss(参数标记是否取平均数）  </p>
-<p>$$<br>loss(x, y) = 1/n\sum|x<em>{i}-y</em>{i}|<br>$$</p>
-</li>
+<script type="math/tex; mode=display">
+loss(x, y) = 1/n\sum|x_{i}-y_{i}|</script></li>
 <li><p>torch.nn.MSELoss  </p>
-<p>$$<br>loss(x, y) = 1/n\sum|x<em>{i}-y</em>{i}|^{2}<br>$$  </p>
-</li>
+<script type="math/tex; mode=display">
+loss(x, y) = 1/n\sum|x_{i}-y_{i}|^{2}</script></li>
 <li><p>torch.nn.CrossEntropyLoss  </p>
-<p>$$<br>loss(x, class) = -log(exp(x[class]) / (\sum_j exp(x[j])))</p>
-<pre><code>= -x[class] + log(\sum_j exp(x[j]))
-</code></pre><p>$$  </p>
-</li>
+<script type="math/tex; mode=display">
+loss(x, class) = -log(exp(x[class]) / (\sum_j exp(x[j])))
+           = -x[class] + log(\sum_j exp(x[j]))</script></li>
 </ul>
 <h4 id="4-Non-linear-Activations"><a href="#4-Non-linear-Activations" class="headerlink" title="4. Non-linear Activations"></a>4. Non-linear Activations</h4><ul>
 <li><p>class torch.nn.ReLU  </p>
-<p> $$<br>ReLU(x)=max(0, x)<br> $$</p>
-</li>
+<script type="math/tex; mode=display">
+ReLU(x)=max(0, x)</script></li>
 </ul>
 <ol>
 <li><p>class torch.nn.ELU</p>
-<p>$$<br>ELU(x)=max(0, x) + min(0, alpha*(exp(x) - 1))<br>$$  </p>
-<p>alpha – the alpha value for the ELU formulation</p>
+<script type="math/tex; mode=display">
+ELU(x)=max(0, x) + min(0, alpha*(exp(x) - 1))</script><p>alpha – the alpha value for the ELU formulation</p>
 </li>
 <li><p>torch.nn.PReLU</p>
-<p>$$<br> PReLU(x)=max(0,x)+a∗min(0,x)<br>$$  </p>
-</li>
+<script type="math/tex; mode=display">
+ PReLU(x)=max(0,x)+a∗min(0,x)</script></li>
 <li><p>torch.nn.LeakyReLU  </p>
-<p>$$<br>LeakyReLU=max(0,x)+negative_slope∗min(0,x)<br>$$  </p>
-</li>
+<script type="math/tex; mode=display">
+LeakyReLU=max(0,x)+negative_slope∗min(0,x)</script></li>
 <li><p>nn.Sigmoid  </p>
 <p>few</p>
 </li>
 <li><p>torch.nn.Softplus  </p>
-<p>$$<br>f(x)=1/beta∗log(1+exp(beta∗xi))<br>$$  </p>
-</li>
+<script type="math/tex; mode=display">
+f(x)=1/beta∗log(1+exp(beta∗xi))</script></li>
 </ol>
 <h4 id="5-Dropout-layers"><a href="#5-Dropout-layers" class="headerlink" title="5. Dropout layers"></a>5. Dropout layers</h4><h4 id="6-Recurrent-layers"><a href="#6-Recurrent-layers" class="headerlink" title="6. Recurrent layers"></a>6. Recurrent layers</h4><h4 id="7-Pooling-Layers"><a href="#7-Pooling-Layers" class="headerlink" title="7. Pooling Layers"></a>7. Pooling Layers</h4><h4 id="8-Vision-函数"><a href="#8-Vision-函数" class="headerlink" title="8. Vision 函数"></a>8. Vision 函数</h4><ul>
 <li>Upsample 函数，和 downsampling 相反，和 interpolation 插值的意思类似<br>Upsample函数根据概念，采样后的尺度(或者放大比例)和采样方法是非常重要的。相对应的就有PyTorch的参数，size(或者 scale_factor) 和 mode(nearest | bilinear | trilinear. Default: nearest)。实现的细节图像处理基础有实现，当使用Upsample时只需要考虑<strong>[尺度]</strong>和<strong>[采样方法]</strong>即可<br>因为Upsample是一种只关注待采样点周围像素点的方法，所以很可能失真或者其他问题，<a href="https://www.zhihu.com/question/43609045" target="_blank" rel="external">Deconvolution</a>是一种非常好的替代方法。</li>
@@ -488,8 +487,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/13/2017-03-13-python/" rel="next" title="Python">
-                <i class="fa fa-chevron-left"></i> Python
+              <a href="/2017/03/13/2017-03-27-rd/" rel="next" title="Python开发环境以及包的管理">
+                <i class="fa fa-chevron-left"></i> Python开发环境以及包的管理
               </a>
             
           </div>

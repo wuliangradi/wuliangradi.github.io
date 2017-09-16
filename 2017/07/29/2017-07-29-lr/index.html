@@ -354,16 +354,16 @@
 </ul>
 <p><img src="https://github.com/wuliangradi/images/raw/master/curve_gaussian.png" alt=""></p>
 <p>多项式曲线拟合问题，给定x的值，对应的l值假设服从高斯分布，分布的均值为y(x,w)，精度由β给出。通过最大似然估计的方法来确定未知参数w和beta的参数的值</p>
-<p>$$<br>p(t|x,w,\beta) = \mathcal{N}(t|y(x,w),\beta^{-1})<br>$$</p>
-<p>对数似然函数如下，此时最小化似然函数和最小二乘的形式是一致的</p>
-<p>$$<br>\ln p(T|X, w, \beta) = -\frac{\beta}{2}\sum\limits_{n=1}^{N}{y(x_n, w) - t_n}^2 + \frac{N}{2}\ln{\beta} - \frac{N}{2}\ln{(2\pi)}<br>$$</p>
-<p>多项式系数w的先验分布</p>
-<p>$$<br>p(w|\alpha) = \mathcal{N}(w|0, \alpha^{-1}I) = \left(\frac{\alpha}{2\pi}\right)^{(M + 1)/2}exp\left{-\frac{\alpha}{2}w^Tw\right}<br>$$</p>
-<p>参数估计w的后验概率表达式</p>
-<p>$$<br>p(w|X, T, \alpha, \beta) \propto  p(T|X, w, \beta)p(w|\alpha)<br>$$</p>
-<p>最大化后验概率的最终形式：</p>
-<p>$$<br>\frac{\beta}{2}\sum\limits_{n=1}^{N}{y(x_n, w) - t_n}^2 + \frac{\alpha}{2}w^Tw<br>$$</p>
-
+<script type="math/tex; mode=display">
+p(t|x,w,\beta) = \mathcal{N}(t|y(x,w),\beta^{-1})</script><p>对数似然函数如下，此时最小化似然函数和最小二乘的形式是一致的</p>
+<script type="math/tex; mode=display">
+\ln p(T|X, w, \beta) = -\frac{\beta}{2}\sum\limits_{n=1}^{N}\{y(x_n, w) - t_n\}^2 + \frac{N}{2}\ln{\beta} - \frac{N}{2}\ln{(2\pi)}</script><p>多项式系数w的先验分布</p>
+<script type="math/tex; mode=display">
+p(w|\alpha) = \mathcal{N}(w|0, \alpha^{-1}I) = \left(\frac{\alpha}{2\pi}\right)^{(M + 1)/2}exp\left\{-\frac{\alpha}{2}w^Tw\right\}</script><p>参数估计w的后验概率表达式</p>
+<script type="math/tex; mode=display">
+p(w|X, T, \alpha, \beta) \propto  p(T|X, w, \beta)p(w|\alpha)</script><p>最大化后验概率的最终形式：</p>
+<script type="math/tex; mode=display">
+\frac{\beta}{2}\sum\limits_{n=1}^{N}\{y(x_n, w) - t_n\}^2 + \frac{\alpha}{2}w^Tw</script>
       
     </div>
     
