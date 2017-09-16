@@ -100,12 +100,12 @@
 <meta property="og:site_name" content="旅途">
 <meta property="og:description" content="Python包的管理[1]Package Management非常重要，模块化开发便于统一安装，下载，和管理以及使用。使用打包的方式使得我们的项目变得易用而且稳定，便于版本管理。这里使用python自带的distutils来实现源程序的打包。关于其他的包管理工具(distutils,setuptools,distribute,easy_install,pip,distutils2)的使用参考包管理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://wuliangradi.github.io/images/structure.png">
-<meta property="og:updated_time" content="2017-09-16T02:28:26.169Z">
+<meta property="og:image" content="https://github.com/wuliangradi/images/raw/master/structure.png">
+<meta property="og:updated_time" content="2017-09-16T07:39:28.735Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python开发环境以及包的管理">
 <meta name="twitter:description" content="Python包的管理[1]Package Management非常重要，模块化开发便于统一安装，下载，和管理以及使用。使用打包的方式使得我们的项目变得易用而且稳定，便于版本管理。这里使用python自带的distutils来实现源程序的打包。关于其他的包管理工具(distutils,setuptools,distribute,easy_install,pip,distutils2)的使用参考包管理">
-<meta name="twitter:image" content="https://wuliangradi.github.io/images/structure.png">
+<meta name="twitter:image" content="https://github.com/wuliangradi/images/raw/master/structure.png">
 
 
 
@@ -362,7 +362,7 @@
 </blockquote>
 </li>
 </ul>
-<h4 id="2-工程的结构化-2"><a href="#2-工程的结构化-2" class="headerlink" title="2. 工程的结构化[2]"></a>2. 工程的结构化<sup>[2]</sup></h4><p> <a href="https://github.com/kennethreitz/samplemod" target="_blank" rel="external">Kenneth Reitz</a>推荐的仓库模板如下所示:<br> <img src="https://wuliangradi.github.io/images/structure.png" alt=""></p>
+<h4 id="2-工程的结构化-2"><a href="#2-工程的结构化-2" class="headerlink" title="2. 工程的结构化[2]"></a>2. 工程的结构化<sup>[2]</sup></h4><p> <a href="https://github.com/kennethreitz/samplemod" target="_blank" rel="external">Kenneth Reitz</a>推荐的仓库模板如下所示:<br> <img src="https://github.com/wuliangradi/images/raw/master/structure.png" alt=""></p>
 <p>package的<strong>init</strong>.py非常重要，最常见的作用是把同级文件的类，函数以及，module等import到最外层去，方便调用</p>
 <h4 id="3-编写setup脚本"><a href="#3-编写setup脚本" class="headerlink" title="3. 编写setup脚本"></a>3. 编写setup脚本</h4><p>setup脚本是Distutils构建、发布、安装模块的核心。包括元数据的编写，以及包结构的组织。元数据包括name(name of the package)，version(version of this release)，author(package author’s name)，author_email(email address of the package author)，description(short, summary description of the package)…..的信息。<br>下面是一个例子文件的组织<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">setup.py</div><div class="line">src/</div><div class="line">    mypkg/</div><div class="line">        __init__.py</div><div class="line">        module.py</div><div class="line">        data/</div><div class="line">            tables.dat</div><div class="line">            spoons.dat</div><div class="line">            forks.dat</div></pre></td></tr></table></figure></p>
 <p>相应的setup()为</p>
@@ -455,8 +455,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/16/2017-03-16-pytorch/" rel="prev" title="Pytorch学习笔记">
-                Pytorch学习笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/13/2017-03-13-python/" rel="prev" title="Python">
+                Python <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -533,7 +533,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

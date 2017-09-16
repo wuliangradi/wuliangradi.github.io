@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="LSTM学习资料 http://colah.github.io/posts/2015-08-Understanding-LSTMs/ 中文http://blog.csdn.net/ycheng_sjtu/article/details/48792467 https://github.com/pangolulu/rnn-from-scratch  教材13章 概率PCAhttps://mqshen.">
+<meta name="description" content="数据预处理问题UFLDL Tutorial 数据切分 Python random random.shuffle(a) random.choice(mylist,3) random.sample(the_list, 50)  图像归一化  normalize a NumPy array image data is 3xMxN 但是imshow的要求是”MxNx3 — RGB (float or ui">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RNN 循环神经网络">
-<meta property="og:url" content="wuliangradi.github.io/2017/03/12/2017-09-10-cnn/index.html">
+<meta property="og:title" content="深度学习实践">
+<meta property="og:url" content="wuliangradi.github.io/2017/06/18/2017-06-24-dl_action/index.html">
 <meta property="og:site_name" content="旅途">
-<meta property="og:description" content="LSTM学习资料 http://colah.github.io/posts/2015-08-Understanding-LSTMs/ 中文http://blog.csdn.net/ycheng_sjtu/article/details/48792467 https://github.com/pangolulu/rnn-from-scratch  教材13章 概率PCAhttps://mqshen.">
+<meta property="og:description" content="数据预处理问题UFLDL Tutorial 数据切分 Python random random.shuffle(a) random.choice(mylist,3) random.sample(the_list, 50)  图像归一化  normalize a NumPy array image data is 3xMxN 但是imshow的要求是”MxNx3 — RGB (float or ui">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-10T12:25:21.866Z">
+<meta property="og:updated_time" content="2017-09-16T07:30:44.962Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RNN 循环神经网络">
-<meta name="twitter:description" content="LSTM学习资料 http://colah.github.io/posts/2015-08-Understanding-LSTMs/ 中文http://blog.csdn.net/ycheng_sjtu/article/details/48792467 https://github.com/pangolulu/rnn-from-scratch  教材13章 概率PCAhttps://mqshen.">
+<meta name="twitter:title" content="深度学习实践">
+<meta name="twitter:description" content="数据预处理问题UFLDL Tutorial 数据切分 Python random random.shuffle(a) random.choice(mylist,3) random.sample(the_list, 50)  图像归一化  normalize a NumPy array image data is 3xMxN 但是imshow的要求是”MxNx3 — RGB (float or ui">
 
 
 
@@ -133,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="wuliangradi.github.io/2017/03/12/2017-09-10-cnn/"/>
+  <link rel="canonical" href="wuliangradi.github.io/2017/06/18/2017-06-24-dl_action/"/>
 
 
 
 
 
-  <title>RNN 循环神经网络 | 旅途</title>
+  <title>深度学习实践 | 旅途</title>
   
 
 
@@ -276,7 +276,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/03/12/2017-09-10-cnn/">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017/06/18/2017-06-24-dl_action/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liang Wu">
@@ -293,7 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">RNN 循环神经网络</h1>
+          <h1 class="post-title" itemprop="name headline">深度学习实践</h1>
         
 
         <div class="post-meta">
@@ -305,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-12T15:27:31+08:00">
-                2017-03-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-18T19:16:31+08:00">
+                2017-06-18
               </time>
             
 
@@ -343,17 +343,19 @@
       
 
       
-        <h4 id="LSTM学习资料"><a href="#LSTM学习资料" class="headerlink" title="LSTM学习资料"></a>LSTM学习资料</h4><ul>
-<li><a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/" target="_blank" rel="external">http://colah.github.io/posts/2015-08-Understanding-LSTMs/</a></li>
-<li>中文<a href="http://blog.csdn.net/ycheng_sjtu/article/details/48792467" target="_blank" rel="external">http://blog.csdn.net/ycheng_sjtu/article/details/48792467</a></li>
-<li><a href="https://github.com/pangolulu/rnn-from-scratch" target="_blank" rel="external">https://github.com/pangolulu/rnn-from-scratch</a></li>
+        <h3 id="数据预处理问题"><a href="#数据预处理问题" class="headerlink" title="数据预处理问题"></a>数据预处理问题</h3><p><a href="http://ufldl.stanford.edu/wiki/index.php/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86" target="_blank" rel="external">UFLDL Tutorial</a></p>
+<p>数据切分 Python random random.shuffle(a) random.choice(mylist,3) random.sample(the_list, 50)</p>
+<ul>
+<li>图像归一化  <a href="https://stackoverflow.com/questions/1735025/how-to-normalize-a-numpy-array-to-within-a-certain-range" target="_blank" rel="external">normalize a NumPy array</a></li>
+<li>image data is 3xMxN 但是imshow的要求是”MxNx3 — RGB (float or uint8 array)”  用 np.rollaxis() 或者 numpy.moveaxis(a, source, destination) 函数 </li>
+<li>打开tiff图像 - gdal包<br>　 - 绘制图像 matplotlib</li>
 </ul>
-<h4 id="教材13章"><a href="#教材13章" class="headerlink" title="教材13章"></a>教材13章</h4><ul>
-<li><p>概率PCA<br><a href="https://mqshen.gitbooks.io/prml/Chapter12/probabilistic_pca.html" target="_blank" rel="external">https://mqshen.gitbooks.io/prml/Chapter12/probabilistic_pca.html</a></p>
-</li>
-<li><p>ICA<br><a href="http://danieljyc.github.io/2014/06/13/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A015-3--%E7%8B%AC%E7%AB%8B%E6%88%90%E5%88%86%E5%88%86%E6%9E%90ica%EF%BC%88independent-component-analysis%EF%BC%89/" target="_blank" rel="external">pca 资料</a><br><a href="https://www.zhihu.com/question/28845451" target="_blank" rel="external">https://www.zhihu.com/question/28845451</a></p>
-</li>
+<h3 id="图像切割实践"><a href="#图像切割实践" class="headerlink" title="图像切割实践"></a>图像切割实践</h3><ul>
+<li><a href="https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/discussion/32402" target="_blank" rel="external">https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/discussion/32402</a><br>比较吊</li>
 </ul>
+<h3 id="内存问题"><a href="#内存问题" class="headerlink" title="内存问题"></a>内存问题</h3><p>python进程以ctrl+z杀死，后台内存还占用，以ctrl+c杀死内存释放。<br>nvidia-smi查看内存占用情况<br>kill -9 pid 杀死进程<br>或者sudo nvidia-smi —gpu-reset 释放内存   </p>
+<h3 id="模型保存"><a href="#模型保存" class="headerlink" title="模型保存"></a>模型保存</h3><p><a href="https://discuss.pytorch.org/t/how-to-save-load-torch-models/718" target="_blank" rel="external">save model in pytorch</a></p>
+<h3 id="学习过程保存及可视化"><a href="#学习过程保存及可视化" class="headerlink" title="学习过程保存及可视化"></a>学习过程保存及可视化</h3><h3 id="pytorch-方法探究"><a href="#pytorch-方法探究" class="headerlink" title="pytorch 方法探究"></a>pytorch 方法探究</h3><p>model.eval()<br><code>Sets the module in evaluation mode.This has any effect only on modules such as Dropout or BatchNorm.</code><br>model.train()<br><code>Sets the module in training mode.This has any effect only on modules such as Dropout or BatchNorm.</code></p>
 
       
     </div>
@@ -378,14 +380,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/06/09/2017-06-09-hadoop/" rel="next" title="Hadoop生态系统">
+                <i class="fa fa-chevron-left"></i> Hadoop生态系统
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/12/2017-03-11-git/" rel="prev" title="Git">
-                Git <i class="fa fa-chevron-right"></i>
+              <a href="/2017/06/18/2017-06-18-roadmap/" rel="prev" title="Roadmap">
+                Roadmap <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -462,7 +468,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -501,7 +507,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#LSTM学习资料"><span class="nav-number">1.</span> <span class="nav-text">LSTM学习资料</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#教材13章"><span class="nav-number">2.</span> <span class="nav-text">教材13章</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据预处理问题"><span class="nav-number">1.</span> <span class="nav-text">数据预处理问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图像切割实践"><span class="nav-number">2.</span> <span class="nav-text">图像切割实践</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存问题"><span class="nav-number">3.</span> <span class="nav-text">内存问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型保存"><span class="nav-number">4.</span> <span class="nav-text">模型保存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#学习过程保存及可视化"><span class="nav-number">5.</span> <span class="nav-text">学习过程保存及可视化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pytorch-方法探究"><span class="nav-number">6.</span> <span class="nav-text">pytorch 方法探究</span></a></li></ol></div>
             
 
           </div>

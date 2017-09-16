@@ -101,7 +101,7 @@
 <meta property="og:description" content="第一阶段 攒机 显卡 其他  第二阶段 双系统安装 进入Ubuntu U盘安装时出现黑屏解决办法“e”进入编辑模式，删除”—“， 加上”nomodeset” 安装Ubuntu时屏幕分辨率问题 /etc/default/grub 修改#GRUB_GFXMODE=640x480   彻底解决黑屏     /etc/default/grub 修改为GRUB_CMDLINE_LINUX_DEFAULT=&amp;">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/wuliangradi/images/raw/master/xiankaqudong.png">
-<meta property="og:updated_time" content="2017-09-10T12:22:43.482Z">
+<meta property="og:updated_time" content="2017-09-16T07:25:08.912Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习系统搭建">
 <meta name="twitter:description" content="第一阶段 攒机 显卡 其他  第二阶段 双系统安装 进入Ubuntu U盘安装时出现黑屏解决办法“e”进入编辑模式，删除”—“， 加上”nomodeset” 安装Ubuntu时屏幕分辨率问题 /etc/default/grub 修改#GRUB_GFXMODE=640x480   彻底解决黑屏     /etc/default/grub 修改为GRUB_CMDLINE_LINUX_DEFAULT=&amp;">
@@ -376,7 +376,7 @@
 <li>CUDA安装 按照教程走即可</li>
 <li>CUDNN安装 按照教程走即可</li>
 </ul>
-<h4 id="第四阶段-深度学习框架以及Python开发环境搭建"><a href="#第四阶段-深度学习框架以及Python开发环境搭建" class="headerlink" title="第四阶段 深度学习框架以及Python开发环境搭建"></a>第四阶段 深度学习框架以及Python开发环境搭建</h4><ul>
+<h4 id="第四阶段-深度学习框架以及Python开发环境搭建"><a href="#第四阶段-深度学习框架以及Python开发环境搭建" class="headerlink" title="第四阶段 深度学习框架以及Python开发环境搭建"></a>第四阶段 深度学习框架以及Python开发环境搭建</h4><ol>
 <li><p>翻墙</p>
 <ul>
 <li><p>Ubuntu shadowsocks-qt5 安装</p>
@@ -388,8 +388,6 @@
 </li>
 </ul>
 </li>
-</ul>
-<ul>
 <li><p>工具安装</p>
 <ul>
 <li>Ubuntu 搜狗输入法的安装</li>
@@ -406,33 +404,27 @@
 </li>
 </ul>
 </li>
-<li><p>python开发环境搭建之pip</p>
+<li><p>python开发环境搭建之pip(该方案安装pytorch失败)</p>
 <ul>
-<li>综述：<ul>
+<li>综述：</li>
 <li>最好在virtualenv和virtualenvwrapper环境下搭建python开发环境</li>
 <li>mac下进入虚拟环境依旧会出现系统的第三方模块，可以参考这个 <a href="https://stackoverflow.com/questions/1382925/virtualenv-no-site-packages-and-pip-still-finding-global-packages" target="_blank" rel="external">回答</a></li>
-</ul>
-</li>
 <li><p>mac osx下 pip 安装某些模块会出现权限问题，甚至root权限都没有安装成功，那么最优雅的方式是</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install ****** --<span class="keyword">user</span> <span class="title">-U</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>opencv<code>pip install opencv-python</code></p>
 </li>
-<li>PIL <code>pip install Pillow</code><br>当使用PIL模块或者其他模块调用PIL模块的时候会出现一个问题：   <ul>
+<li>PIL <code>pip install Pillow</code><br>当使用PIL模块或者其他模块调用PIL模块的时候会出现一个问题：   </li>
 <li>问题提示：NotImplementedError: tostring() has been removed. Please call tobytes() instead</li>
 <li>问题原因：PIL这个库更新后，tostring被舍弃了，叫做tobytes了</li>
 <li>解决办法：<a href="http://blog.csdn.net/hjxu2016/article/details/71055658" target="_blank" rel="external">http://blog.csdn.net/hjxu2016/article/details/71055658</a></li>
-</ul>
-</li>
 <li>pandas scikit-learn<br><code>pip install numpy, scipy, scikit-learn，pandas，matplotlib</code></li>
-<li>pycharm的搭建<ul>
+<li>pycharm的搭建</li>
 <li>pycharm 官网下载</li>
 <li>sudo  dpkg  -i  <em>**</em>.deb</li>
 </ul>
 </li>
-</ul>
-</li>
-<li><p>python开发环境搭建之conda<br>pytorch cuda版不支持pip install，所以只有退而求其次使用Anaconda和conda了（最后conda也因为网络原因不能安装）</p>
+<li><p>python开发环境搭建之conda(该方案安装pytorch失败)<br>pytorch cuda版不支持pip install，所以只有退而求其次使用Anaconda和conda了（最后conda也因为网络原因不能安装）</p>
 <ul>
 <li>下载文件</li>
 <li>安装 bash <strong>*</strong>.sh</li>
@@ -444,13 +436,13 @@
 <li>真是异常蛋疼最后<code>conda install pytorch torchvision cuda80 -c soumith</code>总是出错。所以选择源码编译</li>
 </ul>
 </li>
-<li><p>pytorch编译安装</p>
+<li><p>pytorch编译安装(安装cuda版pytorch正确姿势)</p>
 <ul>
 <li><a href="http://blog.csdn.net/wblgers1234/article/details/72902016" target="_blank" rel="external">ubuntu 下安装pytorch</a></li>
-<li><a href="http://www.jianshu.com/p/50ef56ff79ae" target="_blank" rel="external">Ubuntu 17.04 源码安装 pytorch</a><br>-<br>-</li>
+<li><a href="http://www.jianshu.com/p/50ef56ff79ae" target="_blank" rel="external">Ubuntu 17.04 源码安装 pytorch</a></li>
 </ul>
 </li>
-</ul>
+</ol>
 
       
     </div>
@@ -484,6 +476,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/10/2017-09-10-cnn/" rel="prev" title="CNN 卷积神经网络">
+                CNN 卷积神经网络 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -559,7 +555,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

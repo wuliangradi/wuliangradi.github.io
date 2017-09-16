@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="旅途">
 <meta property="og:description" content="数据预处理问题UFLDL Tutorial 数据切分 Python random random.shuffle(a) random.choice(mylist,3) random.sample(the_list, 50)  图像归一化  normalize a NumPy array image data is 3xMxN 但是imshow的要求是”MxNx3 — RGB (float or ui">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-10T12:28:44.743Z">
+<meta property="og:updated_time" content="2017-09-16T07:36:16.133Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习实践">
 <meta name="twitter:description" content="数据预处理问题UFLDL Tutorial 数据切分 Python random random.shuffle(a) random.choice(mylist,3) random.sample(the_list, 50)  图像归一化  normalize a NumPy array image data is 3xMxN 但是imshow的要求是”MxNx3 — RGB (float or ui">
@@ -350,41 +350,15 @@
 <li>image data is 3xMxN 但是imshow的要求是”MxNx3 — RGB (float or uint8 array)”  用 np.rollaxis() 或者 numpy.moveaxis(a, source, destination) 函数 </li>
 <li>打开tiff图像 - gdal包<br>　 - 绘制图像 matplotlib</li>
 </ul>
-<ul>
-<li><p>一些尝试</p>
-<ul>
-<li>在训练集上测试 0.49</li>
-<li>训练两遍 提升到0.52</li>
-<li>换了个Adam优化算法, 精度提升到0.58  </li>
-<li><p>增加了一层卷积+dropout+max池化 精度提升到了0.63  </p>
-</li>
-<li><p>每个分类的阈值是必须调整的 因为不同分类的对应阈值应该不一样</p>
-</li>
-<li><p>学习率是不是应该低一点 换了学习率好像没太大的反应<br>thresholds = [0.8, 0.65, 0.68, 0.65, 0.6, 0.9, 0.68, 0.6, 0.7, 0.7, 0.7, 0.75, 0.9, 0.75, 0.65]**2<br>这样的精度还是0.63左右</p>
-</li>
-<li><p>不妨加个batch normalize试试</p>
-</li>
-<li><p>要不要粗暴一点 直接10个epoch<br>能到0.67 0.7 左右 </p>
-</li>
-<li><p>改善cnn结构 加个batch normalize<br>一个 epoch达到0.57 但是貌似损失函数震荡严重,而且泛化能力不强</p>
-</li>
-<li><p>得试一下 multi-label classification</p>
-</li>
-<li><p><a href="https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/discussion/32402" target="_blank" rel="external">https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/discussion/32402</a><br>比较吊</p>
-</li>
-<li><p>这个周末把代码理了一遍后，发现准确率提升了很多，有了0.8,哈哈哈,好像很厉害</p>
-</li>
+<h3 id="图像切割实践"><a href="#图像切割实践" class="headerlink" title="图像切割实践"></a>图像切割实践</h3><ul>
+<li><a href="https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/discussion/32402" target="_blank" rel="external">https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/discussion/32402</a><br>比较吊</li>
 </ul>
-</li>
-</ul>
-<h3 id="内存问题"><a href="#内存问题" class="headerlink" title="内存问题"></a>内存问题</h3><p>python进程以ctrl+z杀死，后台内存还占用，以ctrl+c杀死内存释放。nvidia-smi查看内存占用情况，kill -9 pid 杀死进程<br>或者sudo nvidia-smi —gpu-reset</p>
-<h3 id="模型保存"><a href="#模型保存" class="headerlink" title="模型保存"></a>模型保存</h3><p><a href="https://discuss.pytorch.org/t/how-to-save-load-torch-models/718" target="_blank" rel="external">save model</a></p>
+<h3 id="内存问题"><a href="#内存问题" class="headerlink" title="内存问题"></a>内存问题</h3><p>python进程以ctrl+z杀死，后台内存还占用，以ctrl+c杀死内存释放。<br>nvidia-smi查看内存占用情况<br>kill -9 pid 杀死进程<br>或者sudo nvidia-smi —gpu-reset 释放内存   </p>
+<h3 id="模型保存"><a href="#模型保存" class="headerlink" title="模型保存"></a>模型保存</h3><p><a href="https://discuss.pytorch.org/t/how-to-save-load-torch-models/718" target="_blank" rel="external">save model in pytorch</a></p>
 <h3 id="学习过程保存及可视化"><a href="#学习过程保存及可视化" class="headerlink" title="学习过程保存及可视化"></a>学习过程保存及可视化</h3><h3 id="eval"><a href="#eval" class="headerlink" title="eval"></a>eval</h3><p>model.eval()</p>
-<p><code>Sets the module in evaluation mode.    
-   This has any effect only on modules such as Dropout or BatchNorm.</code></p>
+<p><code>Sets the module in evaluation mode.This has any effect only on modules such as Dropout or BatchNorm.</code></p>
 <p>model.train()</p>
-<p><code>Sets the module in training mode.    
-   This has any effect only on modules such as Dropout or BatchNorm.</code></p>
+<p><code>Sets the module in training mode.This has any effect only on modules such as Dropout or BatchNorm.</code></p>
 
       
     </div>
@@ -497,7 +471,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -536,7 +510,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据预处理问题"><span class="nav-number">1.</span> <span class="nav-text">数据预处理问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存问题"><span class="nav-number">2.</span> <span class="nav-text">内存问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型保存"><span class="nav-number">3.</span> <span class="nav-text">模型保存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#学习过程保存及可视化"><span class="nav-number">4.</span> <span class="nav-text">学习过程保存及可视化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#eval"><span class="nav-number">5.</span> <span class="nav-text">eval</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据预处理问题"><span class="nav-number">1.</span> <span class="nav-text">数据预处理问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图像切割实践"><span class="nav-number">2.</span> <span class="nav-text">图像切割实践</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存问题"><span class="nav-number">3.</span> <span class="nav-text">内存问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型保存"><span class="nav-number">4.</span> <span class="nav-text">模型保存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#学习过程保存及可视化"><span class="nav-number">5.</span> <span class="nav-text">学习过程保存及可视化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#eval"><span class="nav-number">6.</span> <span class="nav-text">eval</span></a></li></ol></div>
             
 
           </div>

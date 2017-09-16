@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="旅途">
 <meta property="og:description" content="工具集 git Git[1] is a version control system (VCS) for tracking changes in computer files and coordinating work on those files among multiple people. Git was created by Linus Torvalds in 2005. As a dist">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-10T12:49:28.246Z">
+<meta property="og:updated_time" content="2017-09-16T07:44:29.589Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Github+jekyll+markdown个人站点">
 <meta name="twitter:description" content="工具集 git Git[1] is a version control system (VCS) for tracking changes in computer files and coordinating work on those files among multiple people. Git was created by Linus Torvalds in 2005. As a dist">
@@ -349,11 +349,11 @@
 <li><code>markdown</code> Markdown<sup>[3]</sup> is a lightweight markup language with plain text formatting syntax. </li>
 <li><code>jeykll</code> 将纯文本转换为静态博客网站.GitHub Pages基于Jekyll构建。</li>
 <li><code>mathjax</code> MathJax允许你在你的网页中包含公式，无论是使用LaTeX、MathML或者AsciiMath符号，这些公式都会被javascript处理为HTML、SVG或者MathML符号Markdown<sup>[4]</sup>。   </li>
+<li><code>hexo</code> Hexo 是一个快速、简洁且高效的博客框架<sup>[6]</sup>。</li>
 </ol>
 <h4 id="在Github-jekyll-markdown的组合里使用数学公式"><a href="#在Github-jekyll-markdown的组合里使用数学公式" class="headerlink" title="在Github + jekyll + markdown的组合里使用数学公式"></a>在Github + jekyll + markdown的组合里使用数学公式</h4><ul>
 <li>starkoverflow 里对应问题 <a href="http://stackoverflow.com/questions/10987992/using-mathjax-with-jekyll" target="_blank" rel="external">using-mathjax-with-jekyll</a>. 答案里还碰到了 deeplearning 作者 Ian Goodfellow</li>
-<li><p>解决办法：<br>Change the markdown line in _config.yml to<br><code>markdown: kramdown</code><br>并且将mathjax的js库放到_layouts/default.html里去  </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<li>解决办法：<br>Change the markdown line in _config.yml to<br><code>markdown: kramdown</code><br>并且将mathjax的js库放到_layouts/default.html里去  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="markdown语法"><a href="#markdown语法" class="headerlink" title="markdown语法"></a>markdown语法</h4><ul>
@@ -362,14 +362,10 @@
 <li>markdown里注释, <a href="https://stackoverflow.com/questions/4823468/comments-in-markdown" target="_blank" rel="external">Comments in Markdown</a></li>
 </ul>
 <h4 id="在sublime里编辑markdown"><a href="#在sublime里编辑markdown" class="headerlink" title="在sublime里编辑markdown"></a>在sublime里编辑markdown</h4><ol>
-<li><p><a href="https://www.imjeff.cn/blog/62/" target="_blank" rel="external">安装Package Control</a><br>调出python控制台，输入安装的python代码，如果代码安装失败可以选择手动安装。<br>使用方法：快捷键<code>Ctrl+Shift+P</code>，选中Install Package，即可安装插件  </p>
-</li>
-<li><p>安装Markdown Editing和Markdown Preview<br><a href="http://www.cnblogs.com/IPrograming/p/Sublime-markdown-editor.html" target="_blank" rel="external">自定义快捷键和支持语法高亮和mathjax支持</a>  </p>
-</li>
-<li><p>在sublime里高亮显示<br><a href="http://frank19900731.github.io/blog/2015/04/13/zai-sublime-zhong-pei-zhi-markdown-huan-jing/" target="_blank" rel="external">显示方法</a></p>
-</li>
+<li><a href="https://www.imjeff.cn/blog/62/" target="_blank" rel="external">安装Package Control</a><br>调出python控制台，输入安装的python代码，如果代码安装失败可以选择手动安装。<br>使用方法：快捷键<figure class="highlight plain"><figcaption><span>Package，即可安装插件  </span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">2. 安装Markdown Editing和Markdown Preview</div><div class="line">[自定义快捷键和支持语法高亮和mathjax支持](http://www.cnblogs.com/IPrograming/p/Sublime-markdown-editor.html)  </div><div class="line">3. 在sublime里高亮显示</div><div class="line">[显示方法](http://frank19900731.github.io/blog/2015/04/13/zai-sublime-zhong-pei-zhi-markdown-huan-jing/)</div><div class="line"></div><div class="line">#### hexo主题 next的问题</div><div class="line">- [Hexo和MathJax的兼容问题](https://github.com/iissnan/hexo-theme-next/issues/826)</div></pre></td></tr></table></figure></li>
 </ol>
-<p>参考：<br>[1] <a href="https://en.wikipedia.org/wiki/Git" target="_blank" rel="external">https://en.wikipedia.org/wiki/Git</a><br>[2] <a href="https://en.wikipedia.org/wiki/GitHub" target="_blank" rel="external">https://en.wikipedia.org/wiki/GitHub</a><br>[3] <a href="https://en.wikipedia.org/wiki/Markdown" target="_blank" rel="external">https://en.wikipedia.org/wiki/Markdown</a><br>[4] <a href="https://mathjax-chinese-doc.readthedocs.io/en/latest/start.html" target="_blank" rel="external">https://mathjax-chinese-doc.readthedocs.io/en/latest/start.html</a><br>[5] <a href="http://harttle.com/2013/10/18/github-homepage-tutorial.html" target="_blank" rel="external">http://harttle.com/2013/10/18/github-homepage-tutorial.html</a></p>
+<p>npm uninstall hexo-renderer-marked —save<br>npm install hexo-renderer-kramed —save<br> ```</p>
+<p>参考：<br>[1] <a href="https://en.wikipedia.org/wiki/Git" target="_blank" rel="external">https://en.wikipedia.org/wiki/Git</a><br>[2] <a href="https://en.wikipedia.org/wiki/GitHub" target="_blank" rel="external">https://en.wikipedia.org/wiki/GitHub</a><br>[3] <a href="https://en.wikipedia.org/wiki/Markdown" target="_blank" rel="external">https://en.wikipedia.org/wiki/Markdown</a><br>[4] <a href="https://mathjax-chinese-doc.readthedocs.io/en/latest/start.html" target="_blank" rel="external">https://mathjax-chinese-doc.readthedocs.io/en/latest/start.html</a><br>[5] <a href="http://harttle.com/2013/10/18/github-homepage-tutorial.html" target="_blank" rel="external">http://harttle.com/2013/10/18/github-homepage-tutorial.html</a><br>[6] <a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">https://hexo.io/zh-cn/docs/index.html</a></p>
 
       
     </div>
@@ -394,8 +390,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/12/2017-03-20-tools/" rel="next" title="useful tools">
-                <i class="fa fa-chevron-left"></i> useful tools
+              <a href="/2017/03/12/2017-03-11-git/" rel="next" title="Git">
+                <i class="fa fa-chevron-left"></i> Git
               </a>
             
           </div>
@@ -482,7 +478,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

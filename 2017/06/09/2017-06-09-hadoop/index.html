@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="Hadoop基础(1) 用户（User）：Hadoop使用Linux用户管理，Hadoop中的用户就是Linux中的用户(2) 分组（group）：Hadoop使用Linux分组管理，Hadoop中的分组就是Linux中的分组(3) 池（pool）：Hadoop Fair Scheduler中的概念，一个pool可以是一个user，一个group，或者一个queue。(4) 队列（Queue）：队">
+<meta name="description" content="Hadoop基础 用户的概念(1) 用户（User）：Hadoop使用Linux用户管理，Hadoop中的用户就是Linux中的用户(2) 分组（group）：Hadoop使用Linux分组管理，Hadoop中的分组就是Linux中的分组(3) 池（pool）：Hadoop Fair Scheduler中的概念，一个pool可以是一个user，一个group，或者一个queue。(4) 队列（Qu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hadoop生态系统">
 <meta property="og:url" content="wuliangradi.github.io/2017/06/09/2017-06-09-hadoop/index.html">
 <meta property="og:site_name" content="旅途">
-<meta property="og:description" content="Hadoop基础(1) 用户（User）：Hadoop使用Linux用户管理，Hadoop中的用户就是Linux中的用户(2) 分组（group）：Hadoop使用Linux分组管理，Hadoop中的分组就是Linux中的分组(3) 池（pool）：Hadoop Fair Scheduler中的概念，一个pool可以是一个user，一个group，或者一个queue。(4) 队列（Queue）：队">
+<meta property="og:description" content="Hadoop基础 用户的概念(1) 用户（User）：Hadoop使用Linux用户管理，Hadoop中的用户就是Linux中的用户(2) 分组（group）：Hadoop使用Linux分组管理，Hadoop中的分组就是Linux中的分组(3) 池（pool）：Hadoop Fair Scheduler中的概念，一个pool可以是一个user，一个group，或者一个queue。(4) 队列（Qu">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-09T06:02:42.255Z">
+<meta property="og:updated_time" content="2017-09-16T07:32:32.887Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop生态系统">
-<meta name="twitter:description" content="Hadoop基础(1) 用户（User）：Hadoop使用Linux用户管理，Hadoop中的用户就是Linux中的用户(2) 分组（group）：Hadoop使用Linux分组管理，Hadoop中的分组就是Linux中的分组(3) 池（pool）：Hadoop Fair Scheduler中的概念，一个pool可以是一个user，一个group，或者一个queue。(4) 队列（Queue）：队">
+<meta name="twitter:description" content="Hadoop基础 用户的概念(1) 用户（User）：Hadoop使用Linux用户管理，Hadoop中的用户就是Linux中的用户(2) 分组（group）：Hadoop使用Linux分组管理，Hadoop中的分组就是Linux中的分组(3) 池（pool）：Hadoop Fair Scheduler中的概念，一个pool可以是一个user，一个group，或者一个queue。(4) 队列（Qu">
 
 
 
@@ -343,10 +343,9 @@
       
 
       
-        <h3 id="Hadoop基础"><a href="#Hadoop基础" class="headerlink" title="Hadoop基础"></a>Hadoop基础</h3><p>(1) 用户（User）：Hadoop使用Linux用户管理，Hadoop中的用户就是Linux中的用户<br>(2) 分组（group）：Hadoop使用Linux分组管理，Hadoop中的分组就是Linux中的分组<br>(3) 池（pool）：Hadoop Fair Scheduler中的概念，一个pool可以是一个user，一个group，或者一个queue。<br>(4) 队列（Queue）：队列是Hadoop提出的概念，一个Queue可以由任意几个Group和任意几个User组成。  </p>
-<p>mapreduce适合一次写入多次读取数据的应用,关系型数据库则适合持续更新的数据集</p>
-<p>半结构化数据<br>非规范的,有冗余的数据<br>在节点上存储数据,本地快速访问,数据本地化<br>网络带宽是珍稀资源    </p>
-<p>shuffle<br>jobtracker<br>tasktracker<br>iput split<br>HDFS数据<br>map的输出是本地硬盘<br>reduce  每个键值<br>分区由用户定义的partition函数控制,但默认哈希函数分区,较为高效<br>combiner函数<br>Hadoop streaming<br>hadoop pipes  c++接口<br>当数据集的大小超过一台独立的物理计算机的存储能力时,有必要进行分区,跨多台计算机存储称为分布式文件系统<br>Hadoop Distributed File System (HDFS)<br>块的概念<br>namenode   datanode  </p>
+        <h3 id="Hadoop基础"><a href="#Hadoop基础" class="headerlink" title="Hadoop基础"></a>Hadoop基础</h3><ul>
+<li>用户的概念<br>(1) 用户（User）：Hadoop使用Linux用户管理，Hadoop中的用户就是Linux中的用户<br>(2) 分组（group）：Hadoop使用Linux分组管理，Hadoop中的分组就是Linux中的分组<br>(3) 池（pool）：Hadoop Fair Scheduler中的概念，一个pool可以是一个user，一个group，或者一个queue。<br>(4) 队列（Queue）：队列是Hadoop提出的概念，一个Queue可以由任意几个Group和任意几个User组成。  </li>
+</ul>
 <h3 id="flume"><a href="#flume" class="headerlink" title="flume"></a>flume</h3><h3 id="kafka"><a href="#kafka" class="headerlink" title="kafka"></a>kafka</h3><h3 id="spark"><a href="#spark" class="headerlink" title="spark"></a>spark</h3>
       
     </div>
@@ -381,8 +380,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/18/2017-06-18-roadmap/" rel="prev" title="Roadmap">
-                Roadmap <i class="fa fa-chevron-right"></i>
+              <a href="/2017/06/18/2017-06-24-dl_action/" rel="prev" title="深度学习实践">
+                深度学习实践 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -459,7 +458,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
