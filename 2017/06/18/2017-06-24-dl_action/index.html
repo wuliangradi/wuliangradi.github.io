@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="旅途">
 <meta property="og:description" content="图像数据的读取 image data is 3xMxN 但是imshow的要求是”MxNx3 — RGB (float or uint8 array)”，深度学习tensor的结构也是 MxNxchannel用 np.rollaxis() 或者 numpy.moveaxis(a, source, destination) 函数或者arr.transpose((2, 0, 1)), 其中arr是某个">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-17T14:36:04.002Z">
+<meta property="og:updated_time" content="2017-09-17T14:42:39.133Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习实践">
 <meta name="twitter:description" content="图像数据的读取 image data is 3xMxN 但是imshow的要求是”MxNx3 — RGB (float or uint8 array)”，深度学习tensor的结构也是 MxNxchannel用 np.rollaxis() 或者 numpy.moveaxis(a, source, destination) 函数或者arr.transpose((2, 0, 1)), 其中arr是某个">
@@ -364,15 +364,13 @@
 <li>绘制图像 matplotlib</li>
 </ul>
 <h3 id="数据预处理以及数据增强问题"><a href="#数据预处理以及数据增强问题" class="headerlink" title="数据预处理以及数据增强问题"></a>数据预处理以及数据增强问题</h3><ul>
-<li><p><a href="http://ufldl.stanford.edu/wiki/index.php/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86" target="_blank" rel="external">UFLDL Tutorial</a> 对数据预处理进行了简洁的描述</p>
-</li>
+<li><a href="http://ufldl.stanford.edu/wiki/index.php/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86" target="_blank" rel="external">UFLDL Tutorial</a> 对数据预处理进行了简洁的描述</li>
 <li><p>数据切分 </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">random random.shuffle(a) </div><div class="line">random.choice(mylist,<span class="number">3</span>)</div><div class="line">random.sample(the_list, <span class="number">50</span>)</div></pre></td></tr></table></figure>
 </li>
 <li><p>图像归一化  <a href="https://stackoverflow.com/questions/1735025/how-to-normalize-a-numpy-array-to-within-a-certain-range" target="_blank" rel="external">normalize a NumPy array</a></p>
 </li>
-<li><p>数据增强()</p>
-<ul>
+<li>数据增强(Data Augmentation)<ul>
 <li>keras自带的图像增强工具 <a href="https://keras.io/preprocessing/image/" target="_blank" rel="external">ImageDataGenerator</a></li>
 <li><a href="https://machinelearningmastery.com/image-augmentation-deep-learning-keras/" target="_blank" rel="external">Image Augmentation for Deep Learning With Keras</a></li>
 <li><a href="https://absentm.github.io/2016/06/14/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84Data-Augmentation%E6%96%B9%E6%B3%95%E5%92%8C%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/" target="_blank" rel="external">深度学习中的Data Augmentation方法和代码实现</a></li>
