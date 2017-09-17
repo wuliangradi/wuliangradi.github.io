@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="卷积神经网络基础结构经典卷机神经网络">
+<meta name="description" content="卷积神经网络基础结构 CNN(convolutional neural network, 或者ConvNet)是一种深度、前馈人工神经网络，适用于类似网格结构的数据，例如时间序列数据处理、图像识别、视频识别以及自然语言处理。卷积神经网络是从生物神经网络的结构和激励机制中得到灵感和启发的。Deeplearning书中这样描述CNN的动机：稀疏交互(Sparse Interaction)、参数共享(P">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CNN 卷积神经网络">
 <meta property="og:url" content="wuliangradi.github.io/2017/09/10/2017-09-10-cnn/index.html">
 <meta property="og:site_name" content="旅途">
-<meta property="og:description" content="卷积神经网络基础结构经典卷机神经网络">
+<meta property="og:description" content="卷积神经网络基础结构 CNN(convolutional neural network, 或者ConvNet)是一种深度、前馈人工神经网络，适用于类似网格结构的数据，例如时间序列数据处理、图像识别、视频识别以及自然语言处理。卷积神经网络是从生物神经网络的结构和激励机制中得到灵感和启发的。Deeplearning书中这样描述CNN的动机：稀疏交互(Sparse Interaction)、参数共享(P">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-16T07:31:07.924Z">
+<meta property="og:updated_time" content="2017-09-17T17:23:01.868Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CNN 卷积神经网络">
-<meta name="twitter:description" content="卷积神经网络基础结构经典卷机神经网络">
+<meta name="twitter:description" content="卷积神经网络基础结构 CNN(convolutional neural network, 或者ConvNet)是一种深度、前馈人工神经网络，适用于类似网格结构的数据，例如时间序列数据处理、图像识别、视频识别以及自然语言处理。卷积神经网络是从生物神经网络的结构和激励机制中得到灵感和启发的。Deeplearning书中这样描述CNN的动机：稀疏交互(Sparse Interaction)、参数共享(P">
 
 
 
@@ -357,7 +357,21 @@
       
 
       
-        <h3 id="卷积神经网络基础结构"><a href="#卷积神经网络基础结构" class="headerlink" title="卷积神经网络基础结构"></a>卷积神经网络基础结构</h3><h3 id="经典卷机神经网络"><a href="#经典卷机神经网络" class="headerlink" title="经典卷机神经网络"></a>经典卷机神经网络</h3>
+        <h3 id="卷积神经网络基础结构"><a href="#卷积神经网络基础结构" class="headerlink" title="卷积神经网络基础结构"></a>卷积神经网络基础结构</h3><ul>
+<li>CNN(convolutional neural network, 或者ConvNet)是一种深度、前馈人工神经网络，适用于类似网格结构的数据，例如时间序列数据处理、图像识别、视频识别以及自然语言处理。卷积神经网络是从生物神经网络的结构和激励机制中得到灵感和启发的。Deeplearning书中这样描述CNN的动机：稀疏交互(Sparse Interaction)、参数共享(Parameter Sharing)、等变表示(Equivariant Representation)。稀疏交互极大降低了计算复杂度。参数共享能达到正则化的效果。等变表示使得神经网络层具有对平移等变的性质。</li>
+<li>常见的CNN包括三层结构以及三层结构的组合：卷积层、非线性激活函数层、池化层。卷积层(由卷积核kernel决定，或者叫滤波器filter)用来感知某种特殊的特征，让这些有着某种特征的区域激活值较高，当然从低层到深层的网络意味着低级特征到高级特征模式的识别。卷积核以及卷积核个数Depth，步长Stride， 零填充Zero-padding决定着卷基层。非线性激活单元(例如ReLU)引入了非线性。池化(Pooling)使得神经网络具有平移不变性(Translation Invariance)，降低特征表示的维度(同时也就控制了过拟合)。当然卷积神经网络最后要包括输出层，也就是全连接层，常常是softmax或者其他分类器。</li>
+<li>对于卷积神经网络，这篇博客讲的异常棒，<a href="https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/" target="_blank" rel="external">这是链接</a>，<a href="http://www.hackcv.com/index.php/archives/104/?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io" target="_blank" rel="external">这是翻译版本</a><h3 id="经典卷机神经网络"><a href="#经典卷机神经网络" class="headerlink" title="经典卷机神经网络"></a>经典卷机神经网络</h3></li>
+<li><a href="">LeNet (1990s)</a></li>
+<li><a href="">AlexNet (2012)</a></li>
+<li><a href="">GoogLeNet (2014)</a></li>
+<li><a href="">VGGNet (2014)</a></li>
+<li><a href="">ResNets (2015)</a></li>
+<li><a href="">DenseNet (2016)</a></li>
+</ul>
+<ul>
+<li><a href="http://cs231n.github.io/" target="_blank" rel="external">CS231n: Convolutional Neural Networks for Visual Recognition</a></li>
+</ul>
+
       
     </div>
     
