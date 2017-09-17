@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="数据预处理问题UFLDL Tutorial 数据切分 Python random random.shuffle(a) random.choice(mylist,3) random.sample(the_list, 50)  图像归一化  normalize a NumPy array image data is 3xMxN 但是imshow的要求是”MxNx3 — RGB (float or ui">
+<meta name="description" content="图像数据的读取 image data is 3xMxN 但是imshow的要求是”MxNx3 — RGB (float or uint8 array)”，深度学习tensor的结构也是 MxNxchannel用 np.rollaxis() 或者 numpy.moveaxis(a, source, destination) 函数或者arr.transpose((2, 0, 1)), 其中arr是某个">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深度学习实践">
 <meta property="og:url" content="wuliangradi.github.io/2017/06/18/2017-06-24-dl_action/index.html">
 <meta property="og:site_name" content="旅途">
-<meta property="og:description" content="数据预处理问题UFLDL Tutorial 数据切分 Python random random.shuffle(a) random.choice(mylist,3) random.sample(the_list, 50)  图像归一化  normalize a NumPy array image data is 3xMxN 但是imshow的要求是”MxNx3 — RGB (float or ui">
+<meta property="og:description" content="图像数据的读取 image data is 3xMxN 但是imshow的要求是”MxNx3 — RGB (float or uint8 array)”，深度学习tensor的结构也是 MxNxchannel用 np.rollaxis() 或者 numpy.moveaxis(a, source, destination) 函数或者arr.transpose((2, 0, 1)), 其中arr是某个">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-16T07:46:44.175Z">
+<meta property="og:updated_time" content="2017-09-17T14:36:04.002Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习实践">
-<meta name="twitter:description" content="数据预处理问题UFLDL Tutorial 数据切分 Python random random.shuffle(a) random.choice(mylist,3) random.sample(the_list, 50)  图像归一化  normalize a NumPy array image data is 3xMxN 但是imshow的要求是”MxNx3 — RGB (float or ui">
+<meta name="twitter:description" content="图像数据的读取 image data is 3xMxN 但是imshow的要求是”MxNx3 — RGB (float or uint8 array)”，深度学习tensor的结构也是 MxNxchannel用 np.rollaxis() 或者 numpy.moveaxis(a, source, destination) 函数或者arr.transpose((2, 0, 1)), 其中arr是某个">
 
 
 
@@ -357,15 +357,31 @@
       
 
       
-        <h3 id="数据预处理问题"><a href="#数据预处理问题" class="headerlink" title="数据预处理问题"></a>数据预处理问题</h3><p><a href="http://ufldl.stanford.edu/wiki/index.php/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86" target="_blank" rel="external">UFLDL Tutorial</a></p>
-<p>数据切分 Python random random.shuffle(a) random.choice(mylist,3) random.sample(the_list, 50)</p>
+        <h3 id="图像数据的读取"><a href="#图像数据的读取" class="headerlink" title="图像数据的读取"></a>图像数据的读取</h3><ul>
+<li>image data is 3xMxN 但是imshow的要求是”MxNx3 — RGB (float or uint8 array)”，深度学习tensor的结构也是 MxNxchannel<br>用 <code>np.rollaxis()</code> 或者 <code>numpy.moveaxis(a, source, destination)</code> 函数<br>或者<code>arr.transpose((2, 0, 1)), 其中arr是某个数组</code>可解决问题</li>
+<li>打开tiff图像 - gdal包</li>
+<li>打开图像数据 PIL包或者open-cv包, 一文直观读懂PIL的操作，这里是<a href="https://hhsprings.bitbucket.io/docs/programming/examples/python/PIL/Image__class_Image.html" target="_blank" rel="external">链接</a></li>
+<li>绘制图像 matplotlib</li>
+</ul>
+<h3 id="数据预处理以及数据增强问题"><a href="#数据预处理以及数据增强问题" class="headerlink" title="数据预处理以及数据增强问题"></a>数据预处理以及数据增强问题</h3><ul>
+<li><p><a href="http://ufldl.stanford.edu/wiki/index.php/%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86" target="_blank" rel="external">UFLDL Tutorial</a> 对数据预处理进行了简洁的描述</p>
+</li>
+<li><p>数据切分 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">random random.shuffle(a) </div><div class="line">random.choice(mylist,<span class="number">3</span>)</div><div class="line">random.sample(the_list, <span class="number">50</span>)</div></pre></td></tr></table></figure>
+</li>
+<li><p>图像归一化  <a href="https://stackoverflow.com/questions/1735025/how-to-normalize-a-numpy-array-to-within-a-certain-range" target="_blank" rel="external">normalize a NumPy array</a></p>
+</li>
+<li><p>数据增强()</p>
 <ul>
-<li>图像归一化  <a href="https://stackoverflow.com/questions/1735025/how-to-normalize-a-numpy-array-to-within-a-certain-range" target="_blank" rel="external">normalize a NumPy array</a></li>
-<li>image data is 3xMxN 但是imshow的要求是”MxNx3 — RGB (float or uint8 array)”  用 np.rollaxis() 或者 numpy.moveaxis(a, source, destination) 函数 </li>
-<li>打开tiff图像 - gdal包<br>　 - 绘制图像 matplotlib</li>
+<li>keras自带的图像增强工具 <a href="https://keras.io/preprocessing/image/" target="_blank" rel="external">ImageDataGenerator</a></li>
+<li><a href="https://machinelearningmastery.com/image-augmentation-deep-learning-keras/" target="_blank" rel="external">Image Augmentation for Deep Learning With Keras</a></li>
+<li><a href="https://absentm.github.io/2016/06/14/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84Data-Augmentation%E6%96%B9%E6%B3%95%E5%92%8C%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/" target="_blank" rel="external">深度学习中的Data Augmentation方法和代码实现</a></li>
+<li>PIL <a href="http://pillow.readthedocs.io/en/3.4.x/reference/ImageEnhance.html" target="_blank" rel="external">图像增强(ImageEnhance)模块</a><br>包括彩色平衡，对比度，亮度以及锐度的增强<br>CSDN <a href="http://blog.csdn.net/icamera0/article/details/50753705" target="_blank" rel="external">这篇博客</a> 有带有图像例子的解读，方便理解</li>
+</ul>
+</li>
 </ul>
 <h3 id="图像切割实践"><a href="#图像切割实践" class="headerlink" title="图像切割实践"></a>图像切割实践</h3><ul>
-<li><a href="https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/discussion/32402" target="_blank" rel="external">https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/discussion/32402</a><br>比较吊</li>
+<li><a href="https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/discussion/32402" target="_blank" rel="external">https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/discussion/32402</a></li>
 </ul>
 <h3 id="内存问题"><a href="#内存问题" class="headerlink" title="内存问题"></a>内存问题</h3><p>python进程以ctrl+z杀死，后台内存还占用，以ctrl+c杀死内存释放。<br>nvidia-smi查看内存占用情况<br>kill -9 pid 杀死进程<br>或者sudo nvidia-smi —gpu-reset 释放内存   </p>
 <h3 id="模型保存"><a href="#模型保存" class="headerlink" title="模型保存"></a>模型保存</h3><p><a href="https://discuss.pytorch.org/t/how-to-save-load-torch-models/718" target="_blank" rel="external">save model in pytorch</a></p>
@@ -394,8 +410,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/09/2017-06-09-hadoop/" rel="next" title="Hadoop生态系统">
-                <i class="fa fa-chevron-left"></i> Hadoop生态系统
+              <a href="/2017/06/18/2017-06-18-roadmap/" rel="next" title="Roadmap">
+                <i class="fa fa-chevron-left"></i> Roadmap
               </a>
             
           </div>
@@ -404,8 +420,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/18/2017-06-18-roadmap/" rel="prev" title="Roadmap">
-                Roadmap <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/29/2017-07-29-lr/" rel="prev" title="机器学习第一层之线性回归">
+                机器学习第一层之线性回归 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -521,7 +537,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据预处理问题"><span class="nav-number">1.</span> <span class="nav-text">数据预处理问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图像切割实践"><span class="nav-number">2.</span> <span class="nav-text">图像切割实践</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存问题"><span class="nav-number">3.</span> <span class="nav-text">内存问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型保存"><span class="nav-number">4.</span> <span class="nav-text">模型保存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#学习过程保存及可视化"><span class="nav-number">5.</span> <span class="nav-text">学习过程保存及可视化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pytorch-方法探究"><span class="nav-number">6.</span> <span class="nav-text">pytorch 方法探究</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#图像数据的读取"><span class="nav-number">1.</span> <span class="nav-text">图像数据的读取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据预处理以及数据增强问题"><span class="nav-number">2.</span> <span class="nav-text">数据预处理以及数据增强问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图像切割实践"><span class="nav-number">3.</span> <span class="nav-text">图像切割实践</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存问题"><span class="nav-number">4.</span> <span class="nav-text">内存问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型保存"><span class="nav-number">5.</span> <span class="nav-text">模型保存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#学习过程保存及可视化"><span class="nav-number">6.</span> <span class="nav-text">学习过程保存及可视化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pytorch-方法探究"><span class="nav-number">7.</span> <span class="nav-text">pytorch 方法探究</span></a></li></ol></div>
             
 
           </div>
