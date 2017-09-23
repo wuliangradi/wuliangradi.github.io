@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next muse" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Python包的管理[1]Package Management非常重要，模块化开发便于统一安装，下载，和管理以及使用。使用打包的方式使得我们的项目变得易用而且稳定，便于版本管理。这里使用python自带的distutils来实现源程序的打包。关于其他的包管理工具(distutils,setuptools,distribute,easy_install,pip,distutils2)的使用参考包管理">
+<meta name="keywords" content="Web,HTML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python开发环境以及包的管理">
+<meta property="og:url" content="wuliangradi.github.io/2017-03-27-rd.html">
+<meta property="og:site_name" content="旅途">
+<meta property="og:description" content="Python包的管理[1]Package Management非常重要，模块化开发便于统一安装，下载，和管理以及使用。使用打包的方式使得我们的项目变得易用而且稳定，便于版本管理。这里使用python自带的distutils来实现源程序的打包。关于其他的包管理工具(distutils,setuptools,distribute,easy_install,pip,distutils2)的使用参考包管理">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/wuliangradi/images/raw/master/structure.png">
+<meta property="og:image" content="https://github.com/wuliangradi/images/raw/master/setup.png">
+<meta property="og:image" content="https://github.com/wuliangradi/images/raw/master/setup_b.png">
+<meta property="og:updated_time" content="2017-09-16T07:54:43.884Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python开发环境以及包的管理">
+<meta name="twitter:description" content="Python包的管理[1]Package Management非常重要，模块化开发便于统一安装，下载，和管理以及使用。使用打包的方式使得我们的项目变得易用而且稳定，便于版本管理。这里使用python自带的distutils来实现源程序的打包。关于其他的包管理工具(distutils,setuptools,distribute,easy_install,pip,distutils2)的使用参考包管理">
+<meta name="twitter:image" content="https://github.com/wuliangradi/images/raw/master/structure.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="wuliangradi.github.io/2017-03-27-rd.html"/>
+
+
+
+
+
+  <title>Python开发环境以及包的管理 | 旅途</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-106562186-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">旅途</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">路过生命中漫无止境的寒冷和孤独</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017-03-27-rd.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liang Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="旅途">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python开发环境以及包的管理</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-13T15:27:31+08:00">
+                2017-03-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Python包的管理-1"><a href="#Python包的管理-1" class="headerlink" title="Python包的管理[1]"></a>Python包的管理<sup>[1]</sup></h3><p>Package Management非常重要，模块化开发便于统一安装，下载，和管理以及使用。使用打包的方式使得我们的项目变得易用而且稳定，便于版本管理。这里使用python自带的distutils来实现源程序的打包。关于其他的包管理工具(distutils,setuptools,distribute,easy_install,pip,distutils2)的使用参考<a href="http://blog.yangyubo.com/2012/07/27/python-packaging/" target="_blank" rel="external">包管理工具之间关系</a>,以及<a href="http://zengrong.net/post/2169.htm" target="_blank" rel="external">Python管理工具</a></p>
+<h4 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1. 基本概念"></a>1. 基本概念</h4><p>python语境下的module是<strong><em>复用代码</em></strong>的基本单元，包括三个类别（pure Python modules, extension modules, and packages）</p>
+<ul>
+<li>pure Python module<blockquote>
+<p>a module written in Python and contained in a single .py file.  </p>
+</blockquote>
+</li>
+<li>extension module<br>其他语言（ C/C++，Java ）写成的模块，一般是预编译好的，例如.so文件，DLL文件等</li>
+<li>package  <blockquote>
+<p>a module that contains other modules; typically contained in a directory in the filesystem and distinguished from other directories by the presence of a file <strong>init</strong>.py</p>
+</blockquote>
+</li>
+<li>root package<blockquote>
+<p>every directory listed in sys.path contributes modules to the root package</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="2-工程的结构化-2"><a href="#2-工程的结构化-2" class="headerlink" title="2. 工程的结构化[2]"></a>2. 工程的结构化<sup>[2]</sup></h4><p> <a href="https://github.com/kennethreitz/samplemod" target="_blank" rel="external">Kenneth Reitz</a>推荐的仓库模板如下所示:<br> <img src="https://github.com/wuliangradi/images/raw/master/structure.png" alt=""></p>
+<p>package的<strong>init</strong>.py非常重要，最常见的作用是把同级文件的类，函数以及，module等import到最外层去，方便调用</p>
+<h4 id="3-编写setup脚本"><a href="#3-编写setup脚本" class="headerlink" title="3. 编写setup脚本"></a>3. 编写setup脚本</h4><p>setup脚本是Distutils构建、发布、安装模块的核心。包括元数据的编写，以及包结构的组织。元数据包括name(name of the package)，version(version of this release)，author(package author’s name)，author_email(email address of the package author)，description(short, summary description of the package)…..的信息。<br>下面是一个例子文件的组织<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">setup.py</div><div class="line">src/</div><div class="line">    mypkg/</div><div class="line">        __init__.py</div><div class="line">        module.py</div><div class="line">        data/</div><div class="line">            tables.dat</div><div class="line">            spoons.dat</div><div class="line">            forks.dat</div></pre></td></tr></table></figure></p>
+<p>相应的setup()为</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">setup(...,</div><div class="line">      packages=[<span class="string">'mypkg'</span>],</div><div class="line">      package_dir=&#123;<span class="string">'mypkg'</span>: <span class="string">'src/mypkg'</span>&#125;,</div><div class="line">      package_data=&#123;<span class="string">'mypkg'</span>: [<span class="string">'data/*.dat'</span>]&#125;,</div><div class="line">      )</div></pre></td></tr></table></figure>
+<p>module distribution<br>a collection of Python modules distributed together as a single downloadable resource and meant to be installed en masse.</p>
+<h4 id="4-发布源程序"><a href="#4-发布源程序" class="headerlink" title="4.发布源程序"></a>4.发布源程序</h4><ul>
+<li><p>发布源程序<br>发布，如果没有设置特定的格式，根据所在的平台生成默认的格式<code>python setup.py sdist</code><br>sdist creates the archive of the default format for the current platform。he default format is a gzip’ed tar file (.tar.gz) on Unix, and ZIP file on Windows.<br>You can specify as many formats as you like using the —formats option, for example:<br><code>python setup.py sdist --formats=gztar,zip</code><br>支持的格式如下所示:<br><img src="https://github.com/wuliangradi/images/raw/master/setup.png" alt=""></p>
+</li>
+<li><p>发布二进制编译好的包<br>发布binary package<code>python setup.py bdist</code><br>发布特定格式的二进制包<code>python setup.py bdist --format=zip</code><br>支持的格式如下所示：<br><img src="https://github.com/wuliangradi/images/raw/master/setup_b.png" alt=""><br>创建RPM包<code>python setup.py bdist_rpm</code><br>创建windows安装包<code>python setup.py bdist_wininst</code></p>
+</li>
+</ul>
+<ul>
+<li>发布到PyPI上去<br>Python Package Index(PyPI)是python第三方库管理平台。可以将开发的包上传到该平台上去。<br>PyPI还有国内镜像，如果安装包的时候比较慢，可以使用国内镜像。此外，还可以建立自己私有的pPyPI包管理平台。<br>例如清华的镜像：  <ul>
+<li>临时使用<br><code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package</code><br>注意，simple 不能少, 是 https 而不是 http  </li>
+<li>设为默认<br>修改 ~/.pip/pip.conf (没有就创建一个)， 修改 index-url至tuna，例如  <figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[<span class="keyword">global</span>]  </div><div class="line"><span class="built_in">index</span>-url = http<span class="variable">s:</span>//pypi.tuna.tsinghua.edu.<span class="keyword">cn</span>/simple</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-包的安装"><a href="#5-包的安装" class="headerlink" title="5.包的安装"></a>5.包的安装</h4><ol>
+<li>可执行<code>python setup.py install</code>  </li>
+<li>也可使用pip安装，pip已成为包安装的事实标准  <ul>
+<li>安装<code>pip install SomePackage</code></li>
+<li>查看已经安装的包<code>pip list --outdated</code>哪些需要更新</li>
+<li>升级包<code>pip install --upgrade SomePackage</code></li>
+<li>卸载包<code>pip uninstall SomePackage</code></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="python独立开发环境的构建-3"><a href="#python独立开发环境的构建-3" class="headerlink" title="python独立开发环境的构建[3]"></a>python独立开发环境的构建<sup>[3]</sup></h3><ol>
+<li><p>使用virtualenv建立独立的python开发环境（也就是为不同的项目配置自个使用的依赖模块），对于保持干净、独立(隔绝)、有序、高效的环境非常有用。python的几大神器之一，还有诸如pip,fabric等工具等。 </p>
+<ul>
+<li>安装<code>$ pip install virtualenv</code></li>
+<li>新建<code>virtualenv pyenv</code></li>
+<li>激活虚拟环境<code>source venv/bin/activat</code></li>
+<li>退出虚拟环境<code>deactivate</code></li>
+<li>创建requirements.txt 文件<code>pip freeze &gt; requirements.txt</code></li>
+<li>安装时就可以按需求安装好<code>pip install -r requirements.txt</code></li>
+</ul>
+</li>
+<li><p>管理virtualenv</p>
+<ul>
+<li>virtualenvwrapper封装在virtualenv之上，让开发者和虚拟环境的相处更加愉快。</li>
+<li>安装<code>pip install virtualenvwrapper</code></li>
+<li>配置.bashrc文件<br><code>export WORKON_HOME=~/.virtualenvs    
+source /usr/local/bin/virtualenvwrapper.sh
+当然上个路径不一定相同，需要which virtualenvwrapper.sh</code>  </li>
+<li><p>基本使用</p>
+<ul>
+<li>创建虚拟环境<code>mkvirtualenv venv</code></li>
+<li>使用某虚拟环境<code>workon venv</code></li>
+<li>列出所有工作环境<code>lsvirtualenv</code></li>
+<li>切换到某工作环境<code>cdvirtualenv</code>  </li>
+</ul>
+</li>
+<li><p>pip list -l 列出目前虚拟环境的安装列表</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="fabric"><a href="#fabric" class="headerlink" title="fabric"></a>fabric</h3><p>自动化神器。<br><a href="http://fabric-chs.readthedocs.io/zh_CN/chs/tutorial.html" target="_blank" rel="external">http://fabric-chs.readthedocs.io/zh_CN/chs/tutorial.html</a>  </p>
+<hr>
+<h3 id="Pycharm"><a href="#Pycharm" class="headerlink" title="Pycharm"></a>Pycharm</h3><ul>
+<li>快捷键：<br><code>ctrl+z</code> 退一步；<code>ctrl+shift+z</code> 返回上一步<br><code>alt+enter</code>万能键 智能补充import 或其他功能</li>
+</ul>
+<hr>
+<h3 id="PEP-8-Python风格指南"><a href="#PEP-8-Python风格指南" class="headerlink" title="PEP 8:Python风格指南"></a>PEP 8:Python风格指南</h3><hr>
+<h3 id="代码同步"><a href="#代码同步" class="headerlink" title="代码同步"></a>代码同步</h3><p>环境部署在远程开发机，而代码使用本地IDE编写（不想用VIM），需要需要找到一个代码实时同步的工具，把本地编写的代码传到开发机上。<br><a href="https://github.com/ysmood/nobone-sync" target="_blank" rel="external">https://github.com/ysmood/nobone-sync</a></p>
+<hr>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><ol>
+<li><a href="https://docs.python.org/2.7/distutils/" target="_blank" rel="external">https://docs.python.org/2.7/distutils/</a></li>
+<li><a href="http://pythonguidecn.readthedocs.io/zh/latest/writing/structure.html" target="_blank" rel="external">http://pythonguidecn.readthedocs.io/zh/latest/writing/structure.html</a></li>
+<li><a href="http://pythonguidecn.readthedocs.io/zh/latest/dev/virtualenvs.html" target="_blank" rel="external">http://pythonguidecn.readthedocs.io/zh/latest/dev/virtualenvs.html</a></li>
+<li><a href="http://blog.useasp.net/archive/2014/09/09/packaging-python-libraries-and-upload-to-pypi-python-package-index.aspx" target="_blank" rel="external">http://blog.useasp.net/archive/2014/09/09/packaging-python-libraries-and-upload-to-pypi-python-package-index.aspx</a></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017-03-22-Hive.html" rel="next" title="MySQL以及HIVE">
+                <i class="fa fa-chevron-left"></i> MySQL以及HIVE
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017-03-13-python.html" rel="prev" title="Python">
+                Python <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <p class="site-author-name" itemprop="name">Liang Wu</p>
+            <p class="site-description motion-element" itemprop="description">--</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python包的管理-1"><span class="nav-number">1.</span> <span class="nav-text">Python包的管理[1]</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">1. 基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-工程的结构化-2"><span class="nav-number">1.2.</span> <span class="nav-text">2. 工程的结构化[2]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-编写setup脚本"><span class="nav-number">1.3.</span> <span class="nav-text">3. 编写setup脚本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-发布源程序"><span class="nav-number">1.4.</span> <span class="nav-text">4.发布源程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-包的安装"><span class="nav-number">1.5.</span> <span class="nav-text">5.包的安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python独立开发环境的构建-3"><span class="nav-number">2.</span> <span class="nav-text">python独立开发环境的构建[3]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fabric"><span class="nav-number">3.</span> <span class="nav-text">fabric</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pycharm"><span class="nav-number">4.</span> <span class="nav-text">Pycharm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PEP-8-Python风格指南"><span class="nav-number">5.</span> <span class="nav-text">PEP 8:Python风格指南</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码同步"><span class="nav-number">6.</span> <span class="nav-text">代码同步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文献"><span class="nav-number">7.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liang Wu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next muse" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="第一阶段 攒机 显卡 其他  第二阶段 双系统安装 进入Ubuntu U盘安装时出现黑屏解决办法“e”进入编辑模式，删除”—“， 加上”nomodeset” 安装Ubuntu时屏幕分辨率问题 /etc/default/grub 修改#GRUB_GFXMODE=640x480   彻底解决黑屏     /etc/default/grub 修改为GRUB_CMDLINE_LINUX_DEFAULT=&amp;">
+<meta name="keywords" content="Web,HTML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深度学习系统搭建">
+<meta property="og:url" content="wuliangradi.github.io/2017-08-14-deep learning.html">
+<meta property="og:site_name" content="旅途">
+<meta property="og:description" content="第一阶段 攒机 显卡 其他  第二阶段 双系统安装 进入Ubuntu U盘安装时出现黑屏解决办法“e”进入编辑模式，删除”—“， 加上”nomodeset” 安装Ubuntu时屏幕分辨率问题 /etc/default/grub 修改#GRUB_GFXMODE=640x480   彻底解决黑屏     /etc/default/grub 修改为GRUB_CMDLINE_LINUX_DEFAULT=&amp;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/wuliangradi/images/raw/master/xiankaqudong.png">
+<meta property="og:updated_time" content="2017-09-17T14:46:47.607Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="深度学习系统搭建">
+<meta name="twitter:description" content="第一阶段 攒机 显卡 其他  第二阶段 双系统安装 进入Ubuntu U盘安装时出现黑屏解决办法“e”进入编辑模式，删除”—“， 加上”nomodeset” 安装Ubuntu时屏幕分辨率问题 /etc/default/grub 修改#GRUB_GFXMODE=640x480   彻底解决黑屏     /etc/default/grub 修改为GRUB_CMDLINE_LINUX_DEFAULT=&amp;">
+<meta name="twitter:image" content="https://github.com/wuliangradi/images/raw/master/xiankaqudong.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="wuliangradi.github.io/2017-08-14-deep learning.html"/>
+
+
+
+
+
+  <title>深度学习系统搭建 | 旅途</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-106562186-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">旅途</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">路过生命中漫无止境的寒冷和孤独</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017-08-14-deep learning.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liang Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="旅途">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">深度学习系统搭建</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-14T22:52:41+08:00">
+                2017-08-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="第一阶段-攒机"><a href="#第一阶段-攒机" class="headerlink" title="第一阶段 攒机"></a>第一阶段 攒机</h4><ul>
+<li>显卡</li>
+<li>其他</li>
+</ul>
+<h4 id="第二阶段-双系统安装"><a href="#第二阶段-双系统安装" class="headerlink" title="第二阶段 双系统安装"></a>第二阶段 双系统安装</h4><ul>
+<li>进入Ubuntu U盘安装时出现黑屏解决办法<br>“e”进入编辑模式，删除”—“， 加上”nomodeset”</li>
+<li>安装Ubuntu时屏幕分辨率问题<ul>
+<li><code>/etc/default/grub</code></li>
+<li>修改<code>#GRUB_GFXMODE=640x480</code></li>
+</ul>
+</li>
+<li>彻底解决黑屏    <ul>
+<li><code>/etc/default/grub</code></li>
+<li>修改为<code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash nomodeset&quot;</code></li>
+<li><code>sudo update-grub</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="第三阶段-CUDA和CUDNN安装"><a href="#第三阶段-CUDA和CUDNN安装" class="headerlink" title="第三阶段 CUDA和CUDNN安装"></a>第三阶段 CUDA和CUDNN安装</h4><ul>
+<li>显卡驱动安装<ul>
+<li>sudo add-apt-repository ppa:graphics-drivers/ppa</li>
+<li>sudo apt-get update</li>
+<li>additional drivers里更新，按照这种方法安装不会出现无限循环登录的情况</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://github.com/wuliangradi/images/raw/master/xiankaqudong.png" alt=""></p>
+<ul>
+<li>CUDA安装 按照教程走即可</li>
+<li>CUDNN安装 按照教程走即可</li>
+</ul>
+<h4 id="第四阶段-深度学习框架以及Python开发环境搭建"><a href="#第四阶段-深度学习框架以及Python开发环境搭建" class="headerlink" title="第四阶段 深度学习框架以及Python开发环境搭建"></a>第四阶段 深度学习框架以及Python开发环境搭建</h4><ol>
+<li><p>翻墙</p>
+<ul>
+<li><p>Ubuntu shadowsocks-qt5 安装</p>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo<span class="built_in"> add-apt-repository </span>ppa:hzwhuang/ss-qt5</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install shadowsocks-qt5</div></pre></td></tr></table></figure>
+</li>
+<li><p>浏览器代理 <a href="https://github.com/FelisCatus/SwitchyOmega/releases" target="_blank" rel="external">SwitchyOmega</a></p>
+</li>
+<li>终端代理 <a href="http://shawnelee88.github.io/2015/07/10/proxychains-shadowsocks%E7%A5%9E%E5%99%A8/" target="_blank" rel="external">proxychains+shadowsocks</a><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt install proxychains</div><div class="line">vim /etc/proxychains.conf</div><div class="line">socks5 <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> <span class="number">1080</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>工具安装</p>
+<ul>
+<li>Ubuntu 搜狗输入法的安装</li>
+<li><p>chrome 安装</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo wget http<span class="variable">s:</span>//repo.fdzh.org/chrome/google-chrome.<span class="keyword">list</span> -<span class="keyword">P</span> /etc/apt/sources.<span class="keyword">list</span>.d/</div><div class="line">wget -q -O - http<span class="variable">s:</span>//<span class="keyword">dl</span>.google.<span class="keyword">com</span>/linux/linux_signing_key.pub  | sudo apt-key <span class="built_in">add</span> -</div><div class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></div><div class="line">sudo apt-<span class="built_in">get</span> install google-chrome-stable</div><div class="line">/usr/bin/google-chrome-stable</div></pre></td></tr></table></figure>
+</li>
+<li><p>chrome 的卸载</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-<span class="built_in">get</span> purge google-chrome-stable</div><div class="line">rm ~/.<span class="built_in">config</span>/google-chrome/ -rf</div></pre></td></tr></table></figure>
+</li>
+<li><p>git 安装及配置</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-<span class="builtin-name">get</span> install git</div><div class="line">git<span class="built_in"> config </span>--global user.email <span class="string">"you@example.com"</span></div><div class="line">git<span class="built_in"> config </span>--global user.name <span class="string">"Your Name"</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>sublime</p>
+</li>
+</ul>
+</li>
+<li><p>python开发环境搭建之pip(该方案安装pytorch失败)</p>
+<ul>
+<li>综述：最好在virtualenv和virtualenvwrapper环境下搭建python开发环境</li>
+<li>mac下进入虚拟环境依旧会出现系统的第三方模块，可以参考这个 <a href="https://stackoverflow.com/questions/1382925/virtualenv-no-site-packages-and-pip-still-finding-global-packages" target="_blank" rel="external">回答</a></li>
+<li>mac osx下 pip 安装某些模块会出现权限问题，甚至root权限都没有安装成功，那么最优雅的方式是<br><code>pip install ****** --user -U</code></li>
+<li>opencv<code>pip install opencv-python</code></li>
+<li>PIL <code>pip install Pillow</code><br>当使用PIL模块或者其他模块调用PIL模块的时候会出现一个问题：   <ul>
+<li>问题提示：NotImplementedError: tostring() has been removed. Please call tobytes() instead</li>
+<li>问题原因：PIL这个库更新后，tostring被舍弃了，叫做tobytes了</li>
+<li>解决办法：<a href="http://blog.csdn.net/hjxu2016/article/details/71055658" target="_blank" rel="external">http://blog.csdn.net/hjxu2016/article/details/71055658</a></li>
+</ul>
+</li>
+<li>pandas scikit-learn<br><code>pip install numpy, scipy, scikit-learn，pandas，matplotlib</code></li>
+<li>pycharm的搭建<ul>
+<li>pycharm 官网下载</li>
+<li>sudo  dpkg  -i  <em>**</em>.deb</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>python开发环境搭建之conda(该方案安装pytorch失败)<br>pytorch cuda版不支持pip install，所以只有退而求其次使用Anaconda和conda了（最后conda也因为网络原因不能安装）</p>
+<ul>
+<li>下载文件</li>
+<li>安装 bash <strong>*</strong>.sh</li>
+<li><p>设置清华镜像，提升安装速度</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">conda <span class="built_in">config</span> <span class="comment">--add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span></div><div class="line">conda <span class="built_in">config</span> <span class="comment">--set show_channel_urls yes</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>conda具体操作见 <a href="http://python.jobbole.com/86236/" target="_blank" rel="external">Anaconda使用总结</a><br>numpy scipy pandas scikit-learn</p>
+</li>
+<li>真是异常蛋疼最后<code>conda install pytorch torchvision cuda80 -c soumith</code>总是出错。所以选择源码编译</li>
+</ul>
+</li>
+<li>pytorch编译安装(安装cuda版pytorch正确姿势)<ul>
+<li><a href="http://blog.csdn.net/wblgers1234/article/details/72902016" target="_blank" rel="external">ubuntu 下安装pytorch</a></li>
+<li><a href="http://www.jianshu.com/p/50ef56ff79ae" target="_blank" rel="external">Ubuntu 17.04 源码安装 pytorch</a></li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017-07-30-svn.html" rel="next" title="机器学习第三层之支持向量机">
+                <i class="fa fa-chevron-left"></i> 机器学习第三层之支持向量机
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017-09-10-cnn.html" rel="prev" title="CNN 卷积神经网络">
+                CNN 卷积神经网络 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <p class="site-author-name" itemprop="name">Liang Wu</p>
+            <p class="site-description motion-element" itemprop="description">--</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一阶段-攒机"><span class="nav-number">1.</span> <span class="nav-text">第一阶段 攒机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二阶段-双系统安装"><span class="nav-number">2.</span> <span class="nav-text">第二阶段 双系统安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三阶段-CUDA和CUDNN安装"><span class="nav-number">3.</span> <span class="nav-text">第三阶段 CUDA和CUDNN安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第四阶段-深度学习框架以及Python开发环境搭建"><span class="nav-number">4.</span> <span class="nav-text">第四阶段 深度学习框架以及Python开发环境搭建</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liang Wu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

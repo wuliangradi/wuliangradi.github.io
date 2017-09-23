@@ -93,18 +93,20 @@
 
 
 
-<meta name="description" content="Github: https://github.com/wuliangradi">
+<meta name="description" content="从最小二乘说起 wiki里的定义：最小二乘法（又称最小平方法）是一种数学优化技术。它通过最小化误差的平方和寻找数据的最佳函数匹配 线性回归模型，常使用最小误差函数（平方误差）的方法求解系数，为了抑制过拟合还加入正则项 在高斯噪声的假设下，残差和函数是最大化似然函数的自然结果。知乎有对这个问题的讨论，问题在 这里 Ridge 回归可以用 Gaussian 分布和最大后验估计解释 LASSO 回归可以">
 <meta name="keywords" content="Web,HTML">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="wuliangradi.github.io/about/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习第一层之线性回归">
+<meta property="og:url" content="wuliangradi.github.io/2017-07-29-lr.html">
 <meta property="og:site_name" content="旅途">
-<meta property="og:description" content="Github: https://github.com/wuliangradi">
+<meta property="og:description" content="从最小二乘说起 wiki里的定义：最小二乘法（又称最小平方法）是一种数学优化技术。它通过最小化误差的平方和寻找数据的最佳函数匹配 线性回归模型，常使用最小误差函数（平方误差）的方法求解系数，为了抑制过拟合还加入正则项 在高斯噪声的假设下，残差和函数是最大化似然函数的自然结果。知乎有对这个问题的讨论，问题在 这里 Ridge 回归可以用 Gaussian 分布和最大后验估计解释 LASSO 回归可以">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-10T14:06:54.209Z">
+<meta property="og:image" content="https://github.com/wuliangradi/images/raw/master/curve_gaussian.png">
+<meta property="og:updated_time" content="2017-09-10T12:25:21.826Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="Github: https://github.com/wuliangradi">
+<meta name="twitter:title" content="机器学习第一层之线性回归">
+<meta name="twitter:description" content="从最小二乘说起 wiki里的定义：最小二乘法（又称最小平方法）是一种数学优化技术。它通过最小化误差的平方和寻找数据的最佳函数匹配 线性回归模型，常使用最小误差函数（平方误差）的方法求解系数，为了抑制过拟合还加入正则项 在高斯噪声的假设下，残差和函数是最大化似然函数的自然结果。知乎有对这个问题的讨论，问题在 这里 Ridge 回归可以用 Gaussian 分布和最大后验估计解释 LASSO 回归可以">
+<meta name="twitter:image" content="https://github.com/wuliangradi/images/raw/master/curve_gaussian.png">
 
 
 
@@ -134,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="wuliangradi.github.io/about/"/>
+  <link rel="canonical" href="wuliangradi.github.io/2017-07-29-lr.html"/>
 
 
 
 
 
-  <title>about | 旅途</title>
+  <title>机器学习第一层之线性回归 | 旅途</title>
   
 
 
@@ -274,34 +276,164 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017-07-29-lr.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liang Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="旅途">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">about</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <p>Github: <a href="https://github.com/wuliangradi" target="_blank" rel="external">https://github.com/wuliangradi</a></p>
-
+          <h1 class="post-title" itemprop="name headline">机器学习第一层之线性回归</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-29T22:52:41+08:00">
+                2017-07-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h3 id="从最小二乘说起"><a href="#从最小二乘说起" class="headerlink" title="从最小二乘说起"></a>从最小二乘说起</h3><ul>
+<li>wiki里的定义：最小二乘法（又称最小平方法）是一种数学优化技术。它通过最小化误差的平方和寻找数据的最佳函数匹配</li>
+<li>线性回归模型，常使用最小误差函数（平方误差）的方法求解系数，为了抑制过拟合还加入正则项</li>
+<li>在高斯噪声的假设下，残差和函数是最大化似然函数的自然结果。知乎有对这个问题的讨论，问题在 <a href="https://www.zhihu.com/question/20447622" target="_blank" rel="external">这里</a></li>
+<li>Ridge 回归可以用 Gaussian 分布和最大后验估计解释</li>
+<li>LASSO 回归可以用 Laplace 分布和最大后验估计解释</li>
+</ul>
+<p><img src="https://github.com/wuliangradi/images/raw/master/curve_gaussian.png" alt=""></p>
+<p>多项式曲线拟合问题，给定x的值，对应的l值假设服从高斯分布，分布的均值为y(x,w)，精度由β给出。通过最大似然估计的方法来确定未知参数w和beta的参数的值</p>
+<script type="math/tex; mode=display">
+p(t|x,w,\beta) = \mathcal{N}(t|y(x,w),\beta^{-1})</script><p>对数似然函数如下，此时最小化似然函数和最小二乘的形式是一致的</p>
+<script type="math/tex; mode=display">
+\ln p(T|X, w, \beta) = -\frac{\beta}{2}\sum\limits_{n=1}^{N}\{y(x_n, w) - t_n\}^2 + \frac{N}{2}\ln{\beta} - \frac{N}{2}\ln{(2\pi)}</script><p>多项式系数w的先验分布</p>
+<script type="math/tex; mode=display">
+p(w|\alpha) = \mathcal{N}(w|0, \alpha^{-1}I) = \left(\frac{\alpha}{2\pi}\right)^{(M + 1)/2}exp\left\{-\frac{\alpha}{2}w^Tw\right\}</script><p>参数估计w的后验概率表达式</p>
+<script type="math/tex; mode=display">
+p(w|X, T, \alpha, \beta) \propto  p(T|X, w, \beta)p(w|\alpha)</script><p>最大化后验概率的最终形式：</p>
+<script type="math/tex; mode=display">
+\frac{\beta}{2}\sum\limits_{n=1}^{N}\{y(x_n, w) - t_n\}^2 + \frac{\alpha}{2}w^Tw</script>
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017-06-24-dl_action.html" rel="next" title="深度学习实践">
+                <i class="fa fa-chevron-left"></i> 深度学习实践
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017-07-30-svn.html" rel="prev" title="机器学习第三层之支持向量机">
+                机器学习第三层之支持向量机 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -334,8 +466,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <p class="site-author-name" itemprop="name">Liang Wu</p>
@@ -378,6 +519,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#从最小二乘说起"><span class="nav-number">1.</span> <span class="nav-text">从最小二乘说起</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -518,6 +675,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
@@ -568,6 +729,26 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 

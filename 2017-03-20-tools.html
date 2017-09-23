@@ -93,18 +93,18 @@
 
 
 
-<meta name="description" content="Github: https://github.com/wuliangradi">
+<meta name="description" content="Tmux base newtmux: start new tmux new -s myname attachtmux a   tmux a -t myname list tmux ls tmux kill-session -t myname   tmux kill-window -t myname     windows  1234567c  create windoww  list window">
 <meta name="keywords" content="Web,HTML">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="wuliangradi.github.io/about/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="useful tools">
+<meta property="og:url" content="wuliangradi.github.io/2017-03-20-tools.html">
 <meta property="og:site_name" content="旅途">
-<meta property="og:description" content="Github: https://github.com/wuliangradi">
+<meta property="og:description" content="Tmux base newtmux: start new tmux new -s myname attachtmux a   tmux a -t myname list tmux ls tmux kill-session -t myname   tmux kill-window -t myname     windows  1234567c  create windoww  list window">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-10T14:06:54.209Z">
+<meta property="og:updated_time" content="2017-09-10T12:41:39.591Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
-<meta name="twitter:description" content="Github: https://github.com/wuliangradi">
+<meta name="twitter:title" content="useful tools">
+<meta name="twitter:description" content="Tmux base newtmux: start new tmux new -s myname attachtmux a   tmux a -t myname list tmux ls tmux kill-session -t myname   tmux kill-window -t myname     windows  1234567c  create windoww  list window">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="wuliangradi.github.io/about/"/>
+  <link rel="canonical" href="wuliangradi.github.io/2017-03-20-tools.html"/>
 
 
 
 
 
-  <title>about | 旅途</title>
+  <title>useful tools | 旅途</title>
   
 
 
@@ -274,34 +274,190 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="wuliangradi.github.io/2017-03-20-tools.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Liang Wu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="旅途">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">about</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <p>Github: <a href="https://github.com/wuliangradi" target="_blank" rel="external">https://github.com/wuliangradi</a></p>
-
+          <h1 class="post-title" itemprop="name headline">useful tools</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-12T15:27:31+08:00">
+                2017-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h3 id="Tmux"><a href="#Tmux" class="headerlink" title="Tmux"></a>Tmux</h3><ul>
+<li>base<ul>
+<li>new<br><code>tmux: start new
+tmux new -s myname</code></li>
+<li>attach<br><code>tmux a  
+tmux a -t myname</code></li>
+<li>list tmux ls</li>
+<li>tmux kill-session -t myname  </li>
+<li>tmux kill-window -t myname  </li>
+</ul>
+</li>
+<li><p>windows</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">c  create window</div><div class="line">w  list windows</div><div class="line">n  next window</div><div class="line">p  previous window</div><div class="line">f  find window</div><div class="line">,  name window</div><div class="line">&amp;  kill window</div></pre></td></tr></table></figure>
+</li>
+<li><p>panes</p>
+<pre><code> c  create window
+ o  swap panes
+ q  show pane numbers
+ x  kill pane
+ +  break pane into window (e.g. to select text by mouse to copy)
+ -  restore pane from window
+ ⍽  space - toggle between layouts
+</code></pre></li>
+</ul>
+<h3 id="SwitchyOmega"><a href="#SwitchyOmega" class="headerlink" title="SwitchyOmega"></a>SwitchyOmega</h3><p><em>Manage and switch between multiple proxies quickly &amp; easily.</em></p>
+<ul>
+<li><a href="https://github.com/FelisCatus/SwitchyOmega" target="_blank" rel="external">github site</a></li>
+<li><a href="&quot;https://github.com/FelisCatus/SwitchyOmega/releases&quot;">install help and user guide</a></li>
+</ul>
+<h3 id="python-m-SimpleHTTPServer-8221"><a href="#python-m-SimpleHTTPServer-8221" class="headerlink" title="python -m SimpleHTTPServer 8221"></a>python -m SimpleHTTPServer 8221</h3><ul>
+<li><a href="https://docs.python.org/2/library/simplehttpserver.html" target="_blank" rel="external">https://docs.python.org/2/library/simplehttpserver.html</a></li>
+<li><a href="http://www.pythonforbeginners.com/modules-in-python/how-to-use-simplehttpserver/" target="_blank" rel="external">http://www.pythonforbeginners.com/modules-in-python/how-to-use-simplehttpserver/</a></li>
+<li><a href="http://coolshell.cn/articles/1480.html" target="_blank" rel="external">http://coolshell.cn/articles/1480.html</a></li>
+</ul>
+<h3 id="代码实时同步"><a href="#代码实时同步" class="headerlink" title="代码实时同步"></a>代码实时同步</h3><ul>
+<li><a href="http://www.jianshu.com/p/cbb86d6a7856" target="_blank" rel="external">代码实时同步工具nobone-sync</a></li>
+<li><a href="https://github.com/ysmood/nobone-sync" target="_blank" rel="external">github 地址</a><br> <code>nobone-sync -s sync_config.js &amp;
+ nobone-sync sync_local_config.js</code></li>
+</ul>
+<h3 id="常用的地址："><a href="#常用的地址：" class="headerlink" title="常用的地址："></a>常用的地址：</h3><ul>
+<li><a href="http://hadoop.apache.org/docs/r1.0.4/cn/hdfs_shell.html" target="_blank" rel="external">hadoop 常用命令</a></li>
+<li><a href="http://plus.zealer.com/home/digital" target="_blank" rel="external">digital 资讯</a></li>
+<li><a href="http://color-themes.com/?view=index" target="_blank" rel="external">code配色</a></li>
+</ul>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017-03-27-rnn.html" rel="next" title="RNN 循环神经网络">
+                <i class="fa fa-chevron-left"></i> RNN 循环神经网络
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017-03-22-Hive.html" rel="prev" title="MySQL以及HIVE">
+                MySQL以及HIVE <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -334,8 +490,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <p class="site-author-name" itemprop="name">Liang Wu</p>
@@ -378,6 +543,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tmux"><span class="nav-number">1.</span> <span class="nav-text">Tmux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SwitchyOmega"><span class="nav-number">2.</span> <span class="nav-text">SwitchyOmega</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python-m-SimpleHTTPServer-8221"><span class="nav-number">3.</span> <span class="nav-text">python -m SimpleHTTPServer 8221</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实时同步"><span class="nav-number">4.</span> <span class="nav-text">代码实时同步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的地址："><span class="nav-number">5.</span> <span class="nav-text">常用的地址：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -518,6 +699,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
 
   
 
