@@ -389,7 +389,7 @@
 <li><p>apply 是非常重要的神器，例如这个例子  </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">   df[<span class="string">'channel'</span>] = df[<span class="string">'wise_channel'</span>].apply(<span class="keyword">lambda</span> x:x.split(<span class="string">"*"</span>)[<span class="number">0</span>])</div><div class="line">   ``` </div><div class="line"></div><div class="line"><span class="number">5.</span> [most pythonic way to pad a numeric string <span class="keyword">with</span> zeroes to the left](http://stackoverflow.com/questions/<span class="number">339007</span>/nicest-way-to-pad-zeroes-to-string)  </div><div class="line">  <span class="keyword">for</span> strings</div></pre></td></tr></table></figure>
 <p>i.zfill(3)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> numbers</div></pre></td></tr></table></figure>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> numbers</div></pre></td></tr></table></figure>
 <p>‘{0:03d}’.format(4)</p>
 <figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">  </div><div class="line"><span class="number">6.</span> 多进程</div><div class="line"></div><div class="line"></div><div class="line"><span class="number">7.</span> logging 消息重复问题  </div><div class="line">    多次循环调用程序时，日志出现第一条记录打印一条，第二次记录打印两条，依次类推，导致后续大量重复的日志输出。原因是：重复调用logging，由于logger的name是一样的，每次调用都会添加handler，多个handler就会打印多条同样的日志记录。解决办法：存在handler就不重复创建了，直接返回logger。这一篇csdn的博客可以作为参考:[Python logging 重复写日志问题](http:<span class="comment">//blog.csdn.net/huilan_same/article/details/51858817)</span></div><div class="line">    ```python</div><div class="line">    logger = logging.getLogger(logname)</div><div class="line">    <span class="keyword">if</span> not logger.handlers:</div><div class="line">        balabala...</div><div class="line">    return logger</div></pre></td></tr></table></figure>
 </li>
@@ -452,8 +452,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017-03-16-pytorch.html" rel="prev" title="Pytorch学习笔记">
-                Pytorch学习笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/2017-03-27-rd.html" rel="prev" title="Python开发环境以及包的管理">
+                Python开发环境以及包的管理 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
